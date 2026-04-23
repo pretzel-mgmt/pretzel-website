@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>料金プラン | Pretzel - クリエイターマネジメント</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0e0e18;
+  --bg-card: #14141f;
+  --bg-card-hover: #1a1a2e;
+  --accent-gradient: linear-gradient(135deg, #6366f1, #ec4899);
+  --accent-start: #6366f1;
+  --accent-end: #ec4899;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --cyan: #22d3ee;
+  --border-color: rgba(99, 102, 241, 0.15);
+  --border-hover: rgba(99, 102, 241, 0.4);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 15, 0.85);
+  border-bottom: 1px solid var(--border-color);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+}
+.nav-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem; font-weight: 800;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a {
+  color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.nav-cta {
+  background: var(--accent-gradient); color: #fff !important;
+  padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 0.85rem;
+  -webkit-text-fill-color: #fff;
+}
+.nav-cta:hover { opacity: 0.9; }
+
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text-primary); margin: 5px 0; border-radius: 2px; transition: 0.3s; }
+
+/* ===== HERO ===== */
+.page-hero {
+  padding: 160px 24px 60px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+.page-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+/* ===== TAB TOGGLE ===== */
+.tab-wrapper { text-align: center; padding: 0 24px; margin-bottom: 56px; }
+.tab-toggle {
+  display: inline-flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.tab-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-secondary); font-family: inherit;
+  font-size: 0.95rem; font-weight: 600;
+  padding: 14px 36px;
+  transition: all 0.3s;
+  border-radius: 50px;
+}
+.tab-btn.active {
+  background: var(--accent-gradient); color: #fff;
+}
+
+/* ===== SECTIONS ===== */
+.section { padding: 0 24px 80px; max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(236,72,153,0.15));
+  border: 1px solid var(--border-color);
+  padding: 6px 18px; border-radius: 50px;
+  font-size: 0.8rem; font-weight: 600; color: var(--cyan);
+  margin-bottom: 16px;
+}
+
+/* ===== PRICING CARDS ===== */
+.pricing-panel { display: none; }
+.pricing-panel.active { display: block; }
+
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
+
+.plan-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+  display: flex; flex-direction: column;
+}
+.plan-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+.plan-card.featured {
+  border-color: var(--accent-start);
+  background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, var(--bg-card) 100%);
+}
+.popular-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--accent-gradient); color: #fff; font-size: 0.75rem; font-weight: 700;
+  padding: 4px 16px; border-radius: 50px; white-space: nowrap;
+}
+.plan-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; }
+.plan-meta { margin-bottom: 8px; }
+.plan-meta-label { color: var(--text-muted); font-size: 0.8rem; }
+.plan-meta-value { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+.plan-rate {
+  font-size: 2.2rem; font-weight: 800;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin: 8px 0 4px;
+}
+.plan-rate-sub { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 8px; }
+.plan-contract { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 20px; }
+.plan-divider { height: 1px; background: var(--border-color); margin-bottom: 20px; }
+
+/* ===== FEATURE TABLE ===== */
+.feature-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 56px;
+}
+.feature-table thead th {
+  background: var(--bg-card);
+  padding: 16px 20px;
+  font-size: 0.95rem; font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  text-align: center;
+}
+.feature-table thead th:first-child { text-align: left; border-radius: var(--radius-sm) 0 0 0; }
+.feature-table thead th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+.feature-table thead th.featured-col {
+  background: linear-gradient(180deg, rgba(99,102,241,0.15) 0%, var(--bg-card) 100%);
+  border-bottom-color: var(--accent-start);
+}
+.feature-table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.feature-table tbody td:first-child { text-align: left; font-weight: 500; color: var(--text-primary); }
+.feature-table tbody tr:hover { background: rgba(99,102,241,0.03); }
+.check { color: var(--cyan); font-weight: 700; font-size: 1.1rem; }
+.dash { color: var(--text-muted); }
+
+/* ===== FAQ ===== */
+.faq-section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+.faq-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; text-align: center; margin-bottom: 48px;
+}
+.faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover { border-color: var(--border-hover); }
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; cursor: pointer;
+  background: var(--bg-card);
+  font-weight: 600; font-size: 0.95rem;
+  user-select: none;
+  transition: background 0.3s;
+}
+.faq-q:hover { background: var(--bg-card-hover); }
+.faq-q::after {
+  content: '+'; font-size: 1.4rem; color: var(--text-muted);
+  transition: transform 0.3s;
+  flex-shrink: 0; margin-left: 16px;
+}
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  padding: 0 24px;
+  color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;
+  background: var(--bg-card);
+}
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 0 24px 20px;
+}
+
+/* ===== CTA ===== */
+.cta-section { padding: 80px 24px; text-align: center; }
+.cta-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
+.cta-section p { color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-btn {
+  display: inline-block;
+  background: var(--accent-gradient); color: #fff; text-decoration: none;
+  padding: 16px 48px; border-radius: 50px;
+  font-size: 1rem; font-weight: 700;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ===== FOOTER ===== */
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding: 48px 24px; text-align: center;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem; font-weight: 800;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+.footer-links { list-style: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-copy { color: var(--text-muted); font-size: 0.8rem; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 56px; }
+  .feature-table { font-size: 0.8rem; }
+  .feature-table thead th, .feature-table tbody td { padding: 10px 8px; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .nav-links.active {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(10,10,15,0.98); padding: 24px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .feature-table { display: block; overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Pretzel</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="works.html">実績</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="nightwork.html" class="nav-cta">夜職の方へ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="page-hero">
+  <h1>料金プラン</h1>
+  <p>シンプルで分かりやすい料金体系。あなたのステージに合わせた最適なプランをお選びください。</p>
+</section>
+
+<!-- ===== TAB TOGGLE ===== -->
+<div class="tab-wrapper">
+  <div class="tab-toggle">
+    <button class="tab-btn active" data-tab="standard">Standard</button>
+    <button class="tab-btn" data-tab="launch">Launch</button>
+  </div>
+</div>
+
+<!-- ===== STANDARD PANEL ===== -->
+<div class="pricing-panel active" id="panel-standard">
+  <section class="section">
+    <div class="plans-grid">
+      <!-- Light -->
+      <div class="plan-card">
+        <div class="plan-name">Light</div>
+        <div class="plan-meta">
+          <span class="plan-meta-label">初期費用</span>
+          <span class="plan-meta-value"> なし</span>
+        </div>
+        <div class="plan-rate">15%</div>
+        <div class="plan-rate-sub">売上からのコミッション</div>
+        <div class="plan-contract">最低契約期間: 3ヶ月</div>
+        <div class="plan-divider"></div>
+        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
+      </div>
+
+      <!-- Standard -->
+      <div class="plan-card featured">
+        <span class="popular-badge">POPULAR</span>
+        <div class="plan-name">Standard</div>
+        <div class="plan-meta">
+          <span class="plan-meta-label">初期費用</span>
+          <span class="plan-meta-value"> なし</span>
+        </div>
+        <div class="plan-rate">20%</div>
+        <div class="plan-rate-sub">売上からのコミッション</div>
+        <div class="plan-contract">最低契約期間: 6ヶ月</div>
+        <div class="plan-divider"></div>
+        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan-card">
+        <div class="plan-name">Premium</div>
+        <div class="plan-meta">
+          <span class="plan-meta-label">初期費用</span>
+          <span class="plan-meta-value"> なし</span>
+        </div>
+        <div class="plan-rate">25%</div>
+        <div class="plan-rate-sub">売上からのコミッション</div>
+        <div class="plan-contract">最低契約期間: 12ヶ月</div>
+        <div class="plan-divider"></div>
+        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
+      </div>
+    </div>
+
+    <!-- Feature Comparison -->
+    <table class="feature-table">
+      <thead>
+        <tr>
+          <th>サービス内容</th>
+          <th>Light</th>
+          <th class="featured-col">Standard</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>コンテンツ企画</td>
+          <td><span class="check">&#10003;</span><br><small>月次</small></td>
+          <td><span class="check">&#10003;</span><br><small>週次</small></td>
+          <td><span class="check">&#10003;</span><br><small>随時</small></td>
+        </tr>
+        <tr>
+          <td>マーケティング支援</td>
+          <td><span class="check">&#10003;</span><br><small>基本</small></td>
+          <td><span class="check">&#10003;</span><br><small>戦略立案含む</small></td>
+          <td><span class="check">&#10003;</span><br><small>フル対応</small></td>
+        </tr>
+        <tr>
+          <td>データ分析</td>
+          <td><span class="check">&#10003;</span><br><small>月次レポート</small></td>
+          <td><span class="check">&#10003;</span><br><small>週次レポート</small></td>
+          <td><span class="check">&#10003;</span><br><small>リアルタイム</small></td>
+        </tr>
+        <tr>
+          <td>専属担当</td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="check">&#10003;</span></td>
+          <td><span class="check">&#10003;</span><br><small>チーム体制</small></td>
+        </tr>
+        <tr>
+          <td>撮影ディレクション</td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="check">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>広告運用</td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="check">&#10003;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<!-- ===== LAUNCH PANEL ===== -->
+<div class="pricing-panel" id="panel-launch">
+  <section class="section">
+    <div class="plans-grid">
+      <!-- Lite -->
+      <div class="plan-card">
+        <div class="plan-name">Lite</div>
+        <div class="plan-meta">
+          <span class="plan-meta-label">初期費用</span>
+          <span class="plan-meta-value"> 3万円</span>
+        </div>
+        <div class="plan-rate">20%</div>
+        <div class="plan-rate-sub">売上からのコミッション</div>
+        <div class="plan-contract">契約期間: 3ヶ月</div>
+        <div class="plan-divider"></div>
+        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
+      </div>
+
+      <!-- Standard -->
+      <div class="plan-card featured">
+        <span class="popular-badge">POPULAR</span>
+        <div class="plan-name">Standard</div>
+        <div class="plan-meta">
+          <span class="plan-meta-label">初期費用</span>
+          <span class="plan-meta-value"> 5万円</span>
+        </div>
+        <div class="plan-rate">25%</div>
+        <div class="plan-rate-sub">売上からのコミッション</div>
+        <div class="plan-contract">契約期間: 6ヶ月</div>
+        <div class="plan-divider"></div>
+        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan-card">
+        <div class="plan-name">Premium</div>
+        <div class="plan-meta">
+          <span class="plan-meta-label">初期費用</span>
+          <span class="plan-meta-value"> 8万円</span>
+        </div>
+        <div class="plan-rate">30%→20%</div>
+        <div class="plan-rate-sub">6ヶ月後にコミッション引き下げ</div>
+        <div class="plan-contract">契約期間: 12ヶ月</div>
+        <div class="plan-divider"></div>
+        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
+      </div>
+    </div>
+
+    <!-- Feature Comparison -->
+    <table class="feature-table">
+      <thead>
+        <tr>
+          <th>サービス内容</th>
+          <th>Lite</th>
+          <th class="featured-col">Standard</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>アカウント開設</td>
+          <td><span class="check">&#10003;</span><br><small>サポート</small></td>
+          <td><span class="check">&#10003;</span><br><small>代行</small></td>
+          <td><span class="check">&#10003;</span><br><small>完全代行</small></td>
+        </tr>
+        <tr>
+          <td>プロフィール設計</td>
+          <td><span class="check">&#10003;</span><br><small>基本</small></td>
+          <td><span class="check">&#10003;</span><br><small>最適化込み</small></td>
+          <td><span class="check">&#10003;</span><br><small>プレミアム</small></td>
+        </tr>
+        <tr>
+          <td>コンテンツ企画</td>
+          <td><span class="check">&#10003;</span><br><small>5本</small></td>
+          <td><span class="check">&#10003;</span><br><small>継続</small></td>
+          <td><span class="check">&#10003;</span><br><small>継続</small></td>
+        </tr>
+        <tr>
+          <td>撮影ディレクション</td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="check">&#10003;</span></td>
+          <td><span class="check">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>SNS集客</td>
+          <td><span class="check">&#10003;</span><br><small>基本設定</small></td>
+          <td><span class="check">&#10003;</span><br><small>2媒体</small></td>
+          <td><span class="check">&#10003;</span><br><small>全媒体</small></td>
+        </tr>
+        <tr>
+          <td>身バレ対策</td>
+          <td><span class="check">&#10003;</span><br><small>ガイド</small></td>
+          <td><span class="check">&#10003;</span><br><small>フルサポート</small></td>
+          <td><span class="check">&#10003;</span><br><small>プレミアム</small></td>
+        </tr>
+        <tr>
+          <td>専属担当</td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="check">&#10003;</span></td>
+          <td><span class="check">&#10003;</span><br><small>チーム体制</small></td>
+        </tr>
+        <tr>
+          <td>広告運用</td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="dash">&#8212;</span></td>
+          <td><span class="check">&#10003;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <h2>料金に関するよくある質問</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">コミッションはどのように計算されますか？</div>
+    <div class="faq-a">ファンサブスクプラットフォームでの売上（プラットフォーム手数料控除後の金額）に対して、各プランのコミッション率を乗じた金額が弊社の報酬となります。売上が0円の月は費用は発生しません。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">途中でプランを変更できますか？</div>
+    <div class="faq-a">はい、最低契約期間の経過後はいつでもプラン変更が可能です。アップグレードの場合は月途中からでも対応いたします。ダウングレードは翌月からの適用となります。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">最低契約期間内に解約した場合はどうなりますか？</div>
+    <div class="faq-a">最低契約期間内の解約には、残月数分のコミッション見込み額の50%を違約金としてお支払いいただきます。詳しくは契約書にてご説明いたします。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Launchプランの初期費用には何が含まれますか？</div>
+    <div class="faq-a">アカウント開設、プロフィール設計、初期コンテンツの企画・ディレクション、SNSアカウントの初期設定などの立ち上げ作業がすべて含まれます。追加費用は一切かかりません。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">支払い方法を教えてください。</div>
+    <div class="faq-a">毎月の売上確定後、翌月15日までにコミッションを差し引いた金額をお振り込みいたします。初期費用がある場合は、契約時に銀行振込でお支払いいただきます。</div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <h2>最適なプランをご提案します</h2>
+  <p>あなたの状況やゴールに合わせて、最適なプランを無料でご提案いたします。</p>
+  <a href="contact.html" class="cta-btn">無料相談する</a>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Pretzel</div>
+    <ul class="footer-links">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="works.html">実績</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="nightwork.html">夜職の方へ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+// Tab toggle
+const tabBtns = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.pricing-panel');
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabBtns.forEach(b => b.classList.remove('active'));
+    panels.forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

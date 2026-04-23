@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>実績紹介 | Pretzel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --dark: #0a0a0f;
+      --dark-card: #12121a;
+      --dark-border: #1e1e2e;
+      --pink: #ff2d78;
+      --purple: #b829dd;
+      --cyan: #22d3ee;
+      --text: #e4e4e7;
+      --text-muted: #9ca3af;
+      --gradient-pink: linear-gradient(135deg, #ff2d78, #b829dd);
+      --gradient-cyan: linear-gradient(135deg, #22d3ee, #b829dd);
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 72px;
+    }
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem; font-weight: 800;
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      width: 24px; height: 2px; background: var(--text);
+      transition: 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 160px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(circle at 50% 80%, rgba(255,45,120,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-size: 3rem; font-weight: 800;
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;
+    }
+
+    /* ===== STATS BANNER ===== */
+    .stats-banner {
+      max-width: 1000px; margin: 0 auto 80px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+      background: var(--dark-border);
+      border-radius: 16px; overflow: hidden;
+    }
+    .stat-item {
+      background: var(--dark-card);
+      padding: 32px 20px; text-align: center;
+    }
+    .stat-item:first-child { border-radius: 16px 0 0 16px; }
+    .stat-item:last-child { border-radius: 0 16px 16px 0; }
+    .stat-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.2rem; font-weight: 800;
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px 100px;
+    }
+    .section-title {
+      font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 48px;
+    }
+    .section-title span {
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== CASE STUDIES ===== */
+    .cases-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .case-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px; padding: 32px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,45,120,0.3);
+    }
+    .case-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+    }
+    .case-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.2rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .case-name { font-weight: 600; font-size: 1rem; }
+    .case-tag {
+      font-size: 0.75rem; color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .case-metrics {
+      display: flex; gap: 12px; margin-bottom: 20px;
+    }
+    .metric-box {
+      flex: 1; padding: 12px; border-radius: 10px;
+      text-align: center;
+    }
+    .metric-box.before {
+      background: rgba(255,255,255,0.04);
+    }
+    .metric-box.after {
+      background: rgba(255,45,120,0.1);
+      border: 1px solid rgba(255,45,120,0.2);
+    }
+    .metric-label {
+      font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem; font-weight: 700;
+    }
+    .metric-box.after .metric-value {
+      color: var(--pink);
+    }
+    .case-story {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .case-meta {
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .case-badge {
+      font-size: 0.72rem; padding: 4px 10px;
+      border-radius: 20px; background: rgba(255,255,255,0.06);
+      color: var(--text-muted);
+    }
+
+    /* ===== CHART ===== */
+    .chart-section {
+      max-width: 800px; margin: 0 auto; padding: 0 24px 100px;
+    }
+    .chart-container {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px; padding: 40px;
+    }
+    .chart-bars {
+      display: flex; align-items: flex-end; gap: 16px;
+      height: 250px; padding-top: 20px;
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .chart-bar-wrapper {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; height: 100%;
+      justify-content: flex-end;
+    }
+    .chart-bar-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem; font-weight: 600;
+      margin-bottom: 8px; color: var(--text);
+    }
+    .chart-bar {
+      width: 100%; max-width: 60px; border-radius: 8px 8px 0 0;
+      background: var(--gradient-pink);
+      transition: height 0.6s ease;
+      position: relative;
+    }
+    .chart-bar-label {
+      font-size: 0.78rem; color: var(--text-muted);
+      margin-top: 12px; text-align: center;
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      text-align: center; padding: 80px 24px 120px;
+    }
+    .cta-section h2 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: var(--text-muted); margin-bottom: 32px; font-size: 1.05rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 48px;
+      background: var(--gradient-pink);
+      color: #fff; font-weight: 700; font-size: 1rem;
+      border-radius: 50px; border: none; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,45,120,0.35);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid var(--dark-border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      display: flex; justify-content: center; gap: 24px;
+      list-style: none; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.3s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy {
+      font-size: 0.78rem; color: var(--text-muted);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-banner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:first-child { border-radius: 16px 0 0 0; }
+      .stat-item:nth-child(2) { border-radius: 0 16px 0 0; }
+      .stat-item:nth-child(3) { border-radius: 0 0 0 16px; }
+      .stat-item:last-child { border-radius: 0 0 16px 0; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: rgba(10,10,15,0.97);
+        padding: 24px; gap: 20px;
+        border-bottom: 1px solid var(--dark-border);
+      }
+      .hero h1 { font-size: 2rem; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .stats-banner { grid-template-columns: 1fr 1fr; }
+      .stat-number { font-size: 1.6rem; }
+      .chart-bars { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Pretzel</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="results.html" class="active">実績</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="launch.html">夜職の方へ</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>実績紹介</h1>
+  <p>Pretzelのサポートで成果を出したクリエイターの実績をご紹介します。</p>
+</section>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="stat-item">
+    <span class="stat-number">50+</span>
+    <div class="stat-label">クライアント数</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">47%</span>
+    <div class="stat-label">平均収益UP率</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">94%</span>
+    <div class="stat-label">継続率</div>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">2,000万円+</span>
+    <div class="stat-label">累計売上支援額</div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section class="section">
+  <h2 class="section-title"><span>成功事例</span></h2>
+  <div class="cases-grid">
+
+    <!-- Case A -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-avatar" style="background: linear-gradient(135deg, #ff2d78, #ff6b9d);">A</div>
+        <div>
+          <div class="case-name">Aさん</div>
+          <div class="case-tag">20代女性・コスプレイヤー</div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box before">
+          <div class="metric-label">Before</div>
+          <div class="metric-value">3万円</div>
+        </div>
+        <div class="metric-box after">
+          <div class="metric-label">After</div>
+          <div class="metric-value">18万円</div>
+        </div>
+      </div>
+      <p class="case-story">コスプレ写真をSNSに投稿していたものの、収益化の方法がわからなかった。Pretzelのコンテンツ戦略サポートにより、ファン向け限定コンテンツの企画と定期配信を開始。6ヶ月で月収が6倍に成長。</p>
+      <div class="case-meta">
+        <span class="case-badge">Fanvue</span>
+        <span class="case-badge">Standardプラン</span>
+        <span class="case-badge">6ヶ月</span>
+      </div>
+    </div>
+
+    <!-- Case B -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-avatar" style="background: linear-gradient(135deg, #22d3ee, #06b6d4);">B</div>
+        <div>
+          <div class="case-name">Bさん</div>
+          <div class="case-tag">20代男性・フィットネス</div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box before">
+          <div class="metric-label">Before</div>
+          <div class="metric-value">0円</div>
+        </div>
+        <div class="metric-box after">
+          <div class="metric-label">After</div>
+          <div class="metric-value">12万円</div>
+        </div>
+      </div>
+      <p class="case-story">フィットネス系のSNSアカウントを運用していたが、フォロワー200人で伸び悩み。Pretzelのグロース支援によりフォロワーが3,000人に増加。トレーニング動画のサブスクリプション販売で安定収入を確立。</p>
+      <div class="case-meta">
+        <span class="case-badge">OnlyFans</span>
+        <span class="case-badge">Standardプラン</span>
+        <span class="case-badge">5ヶ月</span>
+      </div>
+    </div>
+
+    <!-- Case C -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-avatar" style="background: linear-gradient(135deg, #b829dd, #8b5cf6);">C</div>
+        <div>
+          <div class="case-name">Cさん</div>
+          <div class="case-tag">30代女性・元キャバ嬢</div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box before">
+          <div class="metric-label">Before</div>
+          <div class="metric-value">0円</div>
+        </div>
+        <div class="metric-box after">
+          <div class="metric-label">After</div>
+          <div class="metric-value">8万円</div>
+        </div>
+      </div>
+      <p class="case-story">夜職を引退後、新しい収入源を探していた。Pretzel Launch経由でファンサブスクを開始。接客スキルを活かしたファンコミュニケーションが好評で、開始2ヶ月で月収8万円を達成。</p>
+      <div class="case-meta">
+        <span class="case-badge">Fanvue</span>
+        <span class="case-badge">Launch Standardプラン</span>
+        <span class="case-badge">2ヶ月</span>
+      </div>
+    </div>
+
+    <!-- Case D -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">D</div>
+        <div>
+          <div class="case-name">Dさん</div>
+          <div class="case-tag">20代女性・現役ホステス</div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box before">
+          <div class="metric-label">Before</div>
+          <div class="metric-value">0円</div>
+        </div>
+        <div class="metric-box after">
+          <div class="metric-label">After</div>
+          <div class="metric-value">15万円</div>
+        </div>
+      </div>
+      <p class="case-story">現役ホステスとして働きながら、副業としてファンサブスクを開始。身バレ対策を徹底しつつ、本業と両立できるコンテンツ制作フローをPretzelが構築。安定的に月収15万円の副収入を実現。</p>
+      <div class="case-meta">
+        <span class="case-badge">OnlyFans</span>
+        <span class="case-badge">Launch Premiumプラン</span>
+        <span class="case-badge">4ヶ月</span>
+      </div>
+    </div>
+
+    <!-- Case E -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-avatar" style="background: linear-gradient(135deg, #10b981, #22d3ee);">E</div>
+        <div>
+          <div class="case-name">Eさん</div>
+          <div class="case-tag">20代男性・ホスト</div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box before">
+          <div class="metric-label">Before</div>
+          <div class="metric-value">5,000</div>
+        </div>
+        <div class="metric-box after">
+          <div class="metric-label">After</div>
+          <div class="metric-value">15,000</div>
+        </div>
+      </div>
+      <p class="case-story">SNSフォロワー5,000人からのスタート。Pretzelのグロース支援でフォロワーを15,000人まで拡大し、ファンサブスクで月収25万円を達成。ライフスタイル系コンテンツが人気を集めている。</p>
+      <div class="case-meta">
+        <span class="case-badge">Fanvue</span>
+        <span class="case-badge">Premiumプラン</span>
+        <span class="case-badge">6ヶ月</span>
+      </div>
+    </div>
+
+    <!-- Case F -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">F</div>
+        <div>
+          <div class="case-name">Fさん</div>
+          <div class="case-tag">20代女性・ガールズバー</div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="metric-box before">
+          <div class="metric-label">Before</div>
+          <div class="metric-value">0円</div>
+        </div>
+        <div class="metric-box after">
+          <div class="metric-label">After</div>
+          <div class="metric-value">10万円</div>
+        </div>
+      </div>
+      <p class="case-story">身バレを最も心配していたが、Pretzelの完全匿名運用サポートにより安心してスタート。顔出しなし・声なしのコンテンツ戦略で、月収10万円を達成。プライバシーを守りながら収益化に成功。</p>
+      <div class="case-meta">
+        <span class="case-badge">OnlyFans</span>
+        <span class="case-badge">Launch Liteプラン</span>
+        <span class="case-badge">3ヶ月</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHART SECTION -->
+<section class="chart-section">
+  <h2 class="section-title"><span>平均収益推移</span></h2>
+  <div class="chart-container">
+    <p style="text-align:center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">開始月から6ヶ月間の平均月収推移（万円）</p>
+    <div class="chart-bars">
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">0.5</div>
+        <div class="chart-bar" style="height: 4%;"></div>
+        <div class="chart-bar-label">開始月</div>
+      </div>
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">2.8</div>
+        <div class="chart-bar" style="height: 14%;"></div>
+        <div class="chart-bar-label">1ヶ月</div>
+      </div>
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">5.5</div>
+        <div class="chart-bar" style="height: 28%;"></div>
+        <div class="chart-bar-label">2ヶ月</div>
+      </div>
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">8.2</div>
+        <div class="chart-bar" style="height: 42%;"></div>
+        <div class="chart-bar-label">3ヶ月</div>
+      </div>
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">11.0</div>
+        <div class="chart-bar" style="height: 56%;"></div>
+        <div class="chart-bar-label">4ヶ月</div>
+      </div>
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">14.5</div>
+        <div class="chart-bar" style="height: 74%;"></div>
+        <div class="chart-bar-label">5ヶ月</div>
+      </div>
+      <div class="chart-bar-wrapper">
+        <div class="chart-bar-value">18.3</div>
+        <div class="chart-bar" style="height: 93%;"></div>
+        <div class="chart-bar-label">6ヶ月</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>あなたも始めてみませんか？</h2>
+  <p>Pretzelがあなたのファンサブスク成功を全力でサポートします。</p>
+  <a href="contact.html" class="btn-primary">無料相談する</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Pretzel</div>
+    <ul class="footer-links">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="results.html">実績</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="launch.html">夜職の方へ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>夜職の方へ - Pretzel Launch | Pretzel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --dark: #0a0a0f;
+      --dark-card: #12121a;
+      --dark-border: #1e1e2e;
+      --pink: #ff2d78;
+      --purple: #b829dd;
+      --cyan: #22d3ee;
+      --text: #e4e4e7;
+      --text-muted: #9ca3af;
+      --gradient-pink: linear-gradient(135deg, #ff2d78, #b829dd);
+      --gradient-cyan: linear-gradient(135deg, #22d3ee, #b829dd);
+      --gradient-neon: linear-gradient(135deg, #ff2d78, #b829dd, #22d3ee);
+      --glow-pink: 0 0 40px rgba(255,45,120,0.4), 0 0 80px rgba(255,45,120,0.15);
+      --glow-purple: 0 0 40px rgba(184,41,221,0.4), 0 0 80px rgba(184,41,221,0.15);
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px; height: 72px;
+    }
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem; font-weight: 800;
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      width: 24px; height: 2px; background: var(--text);
+      transition: 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero-launch {
+      position: relative;
+      padding: 160px 24px 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-launch::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,45,120,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(184,41,221,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(34,211,238,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-launch::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.008) 2px,
+        rgba(255,255,255,0.008) 4px
+      );
+      pointer-events: none;
+    }
+    .hero-launch h1 {
+      font-size: 2.8rem; font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .hero-launch h1 .neon-text {
+      background: var(--gradient-neon);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-launch .hero-sub {
+      font-size: 1.15rem; color: var(--text-muted);
+      max-width: 640px; margin: 0 auto 40px;
+      position: relative;
+    }
+    .btn-glow {
+      display: inline-block;
+      padding: 18px 56px;
+      background: var(--gradient-pink);
+      color: #fff; font-weight: 700; font-size: 1.1rem;
+      border-radius: 50px; border: none; cursor: pointer;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: var(--glow-pink);
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    .btn-glow:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 60px rgba(255,45,120,0.5), 0 0 120px rgba(255,45,120,0.2);
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 30px rgba(255,45,120,0.3), 0 0 60px rgba(255,45,120,0.1); }
+      50% { box-shadow: 0 0 50px rgba(255,45,120,0.5), 0 0 100px rgba(255,45,120,0.2); }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .section {
+      max-width: 1000px; margin: 0 auto; padding: 80px 24px;
+    }
+    .section-lg { max-width: 1200px; }
+    .section-title {
+      font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 48px;
+    }
+    .section-title .accent {
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .neon-divider {
+      width: 60px; height: 3px; margin: 0 auto 48px;
+      background: var(--gradient-pink);
+      border-radius: 2px;
+    }
+
+    /* ===== PROBLEM ===== */
+    .problem-section {
+      background: linear-gradient(180deg, transparent, rgba(255,45,120,0.03) 50%, transparent);
+    }
+    .problem-list {
+      max-width: 680px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .problem-item {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-left: 3px solid var(--pink);
+      border-radius: 12px;
+      padding: 20px 24px;
+      font-size: 1rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .problem-item:hover {
+      border-left-color: var(--purple);
+      transform: translateX(4px);
+    }
+    .problem-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,45,120,0.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--pink); font-size: 1.1rem;
+    }
+
+    /* ===== SOLUTION ===== */
+    .solution-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    }
+    .solution-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .solution-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--gradient-neon);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .solution-card:hover { transform: translateY(-4px); }
+    .solution-card:hover::before { opacity: 1; }
+    .solution-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: rgba(184,41,221,0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.5rem;
+    }
+    .solution-card h3 {
+      font-size: 1.1rem; font-weight: 700; margin-bottom: 8px;
+    }
+    .solution-card p {
+      font-size: 0.88rem; color: var(--text-muted);
+    }
+
+    /* ===== STEPS ===== */
+    .steps-section {
+      background: linear-gradient(180deg, transparent, rgba(184,41,221,0.03) 50%, transparent);
+    }
+    .steps-flow {
+      display: flex; flex-direction: column; gap: 0;
+      max-width: 600px; margin: 0 auto;
+      position: relative;
+    }
+    .steps-flow::before {
+      content: '';
+      position: absolute; left: 28px; top: 32px; bottom: 32px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--pink), var(--purple), var(--cyan));
+    }
+    .step-item {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 20px 0;
+      position: relative;
+    }
+    .step-number {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--dark-card);
+      border: 2px solid var(--pink);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--pink);
+      flex-shrink: 0;
+      position: relative; z-index: 2;
+      transition: background 0.3s, color 0.3s;
+    }
+    .step-item:hover .step-number {
+      background: var(--gradient-pink);
+      background: linear-gradient(135deg, var(--pink), var(--purple));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: var(--glow-pink);
+    }
+    .step-content { padding-top: 12px; }
+    .step-content h4 {
+      font-size: 1.05rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 0.88rem; color: var(--text-muted);
+    }
+
+    /* ===== PRICING ===== */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .pricing-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      position: relative;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+    }
+    .pricing-card.featured {
+      border-color: var(--pink);
+      box-shadow: 0 0 40px rgba(255,45,120,0.12);
+    }
+    .pricing-card.featured::before {
+      content: '人気No.1';
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--gradient-pink);
+      color: #fff; font-size: 0.75rem; font-weight: 700;
+      padding: 4px 16px; border-radius: 20px;
+    }
+    .pricing-plan-name {
+      font-size: 0.85rem; font-weight: 600; color: var(--pink);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .pricing-plan-title {
+      font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;
+    }
+    .pricing-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.2rem; font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .pricing-price span {
+      font-size: 1rem; font-weight: 500; color: var(--text-muted);
+    }
+    .pricing-desc {
+      font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;
+    }
+    .pricing-features {
+      list-style: none; margin-bottom: 24px;
+    }
+    .pricing-features li {
+      font-size: 0.88rem; padding: 6px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .pricing-features li::before {
+      content: '\2713';
+      color: var(--cyan); font-weight: 700;
+    }
+    .pricing-btn {
+      display: block; width: 100%; padding: 14px;
+      text-align: center; border-radius: 12px;
+      font-weight: 700; font-size: 0.95rem;
+      border: none; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .pricing-btn-outline {
+      background: transparent;
+      border: 1px solid var(--dark-border);
+      color: var(--text);
+    }
+    .pricing-btn-outline:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+    }
+    .pricing-btn-fill {
+      background: var(--gradient-pink);
+      color: #fff;
+    }
+    .pricing-btn-fill:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--glow-pink);
+    }
+
+    /* ===== SUCCESS STORIES ===== */
+    .stories-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .story-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 16px; padding: 32px;
+      transition: transform 0.3s;
+    }
+    .story-card:hover { transform: translateY(-4px); }
+    .story-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 16px;
+    }
+    .story-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; color: #fff; font-size: 1.1rem;
+    }
+    .story-name { font-weight: 600; }
+    .story-tag { font-size: 0.78rem; color: var(--text-muted); }
+    .story-result {
+      background: rgba(255,45,120,0.08);
+      border: 1px solid rgba(255,45,120,0.15);
+      border-radius: 10px; padding: 14px; text-align: center;
+      margin-bottom: 16px;
+    }
+    .story-result-value {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem; font-weight: 800; color: var(--pink);
+    }
+    .story-result-label {
+      font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;
+    }
+    .story-text {
+      font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 720px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .faq-item {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 14px; overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: none; border: none; color: var(--text);
+      font-size: 1rem; font-weight: 600;
+      cursor: pointer; text-align: left;
+      font-family: 'Noto Sans JP', sans-serif;
+      transition: color 0.3s;
+    }
+    .faq-question:hover { color: var(--pink); }
+    .faq-question .faq-toggle {
+      font-size: 1.3rem; color: var(--pink);
+      transition: transform 0.3s;
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 0.92rem; color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      text-align: center; padding: 100px 24px;
+      position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 50% 50% at 50% 100%, rgba(255,45,120,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 30% 80%, rgba(184,41,221,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      font-size: 2rem; font-weight: 800; margin-bottom: 16px;
+      position: relative;
+    }
+    .final-cta p {
+      color: var(--text-muted); font-size: 1.05rem;
+      margin-bottom: 40px; position: relative;
+    }
+    .cta-buttons {
+      display: flex; gap: 16px; justify-content: center;
+      flex-wrap: wrap; position: relative;
+    }
+    .btn-line {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px;
+      background: #06c755; color: #fff;
+      font-weight: 700; font-size: 1rem;
+      border-radius: 50px; border: none; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-line:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6,199,85,0.35);
+    }
+    .btn-x {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px;
+      background: #1d1d1f; border: 1px solid #333;
+      color: #fff;
+      font-weight: 700; font-size: 1rem;
+      border-radius: 50px; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-x:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+      border-color: #555;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid var(--dark-border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      background: var(--gradient-pink);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      display: flex; justify-content: center; gap: 24px;
+      list-style: none; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.3s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .stories-grid { grid-template-columns: 1fr; }
+      .solution-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: rgba(10,10,15,0.97);
+        padding: 24px; gap: 20px;
+        border-bottom: 1px solid var(--dark-border);
+      }
+      .hero-launch h1 { font-size: 1.8rem; }
+      .hero-launch .hero-sub { font-size: 1rem; }
+      .step-item { gap: 14px; }
+      .step-number { width: 44px; height: 44px; font-size: 0.95rem; }
+      .steps-flow::before { left: 21px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Pretzel</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="results.html">実績</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="launch.html" class="active">夜職の方へ</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-launch">
+  <h1><span class="neon-text">夜の仕事 × ファンサブスク</span><br>= 新しい収入源</h1>
+  <p class="hero-sub">今の仕事を続けながら、ファンサブスクで月収+10万円を目指しませんか？</p>
+  <a href="contact.html" class="btn-glow">無料相談する</a>
+</section>
+
+<!-- PROBLEM -->
+<section class="section problem-section">
+  <h2 class="section-title"><span class="accent">こんな悩み</span>ありませんか？</h2>
+  <div class="problem-list">
+    <div class="problem-item">
+      <div class="problem-icon">&#x1f4b8;</div>
+      <span>収入が不安定で将来が心配</span>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">&#x1f62e;&#x200d;&#x1f4a8;</div>
+      <span>体力的にいつまで続けられるか不安</span>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">&#x1f4f1;</div>
+      <span>SNSは使ってるけど収益化できていない</span>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">&#x2753;</div>
+      <span>ファンサブスクに興味はあるけど始め方がわからない</span>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">&#x1f636;&#x200d;&#x1f32b;&#xfe0f;</div>
+      <span>身バレが怖くて一歩踏み出せない</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section">
+  <h2 class="section-title"><span class="accent">Pretzel Launch</span>なら全部解決</h2>
+  <div class="solution-grid">
+    <div class="solution-card">
+      <div class="solution-icon">&#x1f680;</div>
+      <h3>アカウント開設から全部サポート</h3>
+      <p>プラットフォーム選びから初期設定、プロフィール作成まで全て代行。あなたはコンテンツに集中するだけ。</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#x1f6e1;&#xfe0f;</div>
+      <h3>身バレ完全対策</h3>
+      <p>顔出しなし運用、メタデータ除去、位置情報対策など、プライバシー保護を徹底。安心して活動できます。</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#x1f3a8;</div>
+      <h3>コンテンツ企画もお任せ</h3>
+      <p>あなたの魅力を活かしたコンテンツ戦略を提案。撮影のコツやスケジュール管理もサポートします。</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#x2705;</div>
+      <h3>成果報酬型だから安心</h3>
+      <p>収益が出るまで大きなリスクなし。一緒に成果を出すことにコミットするビジネスパートナーです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section steps-section">
+  <h2 class="section-title">始め方は<span class="accent">5ステップ</span></h2>
+  <div class="neon-divider"></div>
+  <div class="steps-flow">
+    <div class="step-item">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>無料相談（LINE / X DM）</h4>
+        <p>まずはお気軽にご連絡ください。あなたの状況やご希望をヒアリングします。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>カウンセリング</h4>
+        <p>あなたに合ったプランとプラットフォームをご提案。目標設定も一緒に行います。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>アカウント開設（最短即日）</h4>
+        <p>プラットフォームの登録からプロフィール設定まで全てサポート。最短でその日のうちに完了。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>コンテンツ制作開始</h4>
+        <p>コンテンツの方向性・撮影方法・投稿スケジュールを一緒に計画。無理のないペースで進めます。</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h4>収益化スタート</h4>
+        <p>集客施策と継続的なサポートで、安定した収入を一緒に目指します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-lg">
+  <h2 class="section-title"><span class="accent">Launch</span> 料金プラン</h2>
+  <div class="neon-divider"></div>
+  <div class="pricing-grid">
+
+    <!-- Lite -->
+    <div class="pricing-card">
+      <div class="pricing-plan-name">Launch</div>
+      <div class="pricing-plan-title">Lite</div>
+      <div class="pricing-price">¥9,800<span>/月</span></div>
+      <p class="pricing-desc">まずは試してみたい方に</p>
+      <ul class="pricing-features">
+        <li>アカウント開設サポート</li>
+        <li>初期プロフィール設計</li>
+        <li>身バレ対策ガイド</li>
+        <li>月1回のオンライン面談</li>
+        <li>LINEサポート（平日）</li>
+      </ul>
+      <a href="contact.html" class="pricing-btn pricing-btn-outline">相談する</a>
+    </div>
+
+    <!-- Standard -->
+    <div class="pricing-card featured">
+      <div class="pricing-plan-name">Launch</div>
+      <div class="pricing-plan-title">Standard</div>
+      <div class="pricing-price">¥29,800<span>/月</span></div>
+      <p class="pricing-desc">本気で収益化を目指す方に</p>
+      <ul class="pricing-features">
+        <li>Liteの全内容</li>
+        <li>コンテンツ企画・戦略設計</li>
+        <li>SNSグロース支援</li>
+        <li>月2回のオンライン面談</li>
+        <li>LINEサポート（毎日）</li>
+        <li>撮影アドバイス</li>
+      </ul>
+      <a href="contact.html" class="pricing-btn pricing-btn-fill">相談する</a>
+    </div>
+
+    <!-- Premium -->
+    <div class="pricing-card">
+      <div class="pricing-plan-name">Launch</div>
+      <div class="pricing-plan-title">Premium</div>
+      <div class="pricing-price">¥59,800<span>/月</span></div>
+      <p class="pricing-desc">最速で結果を出したい方に</p>
+      <ul class="pricing-features">
+        <li>Standardの全内容</li>
+        <li>専属マネージャー</li>
+        <li>コンテンツ制作代行</li>
+        <li>週1回のオンライン面談</li>
+        <li>24時間LINEサポート</li>
+        <li>SNS運用代行</li>
+        <li>ファン対応サポート</li>
+      </ul>
+      <a href="contact.html" class="pricing-btn pricing-btn-outline">相談する</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section class="section section-lg">
+  <h2 class="section-title">夜職から<span class="accent">成功した</span>先輩たち</h2>
+  <div class="neon-divider"></div>
+  <div class="stories-grid">
+
+    <!-- Case C -->
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-avatar" style="background: linear-gradient(135deg, #b829dd, #8b5cf6);">C</div>
+        <div>
+          <div class="story-name">Cさん</div>
+          <div class="story-tag">30代女性・元キャバ嬢</div>
+        </div>
+      </div>
+      <div class="story-result">
+        <div class="story-result-value">月収 8万円</div>
+        <div class="story-result-label">開始2ヶ月で達成</div>
+      </div>
+      <p class="story-text">夜職を引退後、新しい収入源を探していました。Pretzel Launchで始めてみたら、接客で培ったコミュニケーション力がファン対応で活きて、2ヶ月目には安定した収入に。</p>
+    </div>
+
+    <!-- Case D -->
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">D</div>
+        <div>
+          <div class="story-name">Dさん</div>
+          <div class="story-tag">20代女性・現役ホステス</div>
+        </div>
+      </div>
+      <div class="story-result">
+        <div class="story-result-value">月収 15万円</div>
+        <div class="story-result-label">副業として安定収入</div>
+      </div>
+      <p class="story-text">本業と両立できるか不安でしたが、Pretzelが身バレ対策とコンテンツ計画を全部やってくれたので、無理なく続けられています。今では本業+副業で生活にかなり余裕ができました。</p>
+    </div>
+
+    <!-- Case F -->
+    <div class="story-card">
+      <div class="story-header">
+        <div class="story-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">F</div>
+        <div>
+          <div class="story-name">Fさん</div>
+          <div class="story-tag">20代女性・ガールズバー</div>
+        </div>
+      </div>
+      <div class="story-result">
+        <div class="story-result-value">月収 10万円</div>
+        <div class="story-result-label">完全匿名で達成</div>
+      </div>
+      <p class="story-text">身バレが一番心配でしたが、顔出しなし・声なしでも稼げる方法をPretzelが教えてくれました。完全匿名のまま月10万円。職場の人には全くバレていません。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <h2 class="section-title">よくある<span class="accent">質問</span></h2>
+  <div class="neon-divider"></div>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        顔出しは必要ですか？
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">いいえ、必要ありません。顔出しなしでも十分に収益化できる戦略をご提案します。実際に完全匿名で月10万円以上稼いでいるクリエイターもいます。</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        今の仕事にバレませんか？
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">徹底的な身バレ対策を行います。アカウント名の設定、メタデータの除去、位置情報の対策、画像の加工指導など、あらゆる角度からプライバシーを保護します。</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        本当に稼げますか？
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">個人差はありますが、Pretzel Launch利用者の多くが平均2ヶ月で初収益を達成しています。継続的なサポートと戦略的なコンテンツ計画で、着実に収益を伸ばしていきます。</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        写真撮影はどうすればいいですか？
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">セルフ撮影のコツを丁寧にお伝えします。スマホ1台で十分です。ライティング、アングル、加工のテクニックなど、プロ級の仕上がりになる方法を伝授します。</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        いつでも辞められますか？
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">各プランには最低契約期間がありますが、事情がある場合はご相談ください。柔軟に対応いたします。無理に続ける必要はありませんので、お気軽にお申し出ください。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>まずは気軽に相談してみませんか？</h2>
+  <p>LINEまたはX（旧Twitter）のDMからお気軽にどうぞ。<br>無理な勧誘は一切ありません。</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-line">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.271.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで相談する
+    </a>
+    <a href="#" class="btn-x">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X DMで相談する
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">Pretzel</div>
+    <ul class="footer-links">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="results.html">実績</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="launch.html">夜職の方へ</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

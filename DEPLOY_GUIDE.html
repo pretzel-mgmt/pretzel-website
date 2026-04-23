@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pretzel公式サイト 公開手順ガイド</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #0a0a0f;
+      color: #e0e0e8;
+      line-height: 1.8;
+      padding: 0;
+    }
+
+    /* ── Header ── */
+    .guide-header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 60%, #16213e 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+    .guide-header h1 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .guide-header p {
+      color: #a0a0b8;
+      font-size: 1.05rem;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #6c63ff, #a855f7);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 48px;
+    }
+    .section-title {
+      font-size: 1.35rem;
+      color: #fff;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(168,85,247,0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title .icon {
+      font-size: 1.4rem;
+    }
+
+    /* ── Step cards ── */
+    .step {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      padding: 28px 28px 24px;
+      margin-bottom: 20px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .step:hover {
+      border-color: rgba(168,85,247,0.35);
+    }
+    .step-number {
+      position: absolute;
+      top: -14px;
+      left: 24px;
+      background: linear-gradient(135deg, #6c63ff, #a855f7);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.8rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step h3 {
+      color: #d4d0ff;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .step p, .step li {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+    }
+    .step ul {
+      list-style: none;
+      padding: 0;
+    }
+    .step ul li {
+      padding: 4px 0 4px 22px;
+      position: relative;
+    }
+    .step ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #a855f7;
+      font-size: 0.85rem;
+    }
+    .step a {
+      color: #a78bfa;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167,139,250,0.3);
+      transition: color 0.2s;
+    }
+    .step a:hover {
+      color: #c4b5fd;
+    }
+
+    /* ── Code / file names ── */
+    code {
+      background: rgba(168,85,247,0.12);
+      color: #d4bfff;
+      padding: 2px 8px;
+      border-radius: 5px;
+      font-size: 0.88rem;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    }
+
+    /* ── File list ── */
+    .file-list {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 12px 0;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.85rem;
+      color: #a0a0b8;
+      line-height: 2;
+    }
+    .file-list .folder { color: #fbbf24; }
+    .file-list .file { color: #60a5fa; }
+
+    /* ── Tip box ── */
+    .tip {
+      background: rgba(168,85,247,0.08);
+      border-left: 3px solid #a855f7;
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 0.92rem;
+      color: #c8c0e8;
+    }
+    .tip strong {
+      color: #d4bfff;
+    }
+
+    /* ── Customization table ── */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    .custom-table th {
+      text-align: left;
+      background: rgba(168,85,247,0.15);
+      color: #d4bfff;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .custom-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.9rem;
+      color: #b0b0c8;
+    }
+    .custom-table tr:last-child td { border-bottom: none; }
+
+    /* ── Help section ── */
+    .help-box {
+      background: rgba(96,165,250,0.08);
+      border: 1px solid rgba(96,165,250,0.2);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-top: 40px;
+    }
+    .help-box h3 {
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+    .help-box a {
+      color: #93c5fd;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(147,197,253,0.3);
+    }
+    .help-box a:hover {
+      color: #bfdbfe;
+    }
+    .help-box p {
+      color: #8ab4e8;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    /* ── Footer ── */
+    .guide-footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .guide-header { padding: 40px 16px 36px; }
+      .guide-header h1 { font-size: 1.5rem; }
+      .container { padding: 28px 16px 60px; }
+      .step { padding: 24px 20px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="guide-header">
+    <div class="badge">FOR 陸哉</div>
+    <h1>&#x1F680; Pretzel公式サイト 公開手順ガイド</h1>
+    <p>GitHub Pagesを使って、無料でサイトを公開する手順です</p>
+  </header>
+
+  <div class="container">
+
+    <!-- ============================================================ -->
+    <!-- やること一覧 -->
+    <!-- ============================================================ -->
+    <div class="section">
+      <h2 class="section-title"><span class="icon">&#x1F4CB;</span> やること一覧（所要時間: 約15分）</h2>
+
+      <!-- Step 1 -->
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>GitHubアカウント作成（すでにあればスキップ）</h3>
+        <ul>
+          <li><a href="https://github.com" target="_blank">https://github.com</a> にアクセス</li>
+          <li><strong>Sign up</strong> をクリック → メールアドレス、パスワードを設定</li>
+          <li>無料プランでOK（クレジットカード不要）</li>
+        </ul>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>リポジトリ作成</h3>
+        <ul>
+          <li>右上の <strong>「+」→「New repository」</strong> をクリック</li>
+          <li>Repository name: <code>pretzel-website</code></li>
+          <li><strong>Public</strong> を選択</li>
+          <li><strong>「Create repository」</strong> をクリック</li>
+        </ul>
+        <div class="tip">
+          <strong>&#x1F4A1; ポイント:</strong> Publicにしないと GitHub Pages（無料版）が使えません。
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>ファイルアップロード</h3>
+        <ul>
+          <li><strong>「uploading an existing file」</strong> リンクをクリック</li>
+          <li><code>website</code> フォルダの中身を全部ドラッグ＆ドロップ</li>
+        </ul>
+        <div class="file-list">
+          <span class="file">index.html</span><br>
+          <span class="file">services.html</span><br>
+          <span class="file">pricing.html</span><br>
+          <span class="file">results.html</span><br>
+          <span class="file">faq.html</span><br>
+          <span class="file">contact.html</span><br>
+          <span class="file">launch.html</span><br>
+          <span class="folder">assets/</span> <span class="file">css/</span>, <span class="file">js/</span>
+        </div>
+        <ul>
+          <li><strong>「Commit changes」</strong> をクリック</li>
+        </ul>
+        <div class="tip">
+          <strong>&#x1F4A1; ポイント:</strong> <code>website</code> フォルダ自体ではなく、<strong>中身のファイル</strong>をアップロードしてください。<code>index.html</code> がリポジトリのルート（一番上の階層）にくるようにします。
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>GitHub Pages を有効化</h3>
+        <ul>
+          <li>リポジトリの <strong>Settings</strong>（設定）タブをクリック</li>
+          <li>左メニューの <strong>Pages</strong> をクリック</li>
+          <li>Source: <strong>「Deploy from a branch」</strong> を選択</li>
+          <li>Branch: <strong>main</strong>、フォルダは <strong>/ (root)</strong> を選択</li>
+          <li><strong>Save</strong> をクリック</li>
+        </ul>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>公開確認（1〜2分待つ）</h3>
+        <ul>
+          <li>ブラウザで以下のURLにアクセス:</li>
+        </ul>
+        <div class="file-list" style="text-align:center; font-size:1rem; color:#a78bfa;">
+          https://<strong style="color:#fbbf24;">あなたのユーザー名</strong>.github.io/pretzel-website/
+        </div>
+        <ul>
+          <li>サイトが表示されれば成功です &#x1F389;</li>
+        </ul>
+        <div class="tip">
+          <strong>&#x1F4A1; ポイント:</strong> 表示されない場合は、1〜2分待ってから再度リロードしてみてください。初回はデプロイに少し時間がかかります。
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- オプション: 独自ドメイン -->
+    <!-- ============================================================ -->
+    <div class="section">
+      <h2 class="section-title"><span class="icon">&#x1F310;</span> オプション: 独自ドメイン設定</h2>
+
+      <div class="step">
+        <h3>独自ドメインでサイトを公開する（任意）</h3>
+        <ul>
+          <li><a href="https://www.onamae.com/" target="_blank">お名前.com</a> 等でドメインを取得（例: <code>pretzel-mgmt.com</code>、年間約1,500円）</li>
+          <li>GitHubリポジトリの <strong>Settings → Pages → Custom domain</strong> にドメインを入力</li>
+          <li>ドメイン側のDNS設定で <strong>CNAMEレコード</strong> を追加:</li>
+        </ul>
+        <div class="file-list" style="text-align:center;">
+          CNAME &nbsp; → &nbsp; <span style="color:#fbbf24;">あなたのユーザー名</span>.github.io
+        </div>
+        <div class="tip">
+          <strong>&#x1F4A1; ポイント:</strong> 独自ドメインは後からいつでも設定できます。まずは <code>github.io</code> のURLで公開して問題ありません。
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- カスタマイズが必要な箇所 -->
+    <!-- ============================================================ -->
+    <div class="section">
+      <h2 class="section-title"><span class="icon">&#x1F527;</span> カスタマイズが必要な箇所</h2>
+
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width:30%;">項目</th>
+            <th>やること</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. ロゴ</strong></td>
+            <td><code>assets/images/</code> に <code>logo.png</code> を追加し、各ページのテキストロゴ部分を <code>&lt;img&gt;</code> タグに差し替え</td>
+          </tr>
+          <tr>
+            <td><strong>2. OGP画像</strong></td>
+            <td><code>assets/images/ogp.png</code> を作成（1200&times;630px推奨）。SNSでシェアした時のプレビュー画像になります</td>
+          </tr>
+          <tr>
+            <td><strong>3. LINE QRコード</strong></td>
+            <td><code>contact.html</code> と <code>launch.html</code> のQRコードプレースホルダーを実際の画像に差し替え</td>
+          </tr>
+          <tr>
+            <td><strong>4. X アカウント名</strong></td>
+            <td>各ページの <code>@pretzel_mgmt</code> を実際のアカウント名に変更</td>
+          </tr>
+          <tr>
+            <td><strong>5. お問い合わせフォーム</strong></td>
+            <td>将来的に <a href="https://formspree.io/" target="_blank">Formspree</a> や Google フォームに接続可能</td>
+          </tr>
+          <tr>
+            <td><strong>6. Google Analytics</strong></td>
+            <td>各HTMLファイルの <code>&lt;/head&gt;</code> 直前にトラッキングコードを貼り付け</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 困ったら -->
+    <!-- ============================================================ -->
+    <div class="help-box">
+      <h3>&#x1F4AC; 困ったら</h3>
+      <p>&#x1F4D6; <a href="https://docs.github.com/ja/pages" target="_blank">GitHub Pages 公式ドキュメント（日本語）</a></p>
+      <p>&#x1F916; 何かあれば Claude に聞いてください。エラー画面のスクリーンショットを貼ると、より正確にサポートできます。</p>
+    </div>
+
+  </div>
+
+  <footer class="guide-footer">
+    Pretzel Management &copy; 2026 &#8212; Deployment Guide
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | Pretzel - クリエイターマネジメント</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-card: #14141f;
+      --bg-card-hover: #1a1a2e;
+      --bg-input: #1a1a2e;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0b8;
+      --text-muted: #6b6b80;
+      --accent-purple: #6366f1;
+      --accent-pink: #ec4899;
+      --cyan: #22d3ee;
+      --gradient-accent: linear-gradient(135deg, #6366f1, #ec4899);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.15);
+      --border-focus: rgba(99, 102, 241, 0.5);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navigation ── */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .navbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .nav-btn {
+      padding: 0.5rem 1.2rem;
+      background: var(--gradient-accent);
+      color: #fff !important;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .nav-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .mobile-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: 0.3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 10rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--accent-purple);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── Contact Cards ── */
+    .contact-methods {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-accent);
+    }
+
+    .contact-card-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      background: rgba(99, 102, 241, 0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-card-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card .qr-placeholder {
+      width: 160px;
+      height: 160px;
+      margin: 1.5rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed var(--border-hover);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .contact-card .handle {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.25);
+      border-radius: 8px;
+      color: var(--cyan);
+      font-family: 'Inter', monospace;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 1rem 0;
+    }
+
+    .contact-card .sub-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .contact-card .card-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: var(--gradient-accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .contact-card .card-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* ── Contact Form ── */
+    .form-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .form-section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-section-sub {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-notice {
+      background: rgba(236, 72, 153, 0.08);
+      border: 1px solid rgba(236, 72, 153, 0.25);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--accent-pink);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .form-group label .required {
+      color: var(--accent-pink);
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236b6b80' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gradient-accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* ── Info Section ── */
+    .info-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .info-card .info-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1.25rem;
+      background: rgba(34, 211, 238, 0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-card .info-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--cyan);
+    }
+
+    .info-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .privacy-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .privacy-link:hover {
+      color: var(--text-secondary);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-secondary);
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 15, 0.98);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .mobile-toggle { display: flex; }
+
+      .hero h1 { font-size: 2rem; }
+
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Pretzel</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="pricing.html">料金</a></li>
+        <li><a href="results.html">実績</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="contact.html" class="active">お問い合わせ</a></li>
+        <li><a href="launch.html" class="nav-btn">夜職の方へ</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-badge">CONTACT</span>
+    <h1>お問い合わせ</h1>
+    <p>ご質問やご相談など、お気軽にお問い合わせください。無料相談も受け付けております。</p>
+  </section>
+
+  <!-- Contact Method Cards -->
+  <div class="contact-methods">
+
+    <!-- LINE Card -->
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 5.82 2 10.5c0 2.83 1.64 5.33 4.2 6.96-.15.54-.82 3.1-.85 3.3 0 0-.02.15.07.21.09.06.2.03.2.03.27-.04 3.12-2.06 3.62-2.41.9.13 1.83.2 2.76.2 5.52 0 10-3.82 10-8.5S17.52 2 12 2z" fill="#06C755"/>
+        </svg>
+      </div>
+      <h3>LINEで相談する</h3>
+      <div class="qr-placeholder">
+        QRコード<br>準備中
+      </div>
+      <p class="sub-text">24時間以内に返信します</p>
+      <a href="#" class="card-btn">LINEで友だち追加</a>
+    </div>
+
+    <!-- X (Twitter) Card -->
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="white"/>
+        </svg>
+      </div>
+      <h3>X DMで相談する</h3>
+      <div class="handle">@pretzel_mgmt</div>
+      <p class="sub-text">お気軽にDMください</p>
+      <a href="https://twitter.com/pretzel_mgmt" target="_blank" rel="noopener" class="card-btn">Xプロフィールを見る</a>
+    </div>
+
+  </div>
+
+  <!-- Contact Form -->
+  <section class="form-section">
+    <h2 class="form-section-title">フォームからお問い合わせ</h2>
+    <p class="form-section-sub">以下のフォームからもお問い合わせいただけます。</p>
+
+    <div class="form-notice">
+      ※現在フォームは準備中です。LINE or X DMからお問い合わせください。
+    </div>
+
+    <form action="#" class="contact-form" onsubmit="event.preventDefault(); alert('現在フォームは準備中です。LINE or X DMからお問い合わせください。');">
+
+      <div class="form-group">
+        <label>名前 <span class="required">必須</span></label>
+        <input type="text" name="name" placeholder="山田 太郎" required>
+      </div>
+
+      <div class="form-group">
+        <label>メールアドレス <span class="required">必須</span></label>
+        <input type="email" name="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>相談内容 <span class="required">必須</span></label>
+        <select name="category" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="service">サービスについて</option>
+          <option value="pricing">料金について</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>メッセージ <span class="required">必須</span></label>
+        <textarea name="message" placeholder="ご質問やご相談内容をお書きください" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">送信する</button>
+    </form>
+  </section>
+
+  <!-- Info Section -->
+  <section class="info-section">
+    <div class="info-card">
+      <div class="info-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </div>
+      <h3>全国対応</h3>
+      <p>オンライン対応のため、全国どこからでもご相談いただけます。<br>お打ち合わせもオンラインで完結しますので、場所を選ばずサービスをご利用いただけます。</p>
+    </div>
+
+    <a href="#" class="privacy-link">プライバシーポリシー</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">Pretzel</div>
+      <ul class="footer-links">
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="pricing.html">料金</a></li>
+        <li><a href="results.html">実績</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="launch.html">夜職の方へ</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
