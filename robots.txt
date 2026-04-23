@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /DEPLOY_GUIDE.html
+
+Sitemap: https://pretzel-mgmt.github.io/pretzel-website/sitemap.xml
