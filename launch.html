@@ -538,6 +538,24 @@
       .stories-grid { grid-template-columns: 1fr; }
       .solution-grid { grid-template-columns: 1fr; }
     }
+    @media (max-width: 768px) {
+      .hero-launch { padding: 120px 16px 60px; }
+      .hero-launch h1 { font-size: clamp(1.6rem, 7vw, 2rem); }
+      .hero-launch .hero-sub { font-size: 1rem; }
+      .hero-launch .hero-sub br { display: none; }
+      .section { padding: 60px 16px; }
+      .section-title { font-size: 1.5rem; margin-bottom: 32px; }
+      .problem-item { padding: 16px 18px; font-size: 0.92rem; }
+      .solution-card { padding: 24px 20px; }
+      .story-card { padding: 24px 20px; }
+      .pricing-headline { font-size: 1.6rem; }
+      .pricing-tagline br { display: none; }
+      .final-cta { padding: 60px 16px; }
+      .final-cta h2 { font-size: 1.5rem; }
+      .final-cta p br { display: none; }
+      .btn-glow { padding: 16px 40px; font-size: 1rem; }
+      .pricing-cta-btn { padding: 16px 40px; font-size: 1rem; }
+    }
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -548,12 +566,12 @@
         padding: 24px; gap: 20px;
         border-bottom: 1px solid var(--dark-border);
       }
-      .hero-launch h1 { font-size: 1.8rem; }
-      .hero-launch .hero-sub { font-size: 1rem; }
+      .hero-launch h1 { font-size: clamp(1.5rem, 7vw, 1.8rem); }
       .step-item { gap: 14px; }
       .step-number { width: 44px; height: 44px; font-size: 0.95rem; }
       .steps-flow::before { left: 21px; }
       .cta-buttons { flex-direction: column; align-items: center; }
+      .btn-line, .btn-x { width: 100%; justify-content: center; }
     }
   </style>
 </head>

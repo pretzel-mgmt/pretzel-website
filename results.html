@@ -305,6 +305,22 @@
       .stat-item:nth-child(3) { border-radius: 0 0 0 16px; }
       .stat-item:last-child { border-radius: 0 0 16px 0; }
     }
+    @media (max-width: 768px) {
+      .hero { padding: 120px 16px 60px; }
+      .hero h1 { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+      .hero p { font-size: 1rem; }
+      .hero p br { display: none; }
+      .section { padding: 0 16px 60px; }
+      .section-title { font-size: 1.5rem; margin-bottom: 32px; }
+      .stats-banner { margin: 0 16px 60px; }
+      .stat-item { padding: 24px 16px; }
+      .case-card { padding: 24px 20px; }
+      .chart-section { padding: 0 16px 60px; }
+      .chart-container { padding: 24px 16px; }
+      .cta-section { padding: 60px 16px 80px; }
+      .cta-section h2 { font-size: 1.5rem; }
+      .cta-section p br { display: none; }
+    }
     @media (max-width: 640px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -315,7 +331,7 @@
         padding: 24px; gap: 20px;
         border-bottom: 1px solid var(--dark-border);
       }
-      .hero h1 { font-size: 2rem; }
+      .hero h1 { font-size: clamp(1.5rem, 7vw, 1.8rem); }
       .cases-grid { grid-template-columns: 1fr; }
       .stats-banner { grid-template-columns: 1fr 1fr; }
       .stat-number { font-size: 1.6rem; }

@@ -421,13 +421,20 @@
 
       .mobile-toggle { display: flex; }
 
-      .hero h1 { font-size: 2rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      .hero h1 { font-size: clamp(1.6rem, 8vw, 2rem); }
+      .hero p { font-size: 1rem; }
+      .hero p br { display: none; }
+
+      .faq-section { padding: 0 1rem 3rem; }
+      .faq-category-title { font-size: 1.1rem; }
 
       .accordion-header { padding: 1rem 1.2rem; font-size: 0.9rem; }
-
       .accordion-body-inner { padding-left: 0; }
 
+      .cta-banner { padding: 0 1rem; }
       .cta-banner-inner { padding: 2rem 1.5rem; }
+      .cta-banner p br { display: none; }
     }
   </style>
 
