@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブログ | Pretzel（プレッツェル）— クリエイターマネジメント</title>
+  <meta name="description" content="Pretzel（プレッツェル）公式ブログ。ファンサブスクの始め方、収益化のコツ、myfans・candfans・Fantia攻略法など、クリエイター向け情報を発信。">
+  <meta name="keywords" content="Pretzel,プレッツェル,ブログ,ファンサブスク,myfans,candfans,Fantia,収益化,クリエイター">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/blog.html">
+
+  <!-- OGP -->
+  <meta property="og:title" content="ブログ | Pretzel（プレッツェル）— クリエイターマネジメント">
+  <meta property="og:description" content="Pretzel公式ブログ。ファンサブスクの始め方、収益化のコツ、myfans・candfans攻略法など、クリエイター向け情報を発信。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/blog.html">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ブログ | Pretzel（プレッツェル）— クリエイターマネジメント">
+  <meta name="twitter:description" content="Pretzel公式ブログ。ファンサブスクの始め方、収益化のコツ、myfans・candfans攻略法など。">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    .blog-hero {
+      display: block;
+      min-height: auto;
+      padding: 140px 24px 60px;
+      text-align: center;
+      background: radial-gradient(ellipse at 30% 20%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(236,72,153,0.1) 0%, transparent 50%);
+    }
+    .blog-hero__title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--color-text-heading);
+      margin-bottom: 16px;
+    }
+    .blog-hero__subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .blog-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-border-hover);
+    }
+    .blog-card__image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-card__image-placeholder {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(236,72,153,0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    .blog-card__body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .blog-card__date {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    .blog-card__tag {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--color-indigo);
+      font-weight: 500;
+    }
+    .blog-card__title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-text-heading);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .blog-card__excerpt {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .blog-card__readmore {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--color-indigo);
+      font-weight: 500;
+      margin-top: 16px;
+    }
+    .blog-card__readmore::after {
+      content: '→';
+    }
+    .blog-coming-soon {
+      text-align: center;
+      padding: 40px 24px 80px;
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 768px) {
+      .blog-hero { padding: 110px 16px 40px; }
+      .blog-grid { grid-template-columns: 1fr; padding: 0 16px 60px; }
+      .blog-hero__subtitle br { display: none; }
+    }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Pretzelブログ",
+    "description": "ファンサブスクの始め方、収益化のコツ、プラットフォーム攻略法などクリエイター向け情報を発信。",
+    "url": "https://pretzel-mgmt.github.io/pretzel-website/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pretzel",
+      "alternateName": "プレッツェル"
+    },
+    "blogPost": [
+      { "@type": "BlogPosting", "headline": "myfans始め方完全ガイド【2026年最新版】", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/myfans-hajimekata.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "candfans始め方完全ガイド【2026年最新版】", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/candfans-hajimekata.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "Fantia始め方完全ガイド【2026年最新版】", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-hajimekata.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ファンサブスク4社徹底比較", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-hikaku.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "裏垢女子がファンサブスクで月10万稼ぐ完全ガイド", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/uraaka-shuuekika.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "夜職×ファンサブスク副業ガイド", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/yashoku-fukugyo.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ファンサブスク収入の確定申告完全ガイド", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-zeikin.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "身バレ防止完全マニュアル", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/mibare-boushi.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "コンテンツ企画＆撮影テクニック集", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/content-kikaku.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "SNS集客術｜X・Instagramでファンを増やす方法", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/sns-shuukyaku.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ファンサブスクで月収100万円を達成するロードマップ", "datePublished": "2026-04-28", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/100man-roadmap.html", "author": { "@type": "Organization", "name": "Pretzel" } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://pretzel-mgmt.github.io/pretzel-website/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;">
+      </a>
+      <div class="nav__links">
+        <a href="services.html" class="nav__link">サービス</a>
+        <a href="pricing.html" class="nav__link">料金</a>
+        <a href="results.html" class="nav__link">実績</a>
+        <a href="blog.html" class="nav__link" style="color: var(--color-indigo);">ブログ</a>
+        <a href="contact.html" class="nav__link">お問い合わせ</a>
+        <a href="launch.html" class="nav__cta">夜職の方へ</a>
+        <a href="uraaka.html" class="nav__cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__overlay" id="navOverlay"></div>
+  <div class="nav__mobile-menu" id="mobileMenu">
+    <a href="services.html">サービス</a>
+    <a href="pricing.html">料金</a>
+    <a href="results.html">実績</a>
+    <a href="blog.html">ブログ</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="launch.html" class="btn-primary w-full text-center">夜職の方へ</a>
+    <a href="uraaka.html" class="btn-primary w-full text-center" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+  </div>
+
+  <main>
+  <!-- ========== Blog Hero ========== -->
+  <section class="blog-hero">
+    <h1 class="blog-hero__title">ブログ</h1>
+    <p class="blog-hero__subtitle">
+      ファンサブスクの始め方、収益化のコツ、<br>
+      プラットフォーム攻略法などクリエイター向け情報を発信しています。
+    </p>
+  </section>
+
+  <!-- ========== Blog Grid ========== -->
+  <div class="blog-grid">
+
+    <!-- Article 1 -->
+    <a href="blog/myfans-hajimekata.html" class="blog-card">
+      <div class="blog-card__image-placeholder">📱</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">myfans</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">myfans始め方完全ガイド【2026年最新版】</h2>
+        <p class="blog-card__excerpt">myfansの始め方を初心者向けに徹底解説。アカウント開設から収益化までのステップ、稼ぐコツ、注意点をプロのマネージャーが解説します。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 2 -->
+    <a href="blog/candfans-hajimekata.html" class="blog-card">
+      <div class="blog-card__image-placeholder">💎</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">candfans</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">candfans始め方完全ガイド【2026年最新版】</h2>
+        <p class="blog-card__excerpt">candfansの特徴から登録方法、収益化のコツまで徹底解説。手数料の仕組みや他プラットフォームとの違いも比較。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 3 -->
+    <a href="blog/fantia-hajimekata.html" class="blog-card">
+      <div class="blog-card__image-placeholder">🎨</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">Fantia</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">Fantia始め方完全ガイド【2026年最新版】</h2>
+        <p class="blog-card__excerpt">Fantiaでファンクラブを開設し収益化するまでの全手順。実写コンテンツでも稼げる理由とプライバシー設定も解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 4 -->
+    <a href="blog/fansub-hikaku.html" class="blog-card">
+      <div class="blog-card__image-placeholder">⚖️</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">比較</span>
+          <span class="blog-card__tag">プラットフォーム</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスク4社徹底比較｜myfans・candfans・Fantia・OnlyFans</h2>
+        <p class="blog-card__excerpt">手数料・決済方法・匿名性・集客力を徹底比較。タイプ別おすすめ診断であなたに最適なプラットフォームがわかる。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 5 -->
+    <a href="blog/uraaka-shuuekika.html" class="blog-card">
+      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.2));">💜</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag" style="background: rgba(168,85,247,0.15); color: #a855f7;">裏垢女子</span>
+          <span class="blog-card__tag">収益化</span>
+        </div>
+        <h2 class="blog-card__title">裏垢女子がファンサブスクで月10万稼ぐ完全ガイド</h2>
+        <p class="blog-card__excerpt">既存フォロワーを収益化する方法、匿名アカウント設計、無料と有料の境界線設計まで。裏垢女子専門ガイド。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 6 -->
+    <a href="blog/yashoku-fukugyo.html" class="blog-card">
+      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(34,211,238,0.2), rgba(99,102,241,0.2));">🌙</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag" style="background: rgba(34,211,238,0.15); color: #22d3ee;">夜職</span>
+          <span class="blog-card__tag">副業</span>
+        </div>
+        <h2 class="blog-card__title">夜職×ファンサブスク副業ガイド｜キャバ嬢・ホステスの収益化戦略</h2>
+        <p class="blog-card__excerpt">本業との両立スケジュール、お店にバレない対策、源氏名での始め方まで。夜職専門の副業ガイド。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 7 -->
+    <a href="blog/fansub-zeikin.html" class="blog-card">
+      <div class="blog-card__image-placeholder">📋</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">確定申告</span>
+          <span class="blog-card__tag">税金</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスク収入の確定申告完全ガイド｜税金・経費・節税</h2>
+        <p class="blog-card__excerpt">所得の種類、経費にできるもの一覧、住民税でバレない方法、開業届のメリット・デメリットまで網羅。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 8 -->
+    <a href="blog/mibare-boushi.html" class="blog-card">
+      <div class="blog-card__image-placeholder">🔒</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">身バレ防止</span>
+          <span class="blog-card__tag">プライバシー</span>
+        </div>
+        <h2 class="blog-card__title">身バレ防止完全マニュアル｜匿名で安全に活動する方法</h2>
+        <p class="blog-card__excerpt">バレるパターンTOP5、Exifデータ削除、決済の匿名化、知人に見つかった場合の対処法まで徹底解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 9 -->
+    <a href="blog/content-kikaku.html" class="blog-card">
+      <div class="blog-card__image-placeholder">📸</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">コンテンツ</span>
+          <span class="blog-card__tag">撮影</span>
+        </div>
+        <h2 class="blog-card__title">コンテンツ企画＆撮影テクニック集｜ネタ切れしない方法</h2>
+        <p class="blog-card__excerpt">アイデア30選、顔出しなし撮影テクニック、スマホでプロ級の写真を撮る方法、投稿スケジュールの作り方。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 10 -->
+    <a href="blog/sns-shuukyaku.html" class="blog-card">
+      <div class="blog-card__image-placeholder">📢</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">SNS集客</span>
+          <span class="blog-card__tag">X</span>
+        </div>
+        <h2 class="blog-card__title">SNS集客術｜X・Instagramでファンを増やす方法</h2>
+        <p class="blog-card__excerpt">バズる投稿テンプレート5選、フォロワー→サブスク登録の導線設計、投稿時間帯とアルゴリズム攻略法。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- Article 11 -->
+    <a href="blog/100man-roadmap.html" class="blog-card">
+      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(236,72,153,0.3));">🚀</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">月収100万</span>
+          <span class="blog-card__tag">ロードマップ</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスクで月収100万円を達成するロードマップ【完全版】</h2>
+        <p class="blog-card__excerpt">0→5万→20万→50万→100万の4フェーズ戦略。必要なファン数の計算、複数プラットフォーム展開、挫折の乗り越え方。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ========== CTA ========== -->
+  <section class="section">
+    <div class="container" style="text-align: center; max-width: 700px;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: var(--color-text-heading); margin-bottom: 16px;">
+        記事を読んで気になったら、<br class="br-desktop">まずは無料相談から。
+      </h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 32px; line-height: 1.8;">
+        Pretzelなら初期費用ゼロ・売上の20%のみ。<br class="br-desktop">
+        あなたのファンサブスク収益化を全力でサポートします。
+      </p>
+      <a href="contact.html" class="btn-primary">無料で相談する</a>
+    </div>
+  </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;">
+          </div>
+          <p class="footer__description">
+            ファンサブスクリプション特化型<br>クリエイターマネジメントエージェンシー
+          </p>
+          <div class="footer__social mt-lg">
+            <a href="#" class="footer__social-link" aria-label="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <div class="footer__links">
+            <a href="services.html">Pretzel Standard</a>
+            <a href="launch.html">Pretzel Launch</a>
+            <a href="uraaka.html">裏垢女子の方へ</a>
+            <a href="pricing.html">料金プラン</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">情報</h4>
+          <div class="footer__links">
+            <a href="results.html">実績</a>
+            <a href="faq.html">よくある質問</a>
+            <a href="blog.html">ブログ</a>
+            <a href="news.html">ニュース</a>
+            <a href="recruit.html">採用情報</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <a href="contact.html">お問い合わせフォーム</a>
+            <a href="#">LINE</a>
+            <a href="#">X (Twitter) DM</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Pretzel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navOverlay = document.getElementById('navOverlay');
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      navOverlay.classList.toggle('visible');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) toggleMenu();
+    }));
+  </script>
+
+</body>
+</html>

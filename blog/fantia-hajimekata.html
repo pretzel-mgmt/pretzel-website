@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fantia始め方完全ガイド【2026年最新版】| Pretzel（プレッツェル）ブログ</title>
+  <meta name="description" content="Fantiaの始め方を初心者向けに徹底解説。アカウント開設からファンクラブ設計、収益化テクニックまでプロのマネージャーが解説します。2026年最新情報対応。">
+  <meta name="keywords" content="Fantia,始め方,Fantia 始め方,Fantia 収益化,Fantia クリエイター,ファンクラブ,ファンサブスク,Pretzel,プレッツェル">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-hajimekata.html">
+
+  <!-- OGP -->
+  <meta property="og:title" content="Fantia始め方完全ガイド【2026年最新版】| Pretzel ブログ">
+  <meta property="og:description" content="Fantiaの始め方を初心者向けに徹底解説。アカウント開設からファンクラブ設計、収益化テクニックまでプロのマネージャーが解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-hajimekata.html">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@pretzel_mgmt">
+  <meta name="twitter:title" content="Fantia始め方完全ガイド【2026年最新版】| Pretzel ブログ">
+  <meta name="twitter:description" content="Fantiaの始め方を初心者向けに徹底解説。アカウント開設からファンクラブ設計、収益化テクニックまでプロのマネージャーが解説します。">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-icon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
+    .blog-article__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .blog-article__date { font-size: 0.875rem; color: var(--color-text-muted); }
+    .blog-article__tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 999px; background: rgba(99, 102, 241, 0.15); color: var(--color-indigo); font-weight: 500; }
+    .blog-article__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.3; margin-bottom: 24px; color: var(--color-text-heading); }
+    .blog-article__lead { font-size: 1.1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--color-border); }
+    .blog-article h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; color: var(--color-text-heading); margin: 56px 0 20px; padding-bottom: 12px; border-bottom: 2px solid transparent; border-image: var(--gradient-primary) 1; }
+    .blog-article h3 { font-size: 1.2rem; font-weight: 600; color: var(--color-text-heading); margin: 36px 0 12px; padding-left: 16px; border-left: 3px solid var(--color-indigo); }
+    .blog-article p { font-size: 1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 20px; }
+    .blog-article ul, .blog-article ol { margin: 16px 0 24px 24px; color: var(--color-text-body); line-height: 1.9; }
+    .blog-article li { margin-bottom: 8px; }
+    .blog-article .tip-box { background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+    .blog-article .tip-box__title { font-size: 0.9rem; font-weight: 700; color: var(--color-indigo); margin-bottom: 8px; }
+    .blog-article .tip-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .blog-article .warning-box { background: rgba(236, 72, 153, 0.08); border: 1px solid rgba(236, 72, 153, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+    .blog-article .warning-box__title { font-size: 0.9rem; font-weight: 700; color: var(--color-pink); margin-bottom: 8px; }
+    .blog-article .warning-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .blog-article .step-number { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-primary); color: #fff; font-weight: 700; font-size: 0.9rem; margin-right: 10px; flex-shrink: 0; }
+    .blog-article .step-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
+    .blog-article .step-item__content h3 { border: none; padding-left: 0; margin-top: 2px; }
+    .blog-cta { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px 32px; text-align: center; margin: 56px 0 0; }
+    .blog-cta__title { font-size: 1.5rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+    .blog-cta__text { color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; }
+    .blog-article .toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 0 0 48px; }
+    .blog-article .toc__title { font-size: 0.95rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+    .blog-article .toc ol { margin: 0 0 0 20px; }
+    .blog-article .toc li { margin-bottom: 6px; }
+    .blog-article .toc a { color: var(--color-indigo); text-decoration: none; font-size: 0.9rem; }
+    .blog-article .toc a:hover { text-decoration: underline; }
+    .blog-breadcrumb { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 24px; }
+    .blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
+    .blog-breadcrumb a:hover { color: var(--color-indigo); }
+    /* --- Night worker / Uraaka Q&A boxes --- */
+    .qa-box { border-radius: 16px; padding: 24px 28px; margin: 32px 0; position: relative; overflow: hidden; }
+    .qa-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .qa-box--night { background: rgba(34, 211, 238, 0.06); border: 1px solid rgba(34, 211, 238, 0.15); }
+    .qa-box--night::before { background: linear-gradient(90deg, #22d3ee, #6366f1); }
+    .qa-box--uraaka { background: rgba(168, 85, 247, 0.06); border: 1px solid rgba(168, 85, 247, 0.15); }
+    .qa-box--uraaka::before { background: linear-gradient(90deg, #a855f7, #ec4899); }
+    .qa-box__label { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+    .qa-box--night .qa-box__label { background: rgba(34, 211, 238, 0.15); color: #22d3ee; }
+    .qa-box--uraaka .qa-box__label { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+    .qa-box__q { font-size: 1.05rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 10px; line-height: 1.5; }
+    .qa-box__a { font-size: 0.95rem; color: var(--color-text-body); line-height: 1.85; margin-bottom: 0; }
+
+    /* --- Phone Mockup --- */
+    .phone-mock { max-width: 320px; margin: 36px auto; background: #1a1a2e; border-radius: 28px; border: 2px solid rgba(255,255,255,0.1); padding: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .phone-mock__screen { background: #0f0f1a; border-radius: 20px; overflow: hidden; }
+    .phone-mock__status { display: flex; justify-content: space-between; padding: 8px 16px 4px; font-size: 0.65rem; color: var(--color-text-muted); }
+    .phone-mock__header { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 8px; }
+    .phone-mock__back { color: var(--color-indigo); font-size: 0.85rem; }
+    .phone-mock__title { font-size: 0.9rem; font-weight: 600; color: var(--color-text-heading); }
+    .phone-mock__body { padding: 20px 16px; }
+    .phone-mock__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-primary); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; }
+    .phone-mock__name { text-align: center; font-weight: 700; font-size: 1rem; color: var(--color-text-heading); margin-bottom: 4px; }
+    .phone-mock__handle { text-align: center; font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 16px; }
+    .phone-mock__bio { font-size: 0.8rem; color: var(--color-text-body); line-height: 1.7; text-align: center; margin-bottom: 16px; padding: 0 8px; }
+    .phone-mock__stats { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; }
+    .phone-mock__stat-num { font-size: 1.1rem; font-weight: 700; color: var(--color-text-heading); text-align: center; }
+    .phone-mock__stat-label { font-size: 0.65rem; color: var(--color-text-muted); text-align: center; }
+    .phone-mock__btn { display: block; width: 100%; padding: 10px; background: var(--gradient-primary); color: #fff; border-radius: 999px; text-align: center; font-size: 0.85rem; font-weight: 600; border: none; }
+    .phone-mock__caption { text-align: center; font-size: 0.8rem; color: var(--color-text-muted); margin-top: 16px; font-style: italic; }
+
+    /* --- Revenue Table --- */
+    .revenue-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; }
+    .revenue-table th { font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--color-border-hover); }
+    .revenue-table td { font-size: 0.9rem; color: var(--color-text-body); padding: 12px; border-bottom: 1px solid var(--color-border); }
+    .revenue-table tr:hover td { background: rgba(99, 102, 241, 0.04); }
+    .revenue-table .highlight { color: var(--color-indigo); font-weight: 700; }
+
+    @media (max-width: 768px) {
+      .blog-article { padding: 100px 16px 60px; }
+      .blog-article .br-desktop { display: none; }
+      .blog-cta { padding: 28px 20px; }
+      .phone-mock { max-width: 280px; }
+      .qa-box { padding: 20px; }
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Fantia始め方完全ガイド【2026年最新版】",
+    "description": "Fantiaの始め方を初心者向けに徹底解説。アカウント開設からファンクラブ設計、収益化テクニックまでプロのマネージャーが解説。",
+    "datePublished": "2026-04-28",
+    "dateModified": "2026-04-28",
+    "author": {
+      "@type": "Organization",
+      "name": "Pretzel",
+      "alternateName": "プレッツェル",
+      "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pretzel",
+      "alternateName": "プレッツェル"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-hajimekata.html"
+    },
+    "keywords": ["Fantia", "始め方", "Fantia 収益化", "Fantia クリエイター", "ファンクラブ", "ファンサブスク"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://pretzel-mgmt.github.io/pretzel-website/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://pretzel-mgmt.github.io/pretzel-website/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Fantia始め方完全ガイド" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Fantiaは無料で始められますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、Fantiaのファンクラブ開設は完全無料です。初期費用はかからず、収益が発生した場合にのみプラットフォーム手数料が差し引かれます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Fantiaはイラスト系以外でも稼げますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、Fantiaはイラスト・漫画系のイメージが強いですが、写真・動画・コスプレ・実写コンテンツなど幅広いジャンルのクリエイターが活動しています。実写系コンテンツでも十分に収益化が可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Fantiaのプライバシー設定はしっかりしていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、Fantiaではクリエイターの本名や個人情報はファンには公開されません。活動名での運営が可能で、プライバシー設定も細かく調整できます。pixivアカウントとの連携も任意です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "pixivアカウントと連携すべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "pixivのフォロワーがいる場合は連携することで集客効果が見込めます。ただし、匿名性を重視する場合は連携せずに独立して運用することも可能です。目的に応じて判断しましょう。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;">
+      </a>
+      <div class="nav__links">
+        <a href="../services.html" class="nav__link">サービス</a>
+        <a href="../pricing.html" class="nav__link">料金</a>
+        <a href="../results.html" class="nav__link">実績</a>
+        <a href="../blog.html" class="nav__link" style="color: var(--color-indigo);">ブログ</a>
+        <a href="../contact.html" class="nav__link">お問い合わせ</a>
+        <a href="../launch.html" class="nav__cta">夜職の方へ</a>
+        <a href="../uraaka.html" class="nav__cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__overlay" id="navOverlay"></div>
+  <div class="nav__mobile-menu" id="mobileMenu">
+    <a href="../services.html">サービス</a>
+    <a href="../pricing.html">料金</a>
+    <a href="../results.html">実績</a>
+    <a href="../blog.html">ブログ</a>
+    <a href="../contact.html">お問い合わせ</a>
+    <a href="../launch.html" class="btn-primary w-full text-center">夜職の方へ</a>
+    <a href="../uraaka.html" class="btn-primary w-full text-center" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+  </div>
+
+  <main>
+  <article class="blog-article">
+
+    <!-- Breadcrumb -->
+    <div class="blog-breadcrumb">
+      <a href="../index.html">ホーム</a> &gt; <a href="../blog.html">ブログ</a> &gt; Fantia始め方完全ガイド
+    </div>
+
+    <!-- Meta -->
+    <div class="blog-article__meta">
+      <span class="blog-article__date">2026.04.28</span>
+      <span class="blog-article__tag">Fantia</span>
+      <span class="blog-article__tag">初心者向け</span>
+      <span class="blog-article__tag">収益化</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="blog-article__title">Fantia始め方完全ガイド<br class="br-desktop">【2026年最新版】</h1>
+
+    <!-- Lead -->
+    <p class="blog-article__lead">
+      「Fantiaでファンクラブを始めたいけど、イラスト系じゃなくても大丈夫？」<br class="br-desktop">
+      「収益化の方法がよくわからない」そんなあなたのために、<br class="br-desktop">
+      アカウント開設からファンクラブ設計、稼ぐテクニックまでプロが徹底解説します。
+    </p>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc__title">目次</div>
+      <ol>
+        <li><a href="#what">Fantiaとは？他サービスとの違い</a></li>
+        <li><a href="#prepare">始める前に準備するもの</a></li>
+        <li><a href="#steps">アカウント開設の流れ</a></li>
+        <li><a href="#design">ファンクラブ設計のポイント</a></li>
+        <li><a href="#content">コンテンツ戦略と投稿のコツ</a></li>
+        <li><a href="#earn">Fantiaで稼ぐための7つのテクニック</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+      <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 8px 0 0;">
+        各セクションに<span style="color: #22d3ee;">夜職の方向け</span>・<span style="color: #a855f7;">裏垢女子向け</span>のワンポイントQ&amp;Aを掲載しています。
+      </p>
+    </div>
+
+    <!-- Section 1 -->
+    <h2 id="what">Fantiaとは？他サービスとの違い</h2>
+    <p>
+      Fantia（ファンティア）は、pixivを運営するピクシブ株式会社が提供する
+      クリエイター支援プラットフォームです。
+      クリエイターが「ファンクラブ」を開設し、月額課金や単品販売を通じて
+      ファンから直接収益を得ることができます。
+    </p>
+    <p>
+      myfansやcandfans、OnlyFansなどの競合と比較した場合、
+      Fantiaならではの強みは以下のとおりです。
+    </p>
+    <ul>
+      <li><strong>pixivとの連携</strong> — 日本最大級のクリエイターコミュニティpixivからの集客が可能</li>
+      <li><strong>プラットフォーム内の検索流入</strong> — Fantia内の検索やランキングからファンが見つけてくれる</li>
+      <li><strong>多彩なコンテンツ形式</strong> — 画像、動画、テキスト、ファイルダウンロードなど幅広い形式に対応</li>
+      <li><strong>無料プランの設定</strong> — 無料プランと有料プランを組み合わせた段階的な設計が可能</li>
+      <li><strong>商品販売機能</strong> — デジタルコンテンツだけでなく、グッズなどの物販にも対応</li>
+      <li><strong>手数料が比較的低い</strong> — 売上の約10%がプラットフォーム手数料（決済手段により変動）</li>
+    </ul>
+
+    <div class="tip-box">
+      <div class="tip-box__title">Pretzelのワンポイント</div>
+      <p>Fantiaの最大の特徴は「プラットフォーム内からの集客力」です。myfansやcandfansは基本的にSNSからの誘導が必要ですが、FantiaはFantia内のランキングや検索からもファンが流入します。この「自然流入」を最大化する設計が、Fantia攻略の鍵です。</p>
+    </div>
+
+    <!-- Night worker Q&A -->
+    <div class="qa-box qa-box--night">
+      <span class="qa-box__label">夜職の方へ</span>
+      <div class="qa-box__q">Q. Fantiaはイラスト系じゃないの？実写でも大丈夫？</div>
+      <p class="qa-box__a">Fantiaは確かにイラスト・漫画系クリエイターのイメージが強いですが、実はコスプレ、グラビア、実写コンテンツで活動しているクリエイターも非常に多いです。特にコスプレイヤーとの親和性が高く、写真・動画メインの活動でも十分に収益化できます。夜職の方のセルフプロデュース力は実写系コンテンツと相性抜群です。</p>
+    </div>
+
+    <!-- Night worker Q&A -->
+    <div class="qa-box qa-box--night">
+      <span class="qa-box__label">夜職の方へ</span>
+      <div class="qa-box__q">Q. 実写コンテンツでも稼げる？イラスト勢に埋もれない？</div>
+      <p class="qa-box__a">稼げます。実写系はイラスト系と客層が異なるため、直接的な競合にはなりにくいです。むしろFantiaでは実写コンテンツの供給がイラストに比べて少ないため、差別化しやすいという利点があります。Pretzelでは実写コンテンツに特化したファンクラブ設計を得意としています。</p>
+    </div>
+
+    <!-- Section 2 -->
+    <h2 id="prepare">始める前に準備するもの</h2>
+    <p>
+      Fantiaでスムーズにファンクラブを開設するために、
+      事前に以下のものを準備しておきましょう。
+    </p>
+
+    <h3>必須のもの</h3>
+    <ul>
+      <li><strong>メールアドレス</strong> — Gmail等のフリーメールでOK。活動専用のアドレスを用意するのが理想</li>
+      <li><strong>本人確認書類</strong> — 運転免許証、マイナンバーカード、パスポートのいずれか</li>
+      <li><strong>振込先の銀行口座</strong> — 収益を受け取るための口座情報</li>
+    </ul>
+
+    <h3>あると便利なもの</h3>
+    <ul>
+      <li><strong>pixivアカウント</strong> — 既にpixivにフォロワーがいる場合、連携による集客効果が大きい</li>
+      <li><strong>SNSアカウント（X、Instagramなど）</strong> — pixiv以外からの集客にも活用</li>
+      <li><strong>ファンクラブのアイコン・ヘッダー画像</strong> — ブランディングに重要。プロっぽい印象を与える</li>
+      <li><strong>コンテンツのストック</strong> — 最低5〜10本は事前に準備しておくとスタートダッシュが切れる</li>
+      <li><strong>プラン設計の下書き</strong> — 何をどの価格帯で提供するか事前にまとめておく</li>
+    </ul>
+
+    <div class="warning-box">
+      <div class="warning-box__title">注意</div>
+      <p>Fantiaでは有料コンテンツを配信するために本人確認が必須です。18歳未満の方は利用できません。また、コンテンツのジャンルによっては追加の審査が必要になる場合があります。審査には数日かかることもあるため、早めに申請しておきましょう。</p>
+    </div>
+
+    <!-- Uraaka Q&A -->
+    <div class="qa-box qa-box--uraaka">
+      <span class="qa-box__label">裏垢女子の方へ</span>
+      <div class="qa-box__q">Q. Fantiaのプライバシー設定は？身バレしない？</div>
+      <p class="qa-box__a">Fantiaではクリエイターの本名や個人情報はファンに公開されません。活動名（ニックネーム）での運用が基本です。本人確認書類は運営の審査のみに使われます。また、ファンクラブの公開範囲や検索への表示設定など、プライバシーに関する細かい設定も可能です。Pretzelでは初回セットアップ時にプライバシー設定を徹底チェックしています。</p>
+    </div>
+
+    <!-- Uraaka Q&A -->
+    <div class="qa-box qa-box--uraaka">
+      <span class="qa-box__label">裏垢女子の方へ</span>
+      <div class="qa-box__q">Q. pixivアカウントと連携すべき？裏垢とバレない？</div>
+      <p class="qa-box__a">pixivとの連携は任意です。既にpixivでフォロワーがいて、そのジャンルとFantiaの活動内容が一致する場合は連携すると集客効果があります。ただし、pixivの活動と裏垢の活動を完全に分けたい場合は、連携せずにFantia単体で運用する方が安全です。Pretzelではあなたの状況に合わせた最適な連携方針をアドバイスします。</p>
+    </div>
+
+    <!-- Section 3 -->
+    <h2 id="steps">アカウント開設の流れ</h2>
+    <p>
+      Fantiaのアカウント開設は比較的シンプルです。
+      以下の手順に沿って進めましょう。
+    </p>
+
+    <div class="step-item">
+      <span class="step-number">1</span>
+      <div class="step-item__content">
+        <h3>Fantia公式サイトでアカウント作成</h3>
+        <p>Fantiaの公式サイトにアクセスし、新規アカウントを作成します。メールアドレスとパスワードで登録する方法と、pixivアカウントで連携登録する方法の2つがあります。匿名性を重視する場合はメールアドレスでの新規登録がおすすめです。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">2</span>
+      <div class="step-item__content">
+        <h3>クリエイター登録の申請</h3>
+        <p>アカウント作成後、「ファンクラブを作る」からクリエイター登録を申請します。ファンクラブ名、カテゴリ、説明文などの基本情報を入力します。この段階ではまだ有料プランの設定はできません。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">3</span>
+      <div class="step-item__content">
+        <h3>本人確認書類の提出</h3>
+        <p>有料コンテンツを配信するには本人確認が必要です。運転免許証やマイナンバーカードなどの画像をアップロードします。審査は通常2〜5営業日で完了します。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">4</span>
+      <div class="step-item__content">
+        <h3>ファンクラブページの設定</h3>
+        <p>プロフィール画像、ヘッダー画像、自己紹介文を設定します。Fantiaではファンクラブページのデザインが第一印象を決める重要な要素です。「どんなコンテンツを提供するのか」「なぜこのファンクラブに入る価値があるのか」が一目でわかるページを目指しましょう。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">5</span>
+      <div class="step-item__content">
+        <h3>プラン（月額コース）の設定</h3>
+        <p>Fantiaでは複数のプラン（月額コース）を設定できます。無料プランを含めることも可能なので、無料プランで間口を広げ、有料プランで収益化する段階的な設計がおすすめです。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">6</span>
+      <div class="step-item__content">
+        <h3>振込口座の登録</h3>
+        <p>収益を受け取るための銀行口座を登録します。口座名義は本人確認書類と一致している必要があります。</p>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">7</span>
+      <div class="step-item__content">
+        <h3>初期コンテンツの投稿とファンクラブ公開</h3>
+        <p>最低5〜10本のコンテンツを投稿してからファンクラブを本格公開しましょう。無料プランでも閲覧できるサンプルコンテンツと、有料プラン限定のコンテンツをバランスよく配置することで、新規ファンの登録率が向上します。</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-box__title">プロのアドバイス</div>
+      <p>Pretzelではファンクラブの開設代行から、ページデザインの最適化、初期コンテンツの企画まで一貫してサポートしています。費用は売上の20%のみ、初期費用は一切かかりません。</p>
+    </div>
+
+    <!-- Section 4 -->
+    <h2 id="design">ファンクラブ設計のポイント</h2>
+    <p>
+      Fantiaで成功するためには、ファンクラブの設計が極めて重要です。
+      プラン構成、価格設定、コンテンツの出し分けを戦略的に考えましょう。
+    </p>
+
+    <h3>無料プランを「入口」にする</h3>
+    <p>
+      Fantiaの大きな特徴の一つが「無料プラン」を設定できることです。
+      無料プランで一部のコンテンツを公開し、
+      「もっと見たい」と思った方を有料プランに誘導する流れが王道です。
+      無料プランのファン数が増えれば、Fantia内のランキングにも好影響を与えます。
+    </p>
+
+    <h3>段階的なプラン構成</h3>
+    <p>
+      以下のような段階的なプラン構成が効果的です。
+    </p>
+    <ul>
+      <li><strong>無料プラン</strong> — 入口。活動報告やサンプルを閲覧可能。ファン数を最大化</li>
+      <li><strong>ライトプラン（300〜980円）</strong> — 通常コンテンツが見られるエントリープラン</li>
+      <li><strong>スタンダードプラン（1,500〜3,000円）</strong> — 限定コンテンツやメイキングが見られるメインプラン</li>
+      <li><strong>プレミアムプラン（5,000〜10,000円）</strong> — リクエスト対応やDMなど特別な体験</li>
+    </ul>
+
+    <h3>コンテンツの出し分けルール</h3>
+    <p>
+      各プランで「何が見られるのか」を明確にすることが大切です。
+      ファンが「上位プランにすれば何が追加で見られるのか」を
+      迷わず理解できる設計にしましょう。
+      プラン説明文に具体的なコンテンツ例を記載するのが効果的です。
+    </p>
+
+    <div class="tip-box">
+      <div class="tip-box__title">料金設計のコツ</div>
+      <p>Fantiaは他のプラットフォームと比べてプラットフォーム手数料が低い（約10%）ため、低価格帯のプランでも手取りが多くなります。300〜500円の入門プランを用意してファン数を増やす戦略は、Fantiaならではの強みです。</p>
+    </div>
+
+    <!-- Section 5 -->
+    <h2 id="content">コンテンツ戦略と投稿のコツ</h2>
+    <p>
+      ファンクラブを開設したら、次はコンテンツ戦略です。
+      Fantiaの特性を活かした投稿のコツを解説します。
+    </p>
+
+    <h3>投稿タイプを使い分ける</h3>
+    <p>
+      Fantiaでは画像、動画、テキスト、ファイルダウンロードなど
+      多彩な投稿形式に対応しています。
+      一つの形式に偏らず、バリエーションを持たせることで
+      ファンの飽きを防ぎ、継続率を高められます。
+    </p>
+    <ul>
+      <li><strong>画像投稿</strong> — メインコンテンツ。高画質で差別化</li>
+      <li><strong>動画投稿</strong> — 滞在時間が長く、満足度が高い</li>
+      <li><strong>テキスト投稿</strong> — 日常報告や裏話。ファンとの距離を縮める</li>
+      <li><strong>ファイルDL</strong> — 高解像度画像セットや素材の配布に活用</li>
+    </ul>
+
+    <h3>投稿頻度の目安</h3>
+    <p>
+      月額課金のファンクラブでは、定期的な更新が命です。
+      最低でも週2〜3回の投稿を目標にしましょう。
+      まとめて撮影・制作して予約投稿を活用するのが効率的です。
+    </p>
+
+    <h3>Fantia内検索への最適化</h3>
+    <p>
+      Fantiaにはプラットフォーム内の検索機能があります。
+      投稿タイトルや説明文にキーワードを適切に含めることで、
+      Fantia内の検索結果に表示されやすくなります。
+      ハッシュタグ機能も積極的に活用しましょう。
+    </p>
+
+    <div class="qa-box qa-box--night">
+      <span class="qa-box__label">夜職の方へ</span>
+      <div class="qa-box__q">Q. 出勤前後の短い時間でも運用できる？</div>
+      <p class="qa-box__a">十分に可能です。Fantiaは予約投稿に対応しているため、休みの日にまとめてコンテンツを作成し、投稿スケジュールを設定しておけば毎日手動で投稿する必要はありません。週に3〜4時間の作業時間が確保できれば安定した運用ができます。Pretzelではコンテンツの撮影・制作の効率化もアドバイスしています。</p>
+    </div>
+
+    <!-- Section 6 -->
+    <h2 id="earn">Fantiaで稼ぐための7つのテクニック</h2>
+    <p>
+      ここからは、Fantiaで実際に高収益を上げているクリエイターに共通する
+      7つのテクニックを公開します。
+    </p>
+
+    <h3>1. 無料プランでファン母数を最大化する</h3>
+    <p>
+      Fantiaの無料プランは「見込み客リスト」のようなものです。
+      無料プランのファンが多いほど、有料プランへのアップグレード母数が増えます。
+      無料コンテンツでも手を抜かず、「この人の有料コンテンツはもっとすごいはず」と
+      期待させるクオリティを維持しましょう。
+    </p>
+
+    <h3>2. pixivからの集客導線を作る</h3>
+    <p>
+      pixivアカウントがある場合、pixiv上の作品からFantiaへの導線を作りましょう。
+      pixivの作品説明欄やプロフィールにFantiaのリンクを設置し、
+      「限定コンテンツはFantiaで」と告知するのが基本です。
+      pixivのフォロワーはすでにあなたの作品に興味がある「温かい見込み客」なので、
+      コンバージョン率が非常に高くなります。
+    </p>
+
+    <h3>3. Fantia内ランキングを狙う</h3>
+    <p>
+      Fantiaにはカテゴリ別のランキングがあり、
+      上位に表示されると新規ファンの獲得が大幅に増えます。
+      ランキングはファン数や支援金額で算出されるため、
+      無料プランのファン数を増やすことが近道です。
+      新規投稿時にSNSで告知し、一気にアクセスを集めるのも効果的です。
+    </p>
+
+    <h3>4. 限定コンテンツの「チラ見せ」を徹底する</h3>
+    <p>
+      無料で見せる部分と有料限定の部分の「境界線」が稼ぎのポイントです。
+      投稿の冒頭やサムネイルで「おっ」と思わせ、
+      続きは有料プランで、という導線を毎回設計しましょう。
+      Fantiaでは投稿の一部を公開し、残りを有料プラン限定にする機能があるので活用してください。
+    </p>
+
+    <h3>5. 季節イベントやトレンドに乗る</h3>
+    <p>
+      バレンタイン、ハロウィン、クリスマスなどのイベントや、
+      話題のトレンドに合わせたコンテンツは注目度が高く、
+      新規ファン獲得のチャンスです。
+      イベント前に告知し、期待感を煽ることで
+      有料プランの新規登録も増やせます。
+    </p>
+
+    <h3>6. 商品販売機能を活用する</h3>
+    <p>
+      Fantiaにはデジタルコンテンツの単品販売や
+      物販（グッズ販売）機能もあります。
+      月額課金に加えて、限定デジタル写真集やオリジナルグッズの販売で
+      追加の収益源を確保しましょう。
+    </p>
+
+    <h3>7. データを分析して改善を続ける</h3>
+    <p>
+      どの投稿が最も見られているか、どのプランの加入率が高いか。
+      Fantiaのアクセス解析機能を定期的にチェックし、
+      データに基づいた改善を続けることが長期的な収益成長の鍵です。
+    </p>
+
+    <!-- Revenue Simulation -->
+    <h3>収益シミュレーション（Fantia）</h3>
+    <p>月額プラン別のファン数に応じた収益の目安です。Fantiaはプラットフォーム手数料が約10%と低いのが特徴です。</p>
+    <table class="revenue-table">
+      <thead>
+        <tr>
+          <th>月額</th>
+          <th>ファン10人</th>
+          <th>ファン50人</th>
+          <th>ファン100人</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>500円</td>
+          <td>4,500円</td>
+          <td>22,500円</td>
+          <td>45,000円</td>
+        </tr>
+        <tr>
+          <td>1,000円</td>
+          <td>9,000円</td>
+          <td>45,000円</td>
+          <td class="highlight">90,000円</td>
+        </tr>
+        <tr>
+          <td>2,000円</td>
+          <td>18,000円</td>
+          <td class="highlight">90,000円</td>
+          <td class="highlight">180,000円</td>
+        </tr>
+        <tr>
+          <td>3,000円</td>
+          <td>27,000円</td>
+          <td class="highlight">135,000円</td>
+          <td class="highlight">270,000円</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: -8px;">
+      ※ 上記はFantiaプラットフォーム手数料（約10%）控除後の手取り目安です。決済手段により手数料率は変動します。<br>
+      ※ Pretzelの報酬は売上の20%のみ。初期費用はかかりません。商品販売の収益は含みません。
+    </p>
+
+    <div class="tip-box">
+      <div class="tip-box__title">Pretzelの実績</div>
+      <p>Fantiaの無料プランからの有料アップグレード戦略を導入したクリエイターは、有料プランのみで運用した場合と比べて平均2.5倍のファン数増加を実現しています。Pretzelではデータに基づいたファンクラブ設計を提案します。</p>
+    </div>
+
+    <div class="qa-box qa-box--uraaka">
+      <span class="qa-box__label">裏垢女子の方へ</span>
+      <div class="qa-box__q">Q. Fantiaって裏垢女子でも使ってる人いるの？</div>
+      <p class="qa-box__a">います。Fantiaはイラスト系のイメージが強いですが、コスプレ・実写・グラビア系のカテゴリも活発です。裏垢女子がFantiaを使うメリットは「プラットフォーム内からの自然流入」。SNS以外からもファンが見つけてくれるので、集客の幅が広がります。myfansやcandfansとの併用で収益チャネルを分散するのも賢い戦略です。</p>
+    </div>
+
+    <div class="qa-box qa-box--night">
+      <span class="qa-box__label">夜職の方へ</span>
+      <div class="qa-box__q">Q. 確定申告どうする？Fantiaの収入はどう扱われる？</div>
+      <p class="qa-box__a">Fantiaの収入は「雑所得」または「事業所得」として確定申告が必要になる場合があります（年間所得20万円超）。お店の給与と合算して申告します。住民税を「自分で納付（普通徴収）」にすれば、お店にバレるリスクを減らせます。Pretzelでは税務面のアドバイスも含めて総合的にサポートしています。</p>
+    </div>
+
+    <!-- Section 7 -->
+    <h2 id="faq">よくある質問</h2>
+
+    <h3>Q. Fantiaは無料で始められますか？</h3>
+    <p>
+      はい、ファンクラブの開設は完全無料です。
+      初期費用はかからず、収益が発生した場合にのみ
+      プラットフォーム手数料（約10%、決済手段により変動）が差し引かれます。
+    </p>
+
+    <h3>Q. Fantiaとmyfans・candfansの違いは？</h3>
+    <p>
+      Fantiaはpixiv連携とプラットフォーム内検索による「自然流入」が強みで、
+      手数料も約10%と低めです。
+      myfansは月額サブスクのシンプルさ、candfansはバックナンバー販売と複数プランが魅力。
+      ジャンルや戦略に応じて使い分け、または併用がおすすめです。
+    </p>
+
+    <h3>Q. 顔出しなしでもFantiaで稼げますか？</h3>
+    <p>
+      はい、顔出しなしでも十分に収益化が可能です。
+      イラスト系はもちろん、実写系でも顔を出さずに活動しているクリエイターは多くいます。
+      アングルやシルエットの工夫、雰囲気のある演出で差別化できます。
+    </p>
+
+    <h3>Q. Fantiaの振込サイクルはどうなっていますか？</h3>
+    <p>
+      Fantiaの売上は毎月末締め、翌月末日に振り込まれるのが基本です。
+      最低振込金額や振込手数料は時期によって変更される場合があるため、
+      最新の公式情報を確認しておきましょう。
+    </p>
+
+    <!-- Section 8 -->
+    <h2 id="summary">まとめ</h2>
+    <p>
+      Fantiaは初期費用ゼロで始められる、
+      多機能なクリエイター支援プラットフォームです。
+      pixiv連携による集客力、プラットフォーム内ランキングからの自然流入、
+      低い手数料率、無料プランの設定など、
+      収益化に有利な仕組みが豊富に用意されています。
+    </p>
+    <p>
+      「イラスト系だけのサービス」というイメージは過去のもの。
+      コスプレ、グラビア、実写コンテンツなど幅広いジャンルで
+      活躍しているクリエイターが増えています。
+    </p>
+    <p>
+      ただし、ファンクラブの設計やコンテンツ戦略、
+      プラットフォーム内SEOなど、押さえるべきポイントは多岐にわたります。
+      プロのサポートを活用することで、
+      収益化までの時間を大幅に短縮できます。
+    </p>
+
+    <!-- CTA -->
+    <div class="blog-cta">
+      <div class="blog-cta__title">Fantiaの始め方、<br class="br-desktop">プロにまるごと相談してみませんか？</div>
+      <p class="blog-cta__text">
+        Pretzelなら初期費用ゼロ・売上の20%のみ。<br class="br-desktop">
+        ファンクラブ開設からコンテンツ戦略まで、すべてお任せください。
+      </p>
+      <a href="../contact.html" class="btn-primary">無料で相談する</a>
+    </div>
+
+  </article>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="../assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;">
+          </div>
+          <p class="footer__description">
+            ファンサブスクリプション特化型<br>クリエイターマネジメントエージェンシー
+          </p>
+          <div class="footer__social mt-lg">
+            <a href="#" class="footer__social-link" aria-label="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <div class="footer__links">
+            <a href="../services.html">Pretzel Standard</a>
+            <a href="../launch.html">Pretzel Launch</a>
+            <a href="../uraaka.html">裏垢女子の方へ</a>
+            <a href="../pricing.html">料金プラン</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">情報</h4>
+          <div class="footer__links">
+            <a href="../results.html">実績</a>
+            <a href="../faq.html">よくある質問</a>
+            <a href="../blog.html">ブログ</a>
+            <a href="../news.html">ニュース</a>
+            <a href="../recruit.html">採用情報</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <a href="../contact.html">お問い合わせフォーム</a>
+            <a href="#">LINE</a>
+            <a href="#">X (Twitter) DM</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Pretzel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navOverlay = document.getElementById('navOverlay');
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      navOverlay.classList.toggle('visible');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) toggleMenu();
+    }));
+  </script>
+
+</body>
+</html>

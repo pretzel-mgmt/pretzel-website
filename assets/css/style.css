@@ -128,9 +128,9 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 /* ---------- Layout ---------- */
@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
 /* ---------- Navigation ---------- */
@@ -215,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 0;
   height: 2px;
   background: var(--gradient-primary);
-  transition: width var(--transition-base);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav__link:hover {
@@ -355,6 +355,19 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(99, 102, 241, 0.5); }
+}
+
+.btn-primary {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+  animation: none;
+}
+
 .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -420,9 +433,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--color-border-hover);
   box-shadow: var(--shadow-glow);
+  background: var(--color-bg-card-hover);
 }
 
 .card__icon {
@@ -821,7 +835,8 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
-  padding: var(--space-3xl) 0 var(--space-xl);
+  padding-top: 80px;
+  padding-bottom: var(--space-xl);
 }
 
 .footer__inner {
@@ -939,26 +954,28 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
-  }
-}
-
-/* Scroll reveal */
+/* ---------- Scroll Reveal Animation ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Stagger animation for cards */
+.features-grid .card:nth-child(1) { transition-delay: 0s; }
+.features-grid .card:nth-child(2) { transition-delay: 0.1s; }
+.features-grid .card:nth-child(3) { transition-delay: 0.15s; }
+.features-grid .card:nth-child(4) { transition-delay: 0.2s; }
 
 /* ---------- Utility Classes ---------- */
 .text-center  { text-align: center; }
