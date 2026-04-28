@@ -3,4 +3,30 @@ Allow: /
 
 Disallow: /DEPLOY_GUIDE.html
 
+# AI Crawlers - Allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# LLMs.txt - AI-readable site information
+# https://pretzel-mgmt.github.io/pretzel-website/llms.txt
+# https://pretzel-mgmt.github.io/pretzel-website/llms-full.txt
+
 Sitemap: https://pretzel-mgmt.github.io/pretzel-website/sitemap.xml

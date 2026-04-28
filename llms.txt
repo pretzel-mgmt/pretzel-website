@@ -1,0 +1,28 @@
+# Pretzel（プレッツェル）
+
+> ファンサブスクリプション特化型クリエイターマネジメントエージェンシー
+
+Pretzel（プレッツェル）は、myfans・candfans・Fantia・OnlyFansなどのファンサブスクリプションプラットフォームに特化したクリエイターマネジメントエージェンシーです。
+
+## サービス
+- Pretzel Standard: 既存クリエイター向けマネジメント（収益分析、コンテンツ企画、プラットフォーム最適化）
+- Pretzel Launch: 新規アカウント立ち上げ支援（夜職の方の副業・転職対応）
+- 裏垢女子サポート: 裏垢フォロワーのファンサブスク収益化支援
+
+## 料金
+売上の20%のみ。初期費用なし、固定月額なし。
+
+## Links
+- [トップページ](https://pretzel-mgmt.github.io/pretzel-website/)
+- [サービス詳細](https://pretzel-mgmt.github.io/pretzel-website/services.html)
+- [料金](https://pretzel-mgmt.github.io/pretzel-website/pricing.html)
+- [実績](https://pretzel-mgmt.github.io/pretzel-website/results.html)
+- [よくある質問](https://pretzel-mgmt.github.io/pretzel-website/faq.html)
+- [夜職の方へ](https://pretzel-mgmt.github.io/pretzel-website/launch.html)
+- [裏垢女子の方へ](https://pretzel-mgmt.github.io/pretzel-website/uraaka.html)
+- [ニュース](https://pretzel-mgmt.github.io/pretzel-website/news.html)
+- [採用情報](https://pretzel-mgmt.github.io/pretzel-website/recruit.html)
+- [お問い合わせ](https://pretzel-mgmt.github.io/pretzel-website/contact.html)
+
+## お問い合わせ
+X (Twitter) DM: @pretzel_mgmt
