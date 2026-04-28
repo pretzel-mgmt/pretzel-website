@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News | Pretzel — クリエイターマネジメント</title>
+  <meta name="description" content="Pretzel（プレッツェル）の最新ニュース・プレスリリース。新サービス情報やお知らせをお届けします。">
+  <meta name="keywords" content="Pretzel,プレッツェル,ニュース,プレスリリース,クリエイターマネジメント,ファンサブスク">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/news.html">
+
+  <!-- OGP -->
+  <meta property="og:title" content="News | Pretzel — クリエイターマネジメント">
+  <meta property="og:description" content="Pretzel（プレッツェル）の最新ニュース・プレスリリース。新サービス情報やお知らせをお届けします。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/news.html">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="News | Pretzel — クリエイターマネジメント">
+  <meta name="twitter:description" content="Pretzel（プレッツェル）の最新ニュース・プレスリリース。新サービス情報やお知らせをお届けします。">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "「裏垢女子サポート」サービス提供開始",
+      "datePublished": "2026-04-25",
+      "description": "匿名アカウント運営に特化したサポートサービスを新たにリリース。プライバシー保護と収益化の両立を実現。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "料金体系をリニューアル — シンプルな成果報酬型へ",
+      "datePublished": "2026-04-10",
+      "description": "全サービスの料金を「売上の20%のみ」に統一。初期費用・固定月額を完全撤廃し、クリエイターのリスクゼロを実現。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Pretzel Launch サービス開始",
+      "datePublished": "2026-03-28",
+      "description": "夜職の方を対象としたファンサブスク立ち上げ支援サービス「Pretzel Launch」を開始。アカウント開設から収益化まで完全サポート。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "公式Webサイト公開",
+      "datePublished": "2026-03-15",
+      "description": "Pretzelの公式Webサイトを公開しました。サービス内容・料金・実績をご確認いただけます。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Pretzel 事業開始のお知らせ",
+      "datePublished": "2026-03-01",
+      "description": "ファンサブスクリプション特化型クリエイターマネジメント「Pretzel」が事業を開始しました。myfans・candfans・Fantia・OnlyFansに対応。",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      }
+    }
+  ]
+  </script>
+
+  <!-- News-specific styles -->
+  <style>
+    .news-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .news-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, rgba(168,85,247,0.06) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .news-hero__title {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .news-hero__subtitle {
+      color: rgba(255,255,255,0.6);
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .news-list {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .news-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px 32px 32px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .news-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #6366f1, #a855f7, #ec4899);
+      border-radius: 4px 0 0 4px;
+    }
+    .news-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(99,102,241,0.1);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .news-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .news-card__date {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+    }
+    .news-card__tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .news-card__tag--service {
+      background: rgba(99,102,241,0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99,102,241,0.25);
+    }
+    .news-card__tag--info {
+      background: rgba(236,72,153,0.12);
+      color: #f472b6;
+      border: 1px solid rgba(236,72,153,0.2);
+    }
+
+    .news-card__title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    }
+    .news-card__content {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 640px) {
+      .news-card {
+        padding: 24px 20px 24px 24px;
+      }
+      .news-card__title {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;">
+      </a>
+
+      <div class="nav__links">
+        <a href="services.html" class="nav__link">サービス</a>
+        <a href="pricing.html" class="nav__link">料金</a>
+        <a href="results.html" class="nav__link">実績</a>
+        <a href="faq.html" class="nav__link">よくある質問</a>
+        <a href="contact.html" class="nav__link">お問い合わせ</a>
+        <a href="launch.html" class="nav__cta">夜職の方へ</a>
+        <a href="uraaka.html" class="nav__cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+      </div>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav__overlay" id="navOverlay"></div>
+  <div class="nav__mobile-menu" id="mobileMenu">
+    <a href="services.html">サービス</a>
+    <a href="pricing.html">料金</a>
+    <a href="results.html">実績</a>
+    <a href="faq.html">よくある質問</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="launch.html" class="btn-primary w-full text-center">夜職の方へ</a>
+    <a href="uraaka.html" class="btn-primary w-full text-center" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+  </div>
+
+  <!-- ========== News Hero ========== -->
+  <section class="news-hero">
+    <div class="container reveal">
+      <h1 class="news-hero__title">News</h1>
+      <p class="news-hero__subtitle">Pretzelの最新情報をお届けします</p>
+    </div>
+  </section>
+
+  <!-- ========== News List ========== -->
+  <section class="news-list">
+
+    <article class="news-card reveal">
+      <div class="news-card__meta">
+        <time class="news-card__date" datetime="2026-04-25">2026年4月25日</time>
+        <span class="news-card__tag news-card__tag--service">新サービス</span>
+      </div>
+      <h2 class="news-card__title">「裏垢女子サポート」サービス提供開始</h2>
+      <p class="news-card__content">匿名アカウント運営に特化したサポートサービスを新たにリリース。プライバシー保護と収益化の両立を実現。</p>
+    </article>
+
+    <article class="news-card reveal">
+      <div class="news-card__meta">
+        <time class="news-card__date" datetime="2026-04-10">2026年4月10日</time>
+        <span class="news-card__tag news-card__tag--info">お知らせ</span>
+      </div>
+      <h2 class="news-card__title">料金体系をリニューアル — シンプルな成果報酬型へ</h2>
+      <p class="news-card__content">全サービスの料金を「売上の20%のみ」に統一。初期費用・固定月額を完全撤廃し、クリエイターのリスクゼロを実現。</p>
+    </article>
+
+    <article class="news-card reveal">
+      <div class="news-card__meta">
+        <time class="news-card__date" datetime="2026-03-28">2026年3月28日</time>
+        <span class="news-card__tag news-card__tag--service">新サービス</span>
+      </div>
+      <h2 class="news-card__title">Pretzel Launch サービス開始</h2>
+      <p class="news-card__content">夜職の方を対象としたファンサブスク立ち上げ支援サービス「Pretzel Launch」を開始。アカウント開設から収益化まで完全サポート。</p>
+    </article>
+
+    <article class="news-card reveal">
+      <div class="news-card__meta">
+        <time class="news-card__date" datetime="2026-03-15">2026年3月15日</time>
+        <span class="news-card__tag news-card__tag--info">お知らせ</span>
+      </div>
+      <h2 class="news-card__title">公式Webサイト公開</h2>
+      <p class="news-card__content">Pretzelの公式Webサイトを公開しました。サービス内容・料金・実績をご確認いただけます。</p>
+    </article>
+
+    <article class="news-card reveal">
+      <div class="news-card__meta">
+        <time class="news-card__date" datetime="2026-03-01">2026年3月1日</time>
+        <span class="news-card__tag news-card__tag--info">お知らせ</span>
+      </div>
+      <h2 class="news-card__title">Pretzel 事業開始のお知らせ</h2>
+      <p class="news-card__content">ファンサブスクリプション特化型クリエイターマネジメント「Pretzel」が事業を開始しました。myfans・candfans・Fantia・OnlyFansに対応。</p>
+    </article>
+
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div>
+          <div class="footer__logo">
+            <img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;">
+          </div>
+          <p class="footer__description">
+            ファンサブスクリプション特化型<br>クリエイターマネジメントエージェンシー
+          </p>
+          <div class="footer__social mt-lg">
+            <a href="#" class="footer__social-link" aria-label="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <div class="footer__links">
+            <a href="services.html">Pretzel Standard</a>
+            <a href="launch.html">Pretzel Launch</a>
+            <a href="uraaka.html">裏垢女子の方へ</a>
+            <a href="pricing.html">料金プラン</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">情報</h4>
+          <div class="footer__links">
+            <a href="results.html">実績</a>
+            <a href="faq.html">よくある質問</a>
+            <a href="news.html">ニュース</a>
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <a href="contact.html">お問い合わせフォーム</a>
+            <a href="#">LINE</a>
+            <a href="#">X (Twitter) DM</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Pretzel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    // --- Sticky nav scroll effect ---
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // --- Hamburger menu ---
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      navOverlay.classList.toggle('visible');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', toggleMenu);
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('open')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // --- Scroll reveal ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

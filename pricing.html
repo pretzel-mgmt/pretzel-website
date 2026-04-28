@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>料金プラン | Pretzel - クリエイターマネジメント</title>
-<meta name="description" content="Pretzelの料金プラン一覧。初期費用なしの成果報酬型Standard（15-25%）と、新規立ち上げ支援Launch（3-8万円＋20-30%）。あなたに合ったプランが見つかる。">
-<meta name="keywords" content="ファンサブスク,クリエイターマネジメント,料金,成果報酬,myfans,candfans,Fantia,OnlyFans,プラン">
+<meta name="description" content="Pretzelの料金はシンプル。売上の20%のみ。初期費用なし・月額固定費なし。売上が0円なら費用も0円。リスクゼロで始められる成果連動型モデル。">
+<meta name="keywords" content="ファンサブスク,クリエイターマネジメント,料金,成果報酬,myfans,candfans,Fantia,OnlyFans">
 <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/pricing.html">
 <meta property="og:title" content="料金プラン | Pretzel - クリエイターマネジメント">
-<meta property="og:description" content="Pretzelの料金プラン一覧。初期費用なしの成果報酬型Standard（15-25%）と、新規立ち上げ支援Launch（3-8万円＋20-30%）。あなたに合ったプランが見つかる。">
+<meta property="og:description" content="Pretzelの料金はシンプル。売上の20%のみ。初期費用なし・月額固定費なし。売上が0円なら費用も0円。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/pricing.html">
 <meta property="og:site_name" content="Pretzel">
@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
 <link rel="stylesheet" href="assets/css/style.css">
 <style>
 :root {
@@ -39,18 +40,22 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
   background: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.8;
+  color: #cbd5e1;
+  line-height: 1.9;
   -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin-bottom: 1.2em;
 }
 
 /* ===== NAV ===== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  backdrop-filter: blur(20px);
-  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  background: rgba(10,10,26,0.85);
   border-bottom: 1px solid var(--border-color);
 }
 .nav-inner {
@@ -59,11 +64,10 @@ body {
   padding: 16px 24px;
 }
 .nav-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem; font-weight: 800;
-  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  text-decoration: none;
+  display: flex; align-items: center; text-decoration: none;
+  margin-right: 2.5rem;
 }
+.nav-logo img { height: 36px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
   color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500;
@@ -82,7 +86,7 @@ body {
 
 /* ===== HERO ===== */
 .page-hero {
-  padding: 160px 24px 60px;
+  padding: 160px 24px 80px;
   text-align: center;
   position: relative; overflow: hidden;
 }
@@ -96,110 +100,147 @@ body {
 .page-hero h1 {
   font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
   background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
-.page-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+.page-hero p {
+  color: var(--text-secondary); font-size: 1.1rem; max-width: 640px; margin: 0 auto;
+  line-height: 1.9;
+}
 
-/* ===== TAB TOGGLE ===== */
-.tab-wrapper { text-align: center; padding: 0 24px; margin-bottom: 56px; }
-.tab-toggle {
-  display: inline-flex;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 50px;
+/* ===== PRICING HERO CARD ===== */
+.pricing-hero {
+  max-width: 640px; margin: 0 auto 64px; padding: 0 24px;
+}
+.pricing-card-main {
+  background: linear-gradient(180deg, rgba(99,102,241,0.1) 0%, var(--bg-card) 100%);
+  border: 2px solid var(--accent-start);
+  border-radius: 24px;
+  padding: 48px 40px;
+  text-align: center;
+  position: relative;
   overflow: hidden;
 }
-.tab-btn {
-  background: none; border: none; cursor: pointer;
-  color: var(--text-secondary); font-family: inherit;
-  font-size: 0.95rem; font-weight: 600;
-  padding: 14px 36px;
-  transition: all 0.3s;
-  border-radius: 50px;
+.pricing-card-main::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-gradient);
 }
-.tab-btn.active {
-  background: var(--accent-gradient); color: #fff;
-}
-
-/* ===== SECTIONS ===== */
-.section { padding: 0 24px 80px; max-width: 1200px; margin: 0 auto; }
-.section-label {
+.pricing-label {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(236,72,153,0.15));
-  border: 1px solid var(--border-color);
-  padding: 6px 18px; border-radius: 50px;
-  font-size: 0.8rem; font-weight: 600; color: var(--cyan);
-  margin-bottom: 16px;
+  background: var(--accent-gradient);
+  color: #fff; font-size: 0.8rem; font-weight: 700;
+  padding: 6px 20px; border-radius: 50px;
+  margin-bottom: 24px;
+}
+.pricing-rate {
+  font-size: clamp(3rem, 8vw, 4.5rem); font-weight: 900;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1.2; margin-bottom: 8px;
+}
+.pricing-rate-sub {
+  font-size: 1.2rem; font-weight: 600; color: var(--text-primary);
+  margin-bottom: 24px;
+}
+.pricing-zero-list {
+  list-style: none; text-align: left;
+  max-width: 320px; margin: 0 auto 8px;
+}
+.pricing-zero-list li {
+  font-size: 1rem; color: var(--text-secondary);
+  padding: 8px 0; padding-left: 28px; position: relative;
+  line-height: 1.8;
+}
+.pricing-zero-list li::before {
+  content: '\2713'; position: absolute; left: 0;
+  color: var(--cyan); font-weight: 700;
 }
 
-/* ===== PRICING CARDS ===== */
-.pricing-panel { display: none; }
-.pricing-panel.active { display: block; }
+/* ===== WHY THIS MODEL ===== */
+.section { padding: 0 24px 80px; max-width: 1000px; margin: 0 auto; }
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800;
+  text-align: center; margin-bottom: 16px;
+}
+.section-desc {
+  color: var(--text-secondary); font-size: 1rem;
+  text-align: center; max-width: 640px; margin: 0 auto 48px;
+  line-height: 1.9;
+}
 
-.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 56px; }
-
-.plan-card {
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  margin-bottom: 56px;
+}
+.benefit-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 36px 28px;
-  transition: border-color 0.3s, transform 0.3s;
-  position: relative;
-  display: flex; flex-direction: column;
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
 }
-.plan-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
-.plan-card.featured {
-  border-color: var(--accent-start);
-  background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, var(--bg-card) 100%);
+.benefit-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
 }
-.popular-badge {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: var(--accent-gradient); color: #fff; font-size: 0.75rem; font-weight: 700;
-  padding: 4px 16px; border-radius: 50px; white-space: nowrap;
+.benefit-icon {
+  font-size: 2rem; margin-bottom: 16px;
 }
-.plan-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 20px; }
-.plan-meta { margin-bottom: 8px; }
-.plan-meta-label { color: var(--text-muted); font-size: 0.8rem; }
-.plan-meta-value { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
-.plan-rate {
-  font-size: 2.2rem; font-weight: 800;
-  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  margin: 8px 0 4px;
+.benefit-card h3 {
+  font-size: 1.1rem; font-weight: 700; margin-bottom: 12px;
 }
-.plan-rate-sub { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 8px; }
-.plan-contract { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 20px; }
-.plan-divider { height: 1px; background: var(--border-color); margin-bottom: 20px; }
+.benefit-card p {
+  color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8;
+  margin-bottom: 0;
+}
 
-/* ===== FEATURE TABLE ===== */
-.feature-table {
-  width: 100%;
-  border-collapse: collapse;
+/* ===== EXAMPLES ===== */
+.examples-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
   margin-bottom: 56px;
 }
-.feature-table thead th {
+.example-card {
   background: var(--bg-card);
-  padding: 16px 20px;
-  font-size: 0.95rem; font-weight: 700;
-  border-bottom: 2px solid var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 28px 24px;
   text-align: center;
 }
-.feature-table thead th:first-child { text-align: left; border-radius: var(--radius-sm) 0 0 0; }
-.feature-table thead th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
-.feature-table thead th.featured-col {
-  background: linear-gradient(180deg, rgba(99,102,241,0.15) 0%, var(--bg-card) 100%);
-  border-bottom-color: var(--accent-start);
+.example-revenue {
+  color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 8px;
 }
-.feature-table tbody td {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border-color);
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+.example-amount {
+  font-size: 1.8rem; font-weight: 800; color: var(--text-primary);
+  margin-bottom: 8px;
 }
-.feature-table tbody td:first-child { text-align: left; font-weight: 500; color: var(--text-primary); }
-.feature-table tbody tr:hover { background: rgba(99,102,241,0.03); }
-.check { color: var(--cyan); font-weight: 700; font-size: 1.1rem; }
-.dash { color: var(--text-muted); }
+.example-arrow {
+  color: var(--text-muted); font-size: 1.2rem; margin-bottom: 8px;
+}
+.example-fee {
+  color: var(--text-muted); font-size: 0.85rem; margin-bottom: 4px;
+}
+.example-fee-amount {
+  font-size: 1.3rem; font-weight: 700;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* ===== SERVICES INCLUDED ===== */
+.services-list {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  max-width: 700px; margin: 0 auto;
+}
+.services-list li {
+  color: var(--text-secondary); font-size: 0.95rem;
+  padding: 12px 16px; padding-left: 40px; position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  line-height: 1.8;
+}
+.services-list li::before {
+  content: '\2713'; position: absolute; left: 16px;
+  color: var(--cyan); font-weight: 700;
+}
 
 /* ===== FAQ ===== */
 .faq-section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
@@ -221,19 +262,20 @@ body {
   font-weight: 600; font-size: 0.95rem;
   user-select: none;
   transition: background 0.3s;
+  line-height: 1.7;
 }
 .faq-q:hover { background: var(--bg-card-hover); }
 .faq-q::after {
   content: '+'; font-size: 1.4rem; color: var(--text-muted);
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
   flex-shrink: 0; margin-left: 16px;
 }
-.faq-item.open .faq-q::after { content: '−'; }
+.faq-item.open .faq-q::after { content: '\2212'; }
 .faq-a {
   max-height: 0; overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s;
   padding: 0 24px;
-  color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;
+  color: var(--text-secondary); font-size: 0.9rem; line-height: 1.9;
   background: var(--bg-card);
 }
 .faq-item.open .faq-a {
@@ -243,14 +285,14 @@ body {
 
 /* ===== CTA ===== */
 .cta-section { padding: 80px 24px; text-align: center; }
-.cta-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
-.cta-section p { color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 20px; }
+.cta-section p { color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.9; }
 .cta-btn {
   display: inline-block;
   background: var(--accent-gradient); color: #fff; text-decoration: none;
   padding: 16px 48px; border-radius: 50px;
   font-size: 1rem; font-weight: 700;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
 }
 .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
@@ -261,11 +303,9 @@ body {
 }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 .footer-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3rem; font-weight: 800;
-  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
 }
+.footer-logo img { height: 32px; width: auto; display: block; margin: 0 auto; }
 .footer-links { list-style: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; }
 .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
 .footer-links a:hover { color: var(--text-primary); }
@@ -273,9 +313,9 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 56px; }
-  .feature-table { font-size: 0.8rem; }
-  .feature-table thead th, .feature-table tbody td { padding: 10px 8px; }
+  .benefits-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 56px; }
+  .examples-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto 56px; }
+  .services-list { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
@@ -286,7 +326,7 @@ body {
     background: rgba(10,10,15,0.98); padding: 24px;
     border-bottom: 1px solid var(--border-color);
   }
-  .feature-table { display: block; overflow-x: auto; }
+  .pricing-card-main { padding: 36px 24px; }
 }
 </style>
 </head>
@@ -295,14 +335,15 @@ body {
 <!-- ===== NAVIGATION ===== -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Pretzel</a>
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="services.html">サービス</a></li>
       <li><a href="pricing.html">料金</a></li>
-      <li><a href="works.html">実績</a></li>
+      <li><a href="results.html">実績</a></li>
       <li><a href="faq.html">よくある質問</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
-      <li><a href="nightwork.html" class="nav-cta">夜職の方へ</a></li>
+      <li><a href="launch.html" class="nav-cta">夜職の方へ</a></li>
+      <li><a href="uraaka.html" class="nav-cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -312,229 +353,103 @@ body {
 
 <!-- ===== HERO ===== -->
 <section class="page-hero">
-  <h1>料金プラン</h1>
-  <p>シンプルで分かりやすい料金体系。あなたのステージに合わせた最適なプランをお選びください。</p>
+  <h1>シンプルな料金体系</h1>
+  <p>複雑なプランは一切なし。<br>料金は売上の20%だけ。それ以外の費用は一切かかりません。</p>
 </section>
 
-<!-- ===== TAB TOGGLE ===== -->
-<div class="tab-wrapper">
-  <div class="tab-toggle">
-    <button class="tab-btn active" data-tab="standard">Standard</button>
-    <button class="tab-btn" data-tab="launch">Launch</button>
+<!-- ===== MAIN PRICING CARD ===== -->
+<div class="pricing-hero">
+  <div class="pricing-card-main">
+    <span class="pricing-label">ワンプラン・シンプル料金</span>
+    <div class="pricing-rate">20%</div>
+    <div class="pricing-rate-sub">売上からのコミッションのみ</div>
+    <ul class="pricing-zero-list">
+      <li>初期費用 0円</li>
+      <li>月額固定費 0円</li>
+      <li>売上が0円なら費用も0円</li>
+      <li>隠れた追加料金なし</li>
+    </ul>
   </div>
 </div>
 
-<!-- ===== STANDARD PANEL ===== -->
-<div class="pricing-panel active" id="panel-standard">
-  <section class="section">
-    <div class="plans-grid">
-      <!-- Light -->
-      <div class="plan-card">
-        <div class="plan-name">Light</div>
-        <div class="plan-meta">
-          <span class="plan-meta-label">初期費用</span>
-          <span class="plan-meta-value"> なし</span>
-        </div>
-        <div class="plan-rate">15%</div>
-        <div class="plan-rate-sub">売上からのコミッション</div>
-        <div class="plan-contract">最低契約期間: 3ヶ月</div>
-        <div class="plan-divider"></div>
-        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
-      </div>
+<!-- ===== WHY THIS MODEL ===== -->
+<section class="section">
+  <h2 class="section-title">この料金モデルが選ばれる理由</h2>
+  <p class="section-desc">
+    Pretzelは完全成果連動型。<br>
+    あなたの売上が伸びた分だけ<br>
+    報酬をいただくモデルです。<br>
+    だからこそ、私たちは<br>
+    あなたの成功に全力でコミットします。
+  </p>
 
-      <!-- Standard -->
-      <div class="plan-card featured">
-        <span class="popular-badge">POPULAR</span>
-        <div class="plan-name">Standard</div>
-        <div class="plan-meta">
-          <span class="plan-meta-label">初期費用</span>
-          <span class="plan-meta-value"> なし</span>
-        </div>
-        <div class="plan-rate">20%</div>
-        <div class="plan-rate-sub">売上からのコミッション</div>
-        <div class="plan-contract">最低契約期間: 6ヶ月</div>
-        <div class="plan-divider"></div>
-        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="plan-card">
-        <div class="plan-name">Premium</div>
-        <div class="plan-meta">
-          <span class="plan-meta-label">初期費用</span>
-          <span class="plan-meta-value"> なし</span>
-        </div>
-        <div class="plan-rate">25%</div>
-        <div class="plan-rate-sub">売上からのコミッション</div>
-        <div class="plan-contract">最低契約期間: 12ヶ月</div>
-        <div class="plan-divider"></div>
-        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
-      </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">&#x1f6e1;&#xfe0f;</div>
+      <h3>リスクゼロで始められる</h3>
+      <p>初期費用も月額費用もなし。売上がなければ費用は一切かかりません。安心してスタートできます。</p>
     </div>
-
-    <!-- Feature Comparison -->
-    <table class="feature-table">
-      <thead>
-        <tr>
-          <th>サービス内容</th>
-          <th>Light</th>
-          <th class="featured-col">Standard</th>
-          <th>Premium</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>コンテンツ企画</td>
-          <td><span class="check">&#10003;</span><br><small>月次</small></td>
-          <td><span class="check">&#10003;</span><br><small>週次</small></td>
-          <td><span class="check">&#10003;</span><br><small>随時</small></td>
-        </tr>
-        <tr>
-          <td>マーケティング支援</td>
-          <td><span class="check">&#10003;</span><br><small>基本</small></td>
-          <td><span class="check">&#10003;</span><br><small>戦略立案含む</small></td>
-          <td><span class="check">&#10003;</span><br><small>フル対応</small></td>
-        </tr>
-        <tr>
-          <td>データ分析</td>
-          <td><span class="check">&#10003;</span><br><small>月次レポート</small></td>
-          <td><span class="check">&#10003;</span><br><small>週次レポート</small></td>
-          <td><span class="check">&#10003;</span><br><small>リアルタイム</small></td>
-        </tr>
-        <tr>
-          <td>専属担当</td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="check">&#10003;</span></td>
-          <td><span class="check">&#10003;</span><br><small>チーム体制</small></td>
-        </tr>
-        <tr>
-          <td>撮影ディレクション</td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="check">&#10003;</span></td>
-        </tr>
-        <tr>
-          <td>広告運用</td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="check">&#10003;</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</div>
-
-<!-- ===== LAUNCH PANEL ===== -->
-<div class="pricing-panel" id="panel-launch">
-  <section class="section">
-    <div class="plans-grid">
-      <!-- Lite -->
-      <div class="plan-card">
-        <div class="plan-name">Lite</div>
-        <div class="plan-meta">
-          <span class="plan-meta-label">初期費用</span>
-          <span class="plan-meta-value"> 3万円</span>
-        </div>
-        <div class="plan-rate">20%</div>
-        <div class="plan-rate-sub">売上からのコミッション</div>
-        <div class="plan-contract">契約期間: 3ヶ月</div>
-        <div class="plan-divider"></div>
-        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
-      </div>
-
-      <!-- Standard -->
-      <div class="plan-card featured">
-        <span class="popular-badge">POPULAR</span>
-        <div class="plan-name">Standard</div>
-        <div class="plan-meta">
-          <span class="plan-meta-label">初期費用</span>
-          <span class="plan-meta-value"> 5万円</span>
-        </div>
-        <div class="plan-rate">25%</div>
-        <div class="plan-rate-sub">売上からのコミッション</div>
-        <div class="plan-contract">契約期間: 6ヶ月</div>
-        <div class="plan-divider"></div>
-        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="plan-card">
-        <div class="plan-name">Premium</div>
-        <div class="plan-meta">
-          <span class="plan-meta-label">初期費用</span>
-          <span class="plan-meta-value"> 8万円</span>
-        </div>
-        <div class="plan-rate">30%→20%</div>
-        <div class="plan-rate-sub">6ヶ月後にコミッション引き下げ</div>
-        <div class="plan-contract">契約期間: 12ヶ月</div>
-        <div class="plan-divider"></div>
-        <a href="contact.html" class="cta-btn" style="text-align:center;padding:12px 0;font-size:0.9rem;">お問い合わせ</a>
-      </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">&#x1f91d;</div>
+      <h3>利益が一致するパートナー</h3>
+      <p>あなたの売上が上がれば私たちの報酬も上がる。だから全力であなたの成長をサポートします。</p>
     </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">&#x2728;</div>
+      <h3>シンプルで分かりやすい</h3>
+      <p>複雑なプランの比較は不要。料金は売上の20%だけ。誰でもすぐに理解できます。</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Feature Comparison -->
-    <table class="feature-table">
-      <thead>
-        <tr>
-          <th>サービス内容</th>
-          <th>Lite</th>
-          <th class="featured-col">Standard</th>
-          <th>Premium</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>アカウント開設</td>
-          <td><span class="check">&#10003;</span><br><small>サポート</small></td>
-          <td><span class="check">&#10003;</span><br><small>代行</small></td>
-          <td><span class="check">&#10003;</span><br><small>完全代行</small></td>
-        </tr>
-        <tr>
-          <td>プロフィール設計</td>
-          <td><span class="check">&#10003;</span><br><small>基本</small></td>
-          <td><span class="check">&#10003;</span><br><small>最適化込み</small></td>
-          <td><span class="check">&#10003;</span><br><small>プレミアム</small></td>
-        </tr>
-        <tr>
-          <td>コンテンツ企画</td>
-          <td><span class="check">&#10003;</span><br><small>5本</small></td>
-          <td><span class="check">&#10003;</span><br><small>継続</small></td>
-          <td><span class="check">&#10003;</span><br><small>継続</small></td>
-        </tr>
-        <tr>
-          <td>撮影ディレクション</td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="check">&#10003;</span></td>
-          <td><span class="check">&#10003;</span></td>
-        </tr>
-        <tr>
-          <td>SNS集客</td>
-          <td><span class="check">&#10003;</span><br><small>基本設定</small></td>
-          <td><span class="check">&#10003;</span><br><small>2媒体</small></td>
-          <td><span class="check">&#10003;</span><br><small>全媒体</small></td>
-        </tr>
-        <tr>
-          <td>身バレ対策</td>
-          <td><span class="check">&#10003;</span><br><small>ガイド</small></td>
-          <td><span class="check">&#10003;</span><br><small>フルサポート</small></td>
-          <td><span class="check">&#10003;</span><br><small>プレミアム</small></td>
-        </tr>
-        <tr>
-          <td>専属担当</td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="check">&#10003;</span></td>
-          <td><span class="check">&#10003;</span><br><small>チーム体制</small></td>
-        </tr>
-        <tr>
-          <td>広告運用</td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="dash">&#8212;</span></td>
-          <td><span class="check">&#10003;</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</div>
+<!-- ===== CONCRETE EXAMPLES ===== -->
+<section class="section">
+  <h2 class="section-title">具体的な料金シミュレーション</h2>
+  <p class="section-desc">実際にどのくらいの費用になるか、具体例でご確認ください。</p>
+
+  <div class="examples-grid">
+    <div class="example-card">
+      <div class="example-revenue">月の売上が</div>
+      <div class="example-amount">10万円</div>
+      <div class="example-arrow">&darr;</div>
+      <div class="example-fee">手数料</div>
+      <div class="example-fee-amount">2万円</div>
+    </div>
+    <div class="example-card">
+      <div class="example-revenue">月の売上が</div>
+      <div class="example-amount">30万円</div>
+      <div class="example-arrow">&darr;</div>
+      <div class="example-fee">手数料</div>
+      <div class="example-fee-amount">6万円</div>
+    </div>
+    <div class="example-card">
+      <div class="example-revenue">月の売上が</div>
+      <div class="example-amount">50万円</div>
+      <div class="example-arrow">&darr;</div>
+      <div class="example-fee">手数料</div>
+      <div class="example-fee-amount">10万円</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INCLUDED SERVICES ===== -->
+<section class="section">
+  <h2 class="section-title">20%に含まれるサービス</h2>
+  <p class="section-desc">プラン選びで迷う必要なし。すべてのサービスが含まれています。</p>
+
+  <ul class="services-list">
+    <li>コンテンツ戦略企画</li>
+    <li>マーケティング支援</li>
+    <li>収益データ分析</li>
+    <li>専属担当マネージャー</li>
+    <li>ファンコミュニティ運営</li>
+    <li>プラットフォーム最適化</li>
+    <li>SNS集客支援</li>
+    <li>撮影ディレクション</li>
+    <li>身バレ・プライバシー対策</li>
+    <li>アカウント開設サポート</li>
+  </ul>
+</section>
 
 <!-- ===== FAQ ===== -->
 <section class="faq-section">
@@ -542,48 +457,63 @@ body {
 
   <div class="faq-item">
     <div class="faq-q">コミッションはどのように計算されますか？</div>
-    <div class="faq-a">ファンサブスクプラットフォームでの売上（プラットフォーム手数料控除後の金額）に対して、各プランのコミッション率を乗じた金額が弊社の報酬となります。売上が0円の月は費用は発生しません。</div>
+    <div class="faq-a">
+      ファンサブスクプラットフォームでの売上（プラットフォーム手数料控除後の金額）に対して、20%を乗じた金額が弊社の報酬となります。<br><br>
+      売上が0円の月は費用は一切発生しません。
+    </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-q">途中でプランを変更できますか？</div>
-    <div class="faq-a">はい、最低契約期間の経過後はいつでもプラン変更が可能です。アップグレードの場合は月途中からでも対応いたします。ダウングレードは翌月からの適用となります。</div>
+    <div class="faq-q">本当に初期費用はかからないのですか？</div>
+    <div class="faq-a">
+      はい、初期費用は一切かかりません。アカウント開設、プロフィール設計、初期コンテンツの企画・ディレクション、SNSアカウントの初期設定など、立ち上げに必要な作業はすべて20%のコミッションに含まれています。
+    </div>
   </div>
 
   <div class="faq-item">
-    <div class="faq-q">最低契約期間内に解約した場合はどうなりますか？</div>
-    <div class="faq-a">最低契約期間内の解約には、残月数分のコミッション見込み額の50%を違約金としてお支払いいただきます。詳しくは契約書にてご説明いたします。</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Launchプランの初期費用には何が含まれますか？</div>
-    <div class="faq-a">アカウント開設、プロフィール設計、初期コンテンツの企画・ディレクション、SNSアカウントの初期設定などの立ち上げ作業がすべて含まれます。追加費用は一切かかりません。</div>
+    <div class="faq-q">最低契約期間はありますか？</div>
+    <div class="faq-a">
+      原則として最低契約期間は設けておりません。ただし、成果を実感いただくために3ヶ月以上の継続をおすすめしています。<br><br>
+      解約をご希望の場合は、担当者にお申し出いただければ速やかに対応いたします。
+    </div>
   </div>
 
   <div class="faq-item">
     <div class="faq-q">支払い方法を教えてください。</div>
-    <div class="faq-a">毎月の売上確定後、翌月15日までにコミッションを差し引いた金額をお振り込みいたします。初期費用がある場合は、契約時に銀行振込でお支払いいただきます。</div>
+    <div class="faq-a">
+      毎月の売上確定後、翌月15日までにコミッション（20%）を差し引いた金額をお振り込みいたします。<br><br>
+      面倒な請求手続きは不要です。
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">売上が少ない月でも20%取られるのですか？</div>
+    <div class="faq-a">
+      はい、売上がある月は一律20%です。ただし、売上が0円なら費用も0円です。<br><br>
+      固定費がないため、売上が少ない月でも赤字になることはありません。
+    </div>
   </div>
 </section>
 
 <!-- ===== CTA ===== -->
 <section class="cta-section">
-  <h2>最適なプランをご提案します</h2>
-  <p>あなたの状況やゴールに合わせて、最適なプランを無料でご提案いたします。</p>
+  <h2>まずは無料相談から</h2>
+  <p>あなたの状況やゴールに合わせて、<br>収益化の具体的なプランを<br>無料でご提案いたします。</p>
   <a href="contact.html" class="cta-btn">無料相談する</a>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo">Pretzel</div>
+    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;margin:0 auto;"></div>
     <ul class="footer-links">
       <li><a href="services.html">サービス</a></li>
       <li><a href="pricing.html">料金</a></li>
-      <li><a href="works.html">実績</a></li>
+      <li><a href="results.html">実績</a></li>
       <li><a href="faq.html">よくある質問</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
-      <li><a href="nightwork.html">夜職の方へ</a></li>
+      <li><a href="launch.html">夜職の方へ</a></li>
+      <li><a href="uraaka.html">裏垢女子の方へ</a></li>
     </ul>
     <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
   </div>
@@ -594,19 +524,6 @@ body {
 // Hamburger menu
 document.getElementById('hamburger').addEventListener('click', function() {
   document.getElementById('navLinks').classList.toggle('active');
-});
-
-// Tab toggle
-const tabBtns = document.querySelectorAll('.tab-btn');
-const panels = document.querySelectorAll('.pricing-panel');
-
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
-  });
 });
 
 // FAQ accordion

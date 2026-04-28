@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | Pretzel クリエイターマネジメント</title>
+  <meta name="description" content="Pretzel（プレッツェル）では一緒にクリエイターの可能性を広げる仲間を募集しています。クリエイターマネージャー、コンテンツストラテジスト、SNS運用アシスタントなど。リモートOK・業務委託。">
+  <meta name="keywords" content="Pretzel,採用,求人,クリエイターマネジメント,業務委託,リモートワーク,SNS運用">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/recruit.html">
+
+  <!-- OGP -->
+  <meta property="og:title" content="採用情報 | Pretzel クリエイターマネジメント">
+  <meta property="og:description" content="Pretzelでは一緒にクリエイターの可能性を広げる仲間を募集しています。リモートOK・業務委託。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/recruit.html">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="採用情報 | Pretzel クリエイターマネジメント">
+  <meta name="twitter:description" content="Pretzelでは一緒にクリエイターの可能性を広げる仲間を募集しています。リモートOK・業務委託。">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JSON-LD JobPosting Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "クリエイターマネージャー",
+      "description": "クリエイターの収益最大化をサポートするマネージャーを募集。データ分析、コンテンツ企画、クライアントコミュニケーションが主な業務。",
+      "datePosted": "2026-04-28",
+      "employmentType": "CONTRACTOR",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "sameAs": "https://pretzel-mgmt.github.io/pretzel-website/",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      },
+      "jobLocationType": "TELECOMMUTE",
+      "applicantLocationRequirements": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "skills": "SNSマーケティングの知識, コミュニケーション能力, 基本的なデータ分析スキル"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "コンテンツストラテジスト",
+      "description": "クリエイターのコンテンツ戦略を企画・立案するストラテジストを募集。トレンド分析とデータに基づいた企画力が求められます。",
+      "datePosted": "2026-04-28",
+      "employmentType": "CONTRACTOR",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "sameAs": "https://pretzel-mgmt.github.io/pretzel-website/",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      },
+      "jobLocationType": "TELECOMMUTE",
+      "applicantLocationRequirements": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "skills": "コンテンツマーケティングの実務経験, トレンドリサーチ能力, 企画書作成スキル"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "JobPosting",
+      "title": "SNS運用アシスタント",
+      "description": "クリエイターのSNSアカウント運用をサポートするアシスタントを募集。投稿管理、DM対応、簡単なデータ集計が主な業務。",
+      "datePosted": "2026-04-28",
+      "employmentType": "CONTRACTOR",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Pretzel",
+        "sameAs": "https://pretzel-mgmt.github.io/pretzel-website/",
+        "url": "https://pretzel-mgmt.github.io/pretzel-website/"
+      },
+      "jobLocationType": "TELECOMMUTE",
+      "applicantLocationRequirements": {
+        "@type": "Country",
+        "name": "Japan"
+      },
+      "skills": "基本的なPC操作スキル, 責任感と丁寧さ"
+    }
+  ]
+  </script>
+
+  <!-- Recruit-specific styles -->
+  <style>
+    .recruit-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 80px;
+      overflow: hidden;
+    }
+
+    .recruit-hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .recruit-hero__shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.3;
+    }
+
+    .recruit-hero__shape--1 {
+      width: 500px;
+      height: 500px;
+      background: #6366f1;
+      top: -200px;
+      right: -100px;
+    }
+
+    .recruit-hero__shape--2 {
+      width: 400px;
+      height: 400px;
+      background: #ec4899;
+      bottom: -150px;
+      left: -100px;
+    }
+
+    .recruit-hero__shape--3 {
+      width: 300px;
+      height: 300px;
+      background: #a855f7;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .recruit-hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .recruit-hero__title {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .recruit-hero__subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .recruit-intro {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    /* Job cards */
+    .jobs-grid {
+      display: grid;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .job-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 40px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .job-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .job-card__header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .job-card__title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+
+    .job-card__badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      color: #fff;
+    }
+
+    .job-card__badge--green {
+      background: linear-gradient(135deg, #10b981, #34d399);
+    }
+
+    .job-card__desc {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .job-card__section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #a855f7;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .job-card__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .job-card__list li {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .job-card__list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .job-card__list--req li::before {
+      background: #6366f1;
+    }
+
+    .job-card__list--nice li::before {
+      background: #ec4899;
+    }
+
+    /* CTA section */
+    .recruit-cta {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .recruit-cta__title {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .recruit-cta__text {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .recruit-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .recruit-cta__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
+    }
+
+    @media (max-width: 640px) {
+      .job-card {
+        padding: 28px 20px;
+      }
+
+      .job-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;">
+      </a>
+
+      <div class="nav__links">
+        <a href="services.html" class="nav__link">サービス</a>
+        <a href="pricing.html" class="nav__link">料金</a>
+        <a href="results.html" class="nav__link">実績</a>
+        <a href="faq.html" class="nav__link">よくある質問</a>
+        <a href="contact.html" class="nav__link">お問い合わせ</a>
+        <a href="launch.html" class="nav__cta">夜職の方へ</a>
+        <a href="uraaka.html" class="nav__cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+      </div>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav__overlay" id="navOverlay"></div>
+  <div class="nav__mobile-menu" id="mobileMenu">
+    <a href="services.html">サービス</a>
+    <a href="pricing.html">料金</a>
+    <a href="results.html">実績</a>
+    <a href="faq.html">よくある質問</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="launch.html" class="btn-primary w-full text-center">夜職の方へ</a>
+    <a href="uraaka.html" class="btn-primary w-full text-center" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a>
+  </div>
+
+  <!-- ========== Hero ========== -->
+  <section class="recruit-hero">
+    <div class="recruit-hero__bg">
+      <div class="recruit-hero__shape recruit-hero__shape--1"></div>
+      <div class="recruit-hero__shape recruit-hero__shape--2"></div>
+      <div class="recruit-hero__shape recruit-hero__shape--3"></div>
+    </div>
+    <div class="recruit-hero__content reveal">
+      <span class="badge mb-lg">We're Hiring</span>
+      <h1 class="recruit-hero__title">Recruit</h1>
+      <p class="recruit-hero__subtitle">一緒にクリエイターの可能性を広げませんか？</p>
+    </div>
+  </section>
+
+  <!-- ========== Intro ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="recruit-intro reveal">
+        <p>
+          Pretzelは、<br>
+          ファンサブスクリプションプラットフォームに特化した<br>
+          クリエイターマネジメントエージェンシーです。<br><br>
+          クリエイターの才能を最大限に活かし、<br>
+          収益化を実現するために、<br>
+          私たちは常に新しい仲間を探しています。<br><br>
+          経験やスキルよりも、<br>
+          クリエイターの成長を<br>
+          本気でサポートしたいという想いを大切にしています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Job Listings ========== -->
+  <section class="section" style="background: var(--color-bg-card);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge badge--pink section-header__badge">Open Positions</span>
+        <h2 class="section-header__title">募集中のポジション</h2>
+        <p class="section-header__subtitle">現在募集中のポジションをご紹介します。</p>
+      </div>
+
+      <div class="jobs-grid">
+
+        <!-- Job 1 -->
+        <div class="job-card reveal">
+          <div class="job-card__header">
+            <h3 class="job-card__title">クリエイターマネージャー</h3>
+            <span class="job-card__badge">業務委託</span>
+            <span class="job-card__badge job-card__badge--green">リモートOK</span>
+          </div>
+          <p class="job-card__desc">
+            クリエイターの収益最大化をサポートするマネージャーを募集。データ分析、コンテンツ企画、クライアントコミュニケーションが主な業務。
+          </p>
+          <div>
+            <p class="job-card__section-title">必須スキル</p>
+            <ul class="job-card__list job-card__list--req">
+              <li>SNSマーケティングの知識</li>
+              <li>コミュニケーション能力</li>
+              <li>基本的なデータ分析スキル</li>
+            </ul>
+          </div>
+          <div>
+            <p class="job-card__section-title">歓迎スキル</p>
+            <ul class="job-card__list job-card__list--nice">
+              <li>ファンサブスクプラットフォームの運用経験</li>
+              <li>クリエイター/インフルエンサーマネジメント経験</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job-card reveal">
+          <div class="job-card__header">
+            <h3 class="job-card__title">コンテンツストラテジスト</h3>
+            <span class="job-card__badge">業務委託</span>
+            <span class="job-card__badge job-card__badge--green">リモートOK</span>
+          </div>
+          <p class="job-card__desc">
+            クリエイターのコンテンツ戦略を企画・立案するストラテジストを募集。トレンド分析とデータに基づいた企画力が求められます。
+          </p>
+          <div>
+            <p class="job-card__section-title">必須スキル</p>
+            <ul class="job-card__list job-card__list--req">
+              <li>コンテンツマーケティングの実務経験</li>
+              <li>トレンドリサーチ能力</li>
+              <li>企画書作成スキル</li>
+            </ul>
+          </div>
+          <div>
+            <p class="job-card__section-title">歓迎スキル</p>
+            <ul class="job-card__list job-card__list--nice">
+              <li>ファンサブスク業界の知識</li>
+              <li>SNS運用代行の経験</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-card reveal">
+          <div class="job-card__header">
+            <h3 class="job-card__title">SNS運用アシスタント</h3>
+            <span class="job-card__badge">業務委託</span>
+            <span class="job-card__badge job-card__badge--green">リモートOK</span>
+            <span class="job-card__badge" style="background: linear-gradient(135deg, #ec4899, #f472b6);">未経験OK</span>
+          </div>
+          <p class="job-card__desc">
+            クリエイターのSNSアカウント運用をサポートするアシスタントを募集。投稿管理、DM対応、簡単なデータ集計が主な業務。
+          </p>
+          <div>
+            <p class="job-card__section-title">必須スキル</p>
+            <ul class="job-card__list job-card__list--req">
+              <li>基本的なPC操作スキル</li>
+              <li>責任感と丁寧さ</li>
+              <li>1日2-3時間の稼働が可能な方</li>
+            </ul>
+          </div>
+          <div>
+            <p class="job-card__section-title">歓迎スキル</p>
+            <ul class="job-card__list job-card__list--nice">
+              <li>SNS運用の経験</li>
+              <li>夜職経験者歓迎</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="section cta-section" id="cta">
+    <div class="container">
+      <div class="recruit-cta reveal">
+        <h2 class="recruit-cta__title">応募方法</h2>
+        <p class="recruit-cta__text">
+          X(<a href="https://twitter.com/pretzel_mgmt" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: underline;">@pretzel_mgmt</a>)のDMからお気軽にご連絡ください。<br>
+          簡単な自己紹介と興味のあるポジションをお伝えいただければ、詳細をご案内します。
+        </p>
+        <a href="https://twitter.com/pretzel_mgmt" target="_blank" rel="noopener noreferrer" class="recruit-cta__btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X DMで応募する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div>
+          <div class="footer__logo">
+            <img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;">
+          </div>
+          <p class="footer__description">
+            ファンサブスクリプション特化型<br>クリエイターマネジメントエージェンシー
+          </p>
+          <div class="footer__social mt-lg">
+            <a href="#" class="footer__social-link" aria-label="X (Twitter)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <div class="footer__links">
+            <a href="services.html">Pretzel Standard</a>
+            <a href="launch.html">Pretzel Launch</a>
+            <a href="uraaka.html">裏垢女子の方へ</a>
+            <a href="pricing.html">料金プラン</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">情報</h4>
+          <div class="footer__links">
+            <a href="results.html">実績</a>
+            <a href="faq.html">よくある質問</a>
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <a href="contact.html">お問い合わせフォーム</a>
+            <a href="#">LINE</a>
+            <a href="#">X (Twitter) DM</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Pretzel. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    // --- Sticky nav scroll effect ---
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // --- Hamburger menu ---
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      navOverlay.classList.toggle('visible');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', toggleMenu);
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('open')) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // --- Scroll reveal ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

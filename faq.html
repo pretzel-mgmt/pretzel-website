@@ -16,7 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
   <style>
     :root {
       --bg-primary: #0a0a0f;
@@ -36,10 +37,11 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      font-family: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
       background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.8;
+      color: #cbd5e1;
+      font-size: 16px;
+  line-height: 1.85;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -51,8 +53,8 @@
       right: 0;
       z-index: 1000;
       padding: 1rem 2rem;
-      background: rgba(10, 10, 15, 0.85);
-      backdrop-filter: blur(20px);
+      background: rgba(10,10,26,0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
     }
 
@@ -65,14 +67,15 @@
     }
 
     .logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      display: flex;
+      align-items: center;
       text-decoration: none;
+      margin-right: 2.5rem;
+    }
+    .logo img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     .nav-links {
@@ -101,7 +104,7 @@
       color: #fff !important;
       border-radius: 8px;
       font-weight: 600;
-      transition: opacity 0.3s, transform 0.3s;
+      transition: all 0.3s ease;
     }
 
     .nav-btn:hover {
@@ -127,6 +130,8 @@
 
     /* ── Hero ── */
     .hero {
+      display: block;
+      min-height: auto;
       padding: 10rem 2rem 4rem;
       text-align: center;
       position: relative;
@@ -171,6 +176,7 @@
       color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
+      line-height: 2;
     }
 
     /* ── FAQ Sections ── */
@@ -198,8 +204,8 @@
     .accordion-item {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      margin-bottom: 0.75rem;
+      border-radius: 16px;
+      margin-bottom: 1rem;
       overflow: hidden;
       transition: border-color 0.3s;
     }
@@ -256,7 +262,7 @@
       height: 20px;
       flex-shrink: 0;
       margin-left: 1rem;
-      transition: transform 0.3s;
+      transition: all 0.3s ease;
       color: var(--text-muted);
     }
 
@@ -272,15 +278,24 @@
     }
 
     .accordion-item.active .accordion-body {
-      max-height: 300px;
-      padding: 0 1.5rem 1.25rem;
+      max-height: 500px;
+      padding: 0 1.5rem 1.5rem;
     }
 
     .accordion-body-inner {
       padding-left: calc(28px + 1rem);
       color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.9;
+      font-size: 0.92rem;
+      line-height: 2;
+      letter-spacing: 0.02em;
+    }
+
+    .accordion-body-inner p {
+      margin-bottom: 0.75rem;
+    }
+
+    .accordion-body-inner p:last-child {
+      margin-bottom: 0;
     }
 
     /* ── CTA Banner ── */
@@ -320,6 +335,7 @@
       color: var(--text-secondary);
       margin-bottom: 2rem;
       font-size: 0.95rem;
+      line-height: 1.9;
     }
 
     .cta-btn {
@@ -331,7 +347,7 @@
       border-radius: 10px;
       font-weight: 600;
       font-size: 1rem;
-      transition: opacity 0.3s, transform 0.3s;
+      transition: all 0.3s ease;
     }
 
     .cta-btn:hover {
@@ -352,14 +368,13 @@
     }
 
     .footer-logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
       margin-bottom: 1rem;
+    }
+    .footer-logo img {
+      height: 32px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     .footer-links {
@@ -459,7 +474,7 @@
         "name": "初期費用はかかりますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standardプランは初期費用無料で始められます。Launchプラン（夜職の方向け）は、初期セットアップ費用として3〜8万円がかかりますが、アカウント構築からコンテンツ戦略の立案まで手厚いサポートが含まれています。詳しくは料金ページをご確認いただくか、お気軽にお問い合わせください。"
+          "text": "いいえ、初期費用は一切かかりません。料金は売上の20%のみです。売上がなければ費用もゼロ。月額固定費もありませんので、完全成果報酬型でリスクなくスタートできます。"
         }
       },
       {
@@ -467,7 +482,7 @@
         "name": "成果報酬はいつから発生しますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Launchプランでは、開始から1ヶ月間の試用期間を設けており、この間は成果報酬が発生しません。まずはサービスの効果を実感いただいてから本格的にスタートできます。Standardプランは売上発生時から成果報酬が適用されます。"
+          "text": "売上が発生したタイミングから、一律20%のコミッションが発生します。プランによる違いはなく、すべてのクリエイターさんに同じ条件でご利用いただけます。売上がなければ費用は一切かかりませんので、安心してスタートできます。"
         }
       },
       {
@@ -483,7 +498,7 @@
         "name": "支払い方法は？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "銀行振込に対応しております。成果報酬は毎月の売上確定後にご請求させていただきます。初期費用が発生するプランの場合は、契約時にお支払いいただく形となります。お支払いに関するご相談もお気軽にお問い合わせください。"
+          "text": "毎月の売上確定後に、コミッション（20%）を差し引いた金額をお振込みいたします。初期費用や月額固定費は一切ありませんので、別途のお支払いは不要です。お支払いに関するご相談もお気軽にお問い合わせください。"
         }
       },
       {
@@ -531,7 +546,7 @@
         "name": "契約後のキャンセルは可能ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、契約後のキャンセルは可能です。解約をご希望の場合は、担当者にお申し出いただければ速やかに手続きいたします。無理な引き止めは一切行いませんのでご安心ください。ただし、初期費用の返金については契約内容によりますので、事前にご確認をお願いいたします。"
+          "text": "はい、契約後のキャンセルは可能です。解約をご希望の場合は、担当者にお申し出いただければ速やかに手続きいたします。初期費用や月額固定費はいただいておりませんので、解約時に追加の費用は発生しません。無理な引き止めは一切行いませんのでご安心ください。"
         }
       },
       {
@@ -539,7 +554,7 @@
         "name": "相談だけでも大丈夫ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "もちろん大丈夫です。「まだ決めていないけど話を聞いてみたい」という段階でもお気軽にご相談ください。LINEまたはX（Twitter）のDMから無料でご相談いただけます。あなたの状況やご希望をお伺いした上で、最適なプランをご提案いたします。"
+          "text": "もちろん大丈夫です。「まだ決めていないけど話を聞いてみたい」という段階でもお気軽にご相談ください。LINEまたはX（Twitter）のDMから無料でご相談いただけます。あなたの状況やご希望をお伺いした上で、最適な運用方法をご提案いたします。"
         }
       }
     ]
@@ -551,7 +566,7 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="logo">Pretzel</a>
+      <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="services.html">サービス</a></li>
         <li><a href="pricing.html">料金</a></li>
@@ -559,6 +574,7 @@
         <li><a href="faq.html" class="active">よくある質問</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
         <li><a href="launch.html" class="nav-btn">夜職の方へ</a></li>
+        <li><a href="uraaka.html" class="nav-btn" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a></li>
       </ul>
       <button class="mobile-toggle" id="mobileToggle" aria-label="メニュー">
         <span></span><span></span><span></span>
@@ -570,7 +586,7 @@
   <section class="hero">
     <span class="hero-badge">FAQ</span>
     <h1>よくある質問</h1>
-    <p>Pretzelのサービスに関して、よくいただくご質問をまとめました。こちらで解決しない場合はお気軽にお問い合わせください。</p>
+    <p>Pretzelのサービスに関して、<br>よくいただくご質問をまとめました。<br>こちらで解決しない場合は<br>お気軽にお問い合わせください。</p>
   </section>
 
   <!-- FAQ Section -->
@@ -660,7 +676,7 @@
         </button>
         <div class="accordion-body">
           <div class="accordion-body-inner">
-            Standardプランは初期費用無料で始められます。Launchプラン（夜職の方向け）は、初期セットアップ費用として3〜8万円がかかりますが、アカウント構築からコンテンツ戦略の立案まで手厚いサポートが含まれています。詳しくは料金ページをご確認いただくか、お気軽にお問い合わせください。
+            いいえ、初期費用は一切かかりません。料金は売上の20%のみです。売上がなければ費用もゼロ。月額固定費もありませんので、完全成果報酬型でリスクなくスタートできます。
           </div>
         </div>
       </div>
@@ -676,7 +692,7 @@
         </button>
         <div class="accordion-body">
           <div class="accordion-body-inner">
-            Launchプランでは、開始から1ヶ月間の試用期間を設けており、この間は成果報酬が発生しません。まずはサービスの効果を実感いただいてから本格的にスタートできます。Standardプランは売上発生時から成果報酬が適用されます。
+            売上が発生したタイミングから、一律20%のコミッションが発生します。プランによる違いはなく、すべてのクリエイターさんに同じ条件でご利用いただけます。売上がなければ費用は一切かかりませんので、安心してスタートできます。
           </div>
         </div>
       </div>
@@ -708,7 +724,7 @@
         </button>
         <div class="accordion-body">
           <div class="accordion-body-inner">
-            銀行振込に対応しております。成果報酬は毎月の売上確定後にご請求させていただきます。初期費用が発生するプランの場合は、契約時にお支払いいただく形となります。お支払いに関するご相談もお気軽にお問い合わせください。
+            毎月の売上確定後に、コミッション（20%）を差し引いた金額をお振込みいたします。初期費用や月額固定費は一切ありませんので、別途のお支払いは不要です。お支払いに関するご相談もお気軽にお問い合わせください。
           </div>
         </div>
       </div>
@@ -814,7 +830,7 @@
         </button>
         <div class="accordion-body">
           <div class="accordion-body-inner">
-            はい、契約後のキャンセルは可能です。解約をご希望の場合は、担当者にお申し出いただければ速やかに手続きいたします。無理な引き止めは一切行いませんのでご安心ください。ただし、初期費用の返金については契約内容によりますので、事前にご確認をお願いいたします。
+            はい、契約後のキャンセルは可能です。解約をご希望の場合は、担当者にお申し出いただければ速やかに手続きいたします。初期費用や月額固定費はいただいておりませんので、解約時に追加の費用は発生しません。無理な引き止めは一切行いませんのでご安心ください。
           </div>
         </div>
       </div>
@@ -830,7 +846,7 @@
         </button>
         <div class="accordion-body">
           <div class="accordion-body-inner">
-            もちろん大丈夫です。「まだ決めていないけど話を聞いてみたい」という段階でもお気軽にご相談ください。LINEまたはX（Twitter）のDMから無料でご相談いただけます。あなたの状況やご希望をお伺いした上で、最適なプランをご提案いたします。
+            もちろん大丈夫です。「まだ決めていないけど話を聞いてみたい」という段階でもお気軽にご相談ください。LINEまたはX（Twitter）のDMから無料でご相談いただけます。あなたの状況やご希望をお伺いした上で、最適な運用方法をご提案いたします。
           </div>
         </div>
       </div>
@@ -841,7 +857,7 @@
   <div class="cta-banner">
     <div class="cta-banner-inner">
       <h2>まだ疑問が残っていますか？</h2>
-      <p>お気軽にLINEやDMからご相談ください。24時間以内にお返事いたします。</p>
+      <p>お気軽にLINEやDMから<br>ご相談ください。<br>24時間以内にお返事いたします。</p>
       <a href="contact.html" class="cta-btn">お問い合わせはこちら</a>
     </div>
   </div>
@@ -849,7 +865,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">Pretzel</div>
+      <div class="footer-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;margin:0 auto;"></div>
       <ul class="footer-links">
         <li><a href="services.html">サービス</a></li>
         <li><a href="pricing.html">料金</a></li>
@@ -857,6 +873,7 @@
         <li><a href="faq.html">よくある質問</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
         <li><a href="launch.html">夜職の方へ</a></li>
+        <li><a href="uraaka.html">裏垢女子の方へ</a></li>
       </ul>
       <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
     </div>

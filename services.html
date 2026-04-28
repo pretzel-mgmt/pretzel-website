@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>サービス紹介 | Pretzel - クリエイターマネジメント</title>
-<meta name="description" content="Pretzelのサービス紹介。既存クリエイター向けStandardプランと、夜職からの新規立ち上げ支援Launchプラン。アカウント開設から収益化まで完全サポート。">
+<meta name="description" content="Pretzelのサービス紹介。料金は売上の20%のみ・初期費用なし・月額固定費なし。既存クリエイター向けStandard、夜職からの新規立ち上げ支援Launch、裏垢女子向け収益化支援。アカウント開設から収益化まで完全サポート。">
 <meta name="keywords" content="ファンサブスク,クリエイターマネジメント,myfans,candfans,Fantia,OnlyFans,収益化,マネジメントサービス,コンテンツ戦略">
 <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/services.html">
 <meta property="og:title" content="サービス紹介 | Pretzel - クリエイターマネジメント">
-<meta property="og:description" content="Pretzelのサービス紹介。既存クリエイター向けStandardプランと、夜職からの新規立ち上げ支援Launchプラン。アカウント開設から収益化まで完全サポート。">
+<meta property="og:description" content="Pretzelのサービス紹介。料金は売上の20%のみ・初期費用なし・月額固定費なし。既存クリエイター向けStandard、夜職からの新規立ち上げ支援Launch。アカウント開設から収益化まで完全サポート。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/services.html">
 <meta property="og:site_name" content="Pretzel">
@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
 <link rel="stylesheet" href="assets/css/style.css">
 
 <!-- JSON-LD Structured Data -->
@@ -29,7 +30,7 @@
       "@type": "Organization",
       "name": "Pretzel"
     },
-    "description": "既存クリエイター向けマネジメントプラン。収益データ分析、コンテンツ企画・制作サポート、プラットフォーム最適化、ファンコミュニケーション支援を提供。",
+    "description": "既存クリエイター向けマネジメントプラン。料金は売上の20%のみ、初期費用なし・月額固定費なし。収益データ分析、コンテンツ企画・制作サポート、プラットフォーム最適化、ファンコミュニケーション支援を提供。",
     "serviceType": "クリエイターマネジメント"
   },
   {
@@ -40,8 +41,19 @@
       "@type": "Organization",
       "name": "Pretzel"
     },
-    "description": "新規立ち上げ支援プラン。夜職の方に特化したファンサブスクアカウント開設代行、ブランディング設計、コンテンツ企画、SNS集客支援、身バレ対策を提供。",
+    "description": "新規立ち上げ支援プラン。料金は売上の20%のみ、初期費用なし・月額固定費なし。夜職の方に特化したファンサブスクアカウント開設代行、ブランディング設計、コンテンツ企画、SNS集客支援、身バレ対策を提供。",
     "serviceType": "新規クリエイター立ち上げ支援"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Pretzel Launch 裏垢サポート",
+    "provider": {
+      "@type": "Organization",
+      "name": "Pretzel"
+    },
+    "description": "裏垢女子向けファンサブスク収益化支援。料金は売上の20%のみ、初期費用なし・月額固定費なし。フォロワーを収益に変える戦略設計、身バレ完全対策、プラットフォーム開設、コンテンツ企画、価格設計、確定申告サポートを提供。",
+    "serviceType": "裏垢女子向け収益化支援"
   }
 ]
 </script>
@@ -68,18 +80,19 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+  font-family: 'Inter', 'Noto Sans JP', -apple-system, sans-serif;
   background: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.8;
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.85;
   -webkit-font-smoothing: antialiased;
 }
 
 /* ===== NAV ===== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  backdrop-filter: blur(20px);
-  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  background: rgba(10,10,26,0.85);
   border-bottom: 1px solid var(--border-color);
 }
 .nav-inner {
@@ -88,11 +101,10 @@ body {
   padding: 16px 24px;
 }
 .nav-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem; font-weight: 800;
-  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  text-decoration: none;
+  display: flex; align-items: center; text-decoration: none;
+  margin-right: 2.5rem;
 }
+.nav-logo img { height: 36px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a {
   color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500;
@@ -131,7 +143,7 @@ body {
 .page-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
 /* ===== SECTIONS ===== */
-.section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+.section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; margin-top: 2rem; }
 .section-label {
   display: inline-block;
   background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(236,72,153,0.15));
@@ -141,9 +153,11 @@ body {
   margin-bottom: 16px;
 }
 .section-title {
-  font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 12px;
+  font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800;
+  margin-top: 2rem; margin-bottom: 1rem;
 }
-.section-desc { color: var(--text-secondary); font-size: 1rem; margin-bottom: 48px; max-width: 700px; }
+.section-desc { color: var(--text-secondary); font-size: 1rem; margin-bottom: 48px; max-width: 700px; line-height: 1.8; }
+p { line-height: 1.8; margin-bottom: 1em; }
 
 /* ===== TARGET / SERVICES LIST ===== */
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 56px; }
@@ -154,7 +168,7 @@ body {
   padding: 32px;
 }
 .info-box h4 { font-size: 0.85rem; color: var(--cyan); margin-bottom: 12px; font-weight: 600; }
-.info-box p { color: var(--text-secondary); font-size: 0.95rem; }
+.info-box p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1em; }
 .info-box ul { list-style: none; }
 .info-box ul li {
   color: var(--text-secondary); font-size: 0.95rem;
@@ -166,6 +180,29 @@ body {
   background: var(--accent-gradient);
 }
 
+/* ===== UNIFIED PRICING CARD ===== */
+.pricing-unified {
+  background: var(--bg-card);
+  border: 1px solid var(--accent-start);
+  border-radius: var(--radius);
+  padding: 48px 36px;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(99,102,241,0.08) 0%, var(--bg-card) 100%);
+}
+.pricing-unified .pricing-rate {
+  font-size: 2.4rem; font-weight: 800;
+  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+.pricing-unified .pricing-details {
+  color: var(--text-secondary); font-size: 1rem; line-height: 2;
+}
+.pricing-unified .pricing-details strong {
+  color: var(--cyan);
+}
+
 /* ===== PLAN CARDS ===== */
 .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .plan-card {
@@ -173,7 +210,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   padding: 36px 28px;
-  transition: border-color 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
   position: relative;
   display: flex; flex-direction: column;
 }
@@ -255,7 +292,7 @@ body {
   background: var(--accent-gradient); color: #fff; text-decoration: none;
   padding: 16px 48px; border-radius: 50px;
   font-size: 1rem; font-weight: 700;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
 }
 .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
@@ -267,11 +304,9 @@ body {
 }
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 .footer-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.3rem; font-weight: 800;
-  background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
 }
+.footer-logo img { height: 32px; width: auto; display: block; margin: 0 auto; }
 .footer-links { list-style: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; }
 .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
 .footer-links a:hover { color: var(--text-primary); }
@@ -279,7 +314,6 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .info-grid { grid-template-columns: 1fr; }
   .process-steps { flex-direction: column; align-items: center; gap: 24px; }
   .process-step:not(:last-child) { margin-right: 0; }
@@ -305,14 +339,15 @@ body {
 <!-- ===== NAVIGATION ===== -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Pretzel</a>
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="services.html">サービス</a></li>
       <li><a href="pricing.html">料金</a></li>
       <li><a href="works.html">実績</a></li>
       <li><a href="faq.html">よくある質問</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
-      <li><a href="nightwork.html" class="nav-cta">夜職の方へ</a></li>
+      <li><a href="launch.html" class="nav-cta">夜職の方へ</a></li>
+      <li><a href="uraaka.html" class="nav-cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -323,14 +358,14 @@ body {
 <!-- ===== HERO ===== -->
 <section class="page-hero">
   <h1>サービス紹介</h1>
-  <p>Pretzelは、ファンサブスクプラットフォームで活躍するクリエイターの成長を、戦略・運用・分析のすべてで支援します。</p>
+  <p>Pretzelは、<br>ファンサブスクプラットフォームで活躍する<br>クリエイターの成長を、<br>戦略・運用・分析のすべてで支援します。</p>
 </section>
 
 <!-- ===== STANDARD ===== -->
 <section class="section">
   <span class="section-label">SERVICE 01</span>
   <h2 class="section-title">Pretzel Standard</h2>
-  <p class="section-desc">既存クリエイター向け ― すでにファンサブスクアカウントを運用中の方のための、収益最大化プログラム。</p>
+  <p class="section-desc">既存クリエイター向け ―<br>すでにファンサブスクアカウントを運用中の方のための、<br>収益最大化プログラム。</p>
 
   <div class="info-grid">
     <div class="info-box">
@@ -349,73 +384,21 @@ body {
     </div>
   </div>
 
-  <div class="plans-grid">
-    <!-- Light -->
-    <div class="plan-card">
-      <div class="plan-name">Light</div>
-      <div class="plan-rate">15%</div>
-      <div class="plan-rate-sub">売上からのコミッション</div>
-      <div class="plan-divider"></div>
-      <ul class="plan-features">
-        <li>月次コンテンツ企画提案</li>
-        <li>基本マーケティング支援</li>
-        <li>月次データレポート</li>
-        <li>チャットサポート</li>
-      </ul>
-      <div class="plan-recommend">
-        <strong>こんな方におすすめ</strong>
-        ある程度自分で運用できるが、戦略面のサポートが欲しいクリエイター
-      </div>
-    </div>
-
-    <!-- Standard -->
-    <div class="plan-card featured">
-      <div class="plan-name">Standard</div>
-      <div class="plan-rate">20%</div>
-      <div class="plan-rate-sub">売上からのコミッション</div>
-      <div class="plan-divider"></div>
-      <ul class="plan-features">
-        <li>週次コンテンツ企画・制作支援</li>
-        <li>マーケティング戦略立案・実行</li>
-        <li>収益最適化コンサル</li>
-        <li>ファンコミュニティ運営サポート</li>
-        <li>週次データ分析レポート</li>
-        <li>専属担当マネージャー</li>
-      </ul>
-      <div class="plan-recommend">
-        <strong>こんな方におすすめ</strong>
-        本格的に収益を伸ばしたい中堅〜上級クリエイター
-      </div>
-    </div>
-
-    <!-- Premium -->
-    <div class="plan-card">
-      <div class="plan-name">Premium</div>
-      <div class="plan-rate">25%</div>
-      <div class="plan-rate-sub">売上からのコミッション</div>
-      <div class="plan-divider"></div>
-      <ul class="plan-features">
-        <li>専属チームによるフルサポート</li>
-        <li>オーダーメイド戦略設計</li>
-        <li>撮影ディレクション</li>
-        <li>広告運用（SNS・Web）</li>
-        <li>リアルタイムデータダッシュボード</li>
-        <li>優先対応・緊急サポート</li>
-        <li>ブランディング支援</li>
-      </ul>
-      <div class="plan-recommend">
-        <strong>こんな方におすすめ</strong>
-        トップクリエイターを目指す方、すべてをお任せしたい方
-      </div>
+  <div class="pricing-unified">
+    <div class="pricing-rate">売上の20%のみ</div>
+    <div class="pricing-details">
+      <strong>初期費用なし・月額固定費なし</strong><br>
+      売上が0円なら費用も0円。<br>
+      完全成果報酬型だから、安心して始められます。
     </div>
   </div>
 </section>
 
 <!-- ===== LAUNCH ===== -->
-<section class="section" style="padding-top: 40px;">
+<section class="section" style="padding-top: 60px;">
   <span class="section-label">SERVICE 02</span>
   <h2 class="section-title">Pretzel Launch</h2>
-  <p class="section-desc">新規立ち上げ支援 ― これからファンサブスクを始めたい方（夜職の方に特化）のためのオールインワンプログラム。</p>
+  <p class="section-desc">新規立ち上げ支援 ―<br>これからファンサブスクを始めたい方<br>（夜職の方に特化）のための<br>オールインワンプログラム。</p>
 
   <div class="info-grid">
     <div class="info-box">
@@ -435,75 +418,47 @@ body {
     </div>
   </div>
 
-  <div class="plans-grid">
-    <!-- Lite -->
-    <div class="plan-card">
-      <div class="plan-name">Lite</div>
-      <div class="plan-initial">初期費用</div>
-      <div class="plan-rate">3万円</div>
-      <div class="plan-rate-sub">+ 売上の20%</div>
-      <div class="plan-contract">最低契約期間: 3ヶ月</div>
-      <div class="plan-divider"></div>
-      <ul class="plan-features">
-        <li>プラットフォーム選定相談</li>
-        <li>アカウント開設サポート</li>
-        <li>基本プロフィール設計</li>
-        <li>初期コンテンツ企画（5本）</li>
-        <li>SNS基本設定</li>
-        <li>身バレ対策基本ガイド</li>
-      </ul>
-      <div class="plan-recommend">
-        <strong>こんな方におすすめ</strong>
-        まずは低コストで始めてみたい方
-      </div>
+  <div class="pricing-unified">
+    <div class="pricing-rate">売上の20%のみ</div>
+    <div class="pricing-details">
+      <strong>初期費用なし・月額固定費なし</strong><br>
+      売上が0円なら費用も0円。<br>
+      完全成果報酬型だから、未経験でもリスクゼロで始められます。
     </div>
+  </div>
+</section>
 
-    <!-- Standard -->
-    <div class="plan-card featured">
-      <div class="plan-name">Standard</div>
-      <div class="plan-initial">初期費用</div>
-      <div class="plan-rate">5万円</div>
-      <div class="plan-rate-sub">+ 売上の25%</div>
-      <div class="plan-contract">最低契約期間: 6ヶ月</div>
-      <div class="plan-divider"></div>
-      <ul class="plan-features">
-        <li>プラットフォーム選定・比較分析</li>
-        <li>アカウント開設代行</li>
-        <li>プロフィール設計・最適化</li>
-        <li>コンテンツ企画・撮影ディレクション</li>
-        <li>SNS集客支援（2プラットフォーム）</li>
-        <li>身バレ対策フルサポート</li>
-        <li>専属担当マネージャー</li>
-      </ul>
-      <div class="plan-recommend">
-        <strong>こんな方におすすめ</strong>
-        しっかりサポートを受けて確実に成果を出したい方
-      </div>
-    </div>
+<div class="photo-divider">
+  <img src="assets/images/DSC_0412.jpg" alt="" loading="lazy">
+  <div class="photo-divider__overlay"></div>
+</div>
 
-    <!-- Premium -->
-    <div class="plan-card">
-      <div class="plan-name">Premium</div>
-      <div class="plan-initial">初期費用</div>
-      <div class="plan-rate">8万円</div>
-      <div class="plan-rate-sub">+ 売上の30%→20%（6ヶ月後）</div>
-      <div class="plan-contract">最低契約期間: 12ヶ月</div>
-      <div class="plan-divider"></div>
-      <ul class="plan-features">
-        <li>全プラットフォーム対応</li>
-        <li>アカウント開設・設定完全代行</li>
-        <li>プレミアムプロフィール設計</li>
-        <li>コンテンツ企画・撮影ディレクション</li>
-        <li>SNS集客支援（全プラットフォーム）</li>
-        <li>身バレ対策プレミアム</li>
-        <li>専属チーム体制</li>
-        <li>広告運用</li>
-      </ul>
-      <div class="plan-recommend">
-        <strong>こんな方におすすめ</strong>
-        最速で結果を出したい方、フルサポートを希望する方
-      </div>
+<!-- ===== URAAKA ===== -->
+<section class="section" style="padding-top: 60px;">
+  <span class="section-label">SERVICE 03</span>
+  <h2 class="section-title">Pretzel Launch｜裏垢サポート</h2>
+  <p class="section-desc">フォロワーを収益に変える ―<br>裏垢女子向けのファンサブスク収益化支援。<br>すでにフォロワーがいる方の<br>収益最大化をサポートします。</p>
+
+  <div class="info-grid">
+    <div class="info-box">
+      <h4>対象となる方</h4>
+      <p>裏垢（匿名アカウント）でフォロワーを持つ方。フォロワーを収益化したい方、既にサブスクを始めているが伸び悩んでいる方に最適です。</p>
     </div>
+    <div class="info-box">
+      <h4>提供サービス</h4>
+      <ul>
+        <li>収益化戦略設計</li>
+        <li>身バレ完全対策</li>
+        <li>プラットフォーム開設</li>
+        <li>コンテンツ企画</li>
+        <li>価格設計</li>
+        <li>確定申告サポート</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 32px;">
+    <a href="uraaka.html" class="cta-btn" style="background: linear-gradient(135deg, #a855f7, #ec4899);">詳しく見る</a>
   </div>
 </section>
 
@@ -512,7 +467,7 @@ body {
   <div class="process-inner">
     <span class="section-label">PROCESS</span>
     <h2 class="section-title">ご利用の流れ</h2>
-    <p class="section-desc" style="margin: 0 auto 0;">お問い合わせから運用開始まで、5つのステップでサポートします。</p>
+    <p class="section-desc" style="margin: 0 auto 0;">お問い合わせから運用開始まで、<br>5つのステップでサポートします。</p>
 
     <div class="process-steps">
       <div class="process-step">
@@ -525,7 +480,7 @@ body {
       </div>
       <div class="process-step">
         <div class="step-num">3</div>
-        <div class="step-label">プラン選択</div>
+        <div class="step-label">サービス選択</div>
       </div>
       <div class="process-step">
         <div class="step-num">4</div>
@@ -542,21 +497,22 @@ body {
 <!-- ===== CTA ===== -->
 <section class="cta-section">
   <h2>まずは無料相談から</h2>
-  <p>あなたに最適なプランをご提案します。お気軽にお問い合わせください。</p>
+  <p>料金は売上の20%のみ。<br>初期費用も月額固定費もありません。<br>お気軽にお問い合わせください。</p>
   <a href="contact.html" class="cta-btn">無料相談する</a>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo">Pretzel</div>
+    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;margin:0 auto;"></div>
     <ul class="footer-links">
       <li><a href="services.html">サービス</a></li>
       <li><a href="pricing.html">料金</a></li>
       <li><a href="works.html">実績</a></li>
       <li><a href="faq.html">よくある質問</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
-      <li><a href="nightwork.html">夜職の方へ</a></li>
+      <li><a href="launch.html">夜職の方へ</a></li>
+      <li><a href="uraaka.html">裏垢女子の方へ</a></li>
     </ul>
     <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
   </div>

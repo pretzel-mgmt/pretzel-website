@@ -13,7 +13,7 @@
   --color-bg-card:     #14141f;
   --color-bg-card-hover:#1a1a2e;
   --color-bg-nav:      rgba(10, 10, 15, 0.85);
-  --color-bg-nav-solid:rgba(10, 10, 15, 0.98);
+  --color-bg-nav-solid:rgba(10, 10, 26, 0.95);
   --color-border:      rgba(255, 255, 255, 0.08);
   --color-border-hover:rgba(255, 255, 255, 0.15);
 
@@ -30,7 +30,7 @@
   --color-text-muted:  #94a3b8;
 
   /* Typography */
-  --font-family:       'Inter', 'Noto Sans JP', sans-serif;
+  --font-family:       'Inter', 'Noto Sans JP', -apple-system, sans-serif;
   --fs-xs:   0.75rem;
   --fs-sm:   0.875rem;
   --fs-base: 1rem;
@@ -88,13 +88,19 @@ html {
 
 body {
   font-family: var(--font-family);
-  font-size: var(--fs-base);
-  line-height: 1.7;
-  color: var(--color-text-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cbd5e1;
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+p {
+  margin-bottom: 1.2em;
+  line-height: 1.85;
+  max-width: 680px;
 }
 
 img {
@@ -123,7 +129,8 @@ button {
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
 /* ---------- Layout ---------- */
@@ -137,8 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section {
-  padding-top: var(--space-4xl);
-  padding-bottom: var(--space-4xl);
+  padding: 80px 0;
 }
 
 /* ---------- Navigation ---------- */
@@ -151,8 +157,10 @@ h1, h2, h3, h4, h5, h6 {
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  background: transparent;
-  border-bottom: 1px solid transparent;
+  background: rgba(10,10,26,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
   transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
@@ -175,13 +183,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav__logo {
-  font-size: var(--fs-2xl);
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  margin-right: 2.5rem;
+}
+.nav__logo img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .nav__links {
@@ -332,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   border-radius: var(--border-radius-full);
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+  transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
 }
 
@@ -359,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--color-border-hover);
   border-radius: var(--border-radius-full);
   cursor: pointer;
-  transition: transform var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -404,10 +413,10 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------- Cards ---------- */
 .card {
   background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
   padding: var(--space-2xl);
-  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  transition: all 0.3s ease;
 }
 
 .card:hover {
@@ -1084,8 +1093,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding: 100px 0;
   }
 
   .footer__inner {
@@ -1109,6 +1117,42 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   background: rgba(99, 102, 241, 0.3);
   color: var(--color-text-heading);
+}
+
+/* ---------- Photo Dividers ---------- */
+.photo-divider {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-divider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.4) saturate(0.8);
+  transition: filter 600ms ease;
+}
+
+.photo-divider:hover img {
+  filter: brightness(0.5) saturate(1);
+}
+
+.photo-divider__overlay,
+.photo-divider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,15,0.6) 0%, transparent 30%, transparent 70%, rgba(10,10,15,0.6) 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .photo-divider {
+    height: 180px;
+  }
 }
 
 /* ---------- Scrollbar ---------- */
