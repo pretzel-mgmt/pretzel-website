@@ -182,6 +182,52 @@ A: もちろん。LINEまたはX（Twitter）のDMから無料相談可能。
 
 応募方法: X（@pretzel_mgmt）のDMから
 
+## ブログ記事 / Blog Articles
+
+### myfans始め方完全ガイド【2026年最新版】
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/myfans-hajimekata.html
+myfansのアカウント開設手順、プロフィール設定、収益化のコツを初心者向けに解説。本人確認から初投稿、SNS集客まで網羅。最短即日で開始可能。
+
+### candfans始め方完全ガイド【2026年最新版】
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/candfans-hajimekata.html
+candfansの特徴（手数料20%・バックナンバー販売機能）とアカウント開設から収益化までの手順を解説。
+
+### Fantia始め方完全ガイド【2026年最新版】
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-hajimekata.html
+Fantiaの強み（pixiv連携・手数料約10%・商品販売機能）と始め方を解説。イラスト・コスプレ系に強い。
+
+### ファンサブスク4社徹底比較
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-hikaku.html
+myfans・candfans・Fantia・OnlyFansの手数料、機能、ターゲット層を比較。目的別おすすめプラットフォームを提案。
+
+### 裏垢女子のファンサブスク収益化完全ガイド
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/uraaka-shuuekika.html
+裏垢（匿名アカウント）のフォロワーをファンサブスクで収益化する方法。身バレ対策、プラットフォーム選び、価格設定を解説。フォロワー500人から収益化可能。
+
+### 夜職×ファンサブスク副業完全ガイド
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/yashoku-fukugyo.html
+キャバ嬢・ホステス・ガールズバーの方向け。お店にバレずにファンサブスクを副業として始める方法。匿名運用、時間管理、確定申告のポイントを網羅。
+
+### ファンサブスクの確定申告・税金完全ガイド
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-zeikin.html
+ファンサブスク収入の確定申告方法、経費計上できるもの、住民税対策（副業バレ防止）を解説。年20万円超で申告必要。
+
+### 身バレ防止完全マニュアル
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/mibare-boushi.html
+Exifデータ削除、位置情報対策、アカウント分離、決済情報の匿名化など、ファンサブスク運用で身バレを防ぐための実践的なチェックリスト。
+
+### コンテンツ企画・撮影テクニック集
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/content-kikaku.html
+ファンサブスクで人気の20種類のコンテンツアイデアと、スマホでも映える撮影・編集テクニック。投稿スケジュール管理術も収録。
+
+### SNS集客術完全ガイド（X・Instagram）
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/sns-shuukyaku.html
+X（Twitter）・InstagramからファンサブスクDへの集客方法。バズ投稿テンプレート5選、最適投稿時間、フォロワー獲得戦略を解説。
+
+### 月収100万円ロードマップ
+URL: https://pretzel-mgmt.github.io/pretzel-website/blog/100man-roadmap.html
+ファンサブスクで月収100万円を目指す4フェーズの実行計画。基盤構築→成長→拡大→最適化の各段階で具体的なアクションを提示。平均8ヶ月で月収50万円突破の実績。
+
 ## お問い合わせ / Contact
 
 - X (Twitter) DM: @pretzel_mgmt

@@ -24,5 +24,21 @@ Pretzel（プレッツェル）は、myfans・candfans・Fantia・OnlyFansなど
 - [採用情報](https://pretzel-mgmt.github.io/pretzel-website/recruit.html)
 - [お問い合わせ](https://pretzel-mgmt.github.io/pretzel-website/contact.html)
 
+## ブログ記事 / Blog Articles
+
+Pretzelが運営するSEOブログ。ファンサブスクリプションに関する包括的なガイド記事を公開。
+
+- [myfans始め方完全ガイド【2026年最新版】](https://pretzel-mgmt.github.io/pretzel-website/blog/myfans-hajimekata.html)
+- [candfans始め方完全ガイド【2026年最新版】](https://pretzel-mgmt.github.io/pretzel-website/blog/candfans-hajimekata.html)
+- [Fantia始め方完全ガイド【2026年最新版】](https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-hajimekata.html)
+- [myfans vs candfans vs Fantia vs OnlyFans｜ファンサブスク4社徹底比較](https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-hikaku.html)
+- [裏垢女子のファンサブスク収益化完全ガイド](https://pretzel-mgmt.github.io/pretzel-website/blog/uraaka-shuuekika.html)
+- [夜職×ファンサブスク副業完全ガイド](https://pretzel-mgmt.github.io/pretzel-website/blog/yashoku-fukugyo.html)
+- [ファンサブスクの確定申告・税金完全ガイド](https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-zeikin.html)
+- [ファンサブスク身バレ防止完全マニュアル](https://pretzel-mgmt.github.io/pretzel-website/blog/mibare-boushi.html)
+- [ファンサブスク コンテンツ企画・撮影テクニック集](https://pretzel-mgmt.github.io/pretzel-website/blog/content-kikaku.html)
+- [ファンサブスクSNS集客術完全ガイド（X・Instagram）](https://pretzel-mgmt.github.io/pretzel-website/blog/sns-shuukyaku.html)
+- [ファンサブスク月収100万円ロードマップ](https://pretzel-mgmt.github.io/pretzel-website/blog/100man-roadmap.html)
+
 ## お問い合わせ
 X (Twitter) DM: @pretzel_mgmt

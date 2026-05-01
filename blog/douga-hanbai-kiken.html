@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人間の動画販売は危険！プラットフォームを使うべき理由 | Pretzel ブログ</title>
+  <meta name="description" content="Twitter DM・LINE・FC2での個人動画販売のリスク（流出・脅迫・法的問題・代金未払い）を解説。myfans・candfansなら安全に販売できる理由と移行方法。">
+  <meta name="keywords" content="動画販売,危険,個人間取引,リスク,myfans,candfans,ファンサブスク,流出,著作権,Pretzel">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/blog/douga-hanbai-kiken.html">
+  <meta property="og:title" content="個人間の動画販売は危険！プラットフォームを使うべき理由">
+  <meta property="og:description" content="個人動画販売のリスクを解説。myfans・candfansなら安全に販売できる理由と移行方法。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/blog/douga-hanbai-kiken.html">
+  <meta property="og:image" content="https://pretzel-mgmt.github.io/pretzel-website/blog/thumbnails/douga-hanbai-kiken.png">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .blog-article { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
+    .blog-article__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .blog-article__date { font-size: 0.875rem; color: var(--color-text-muted); }
+    .blog-article__tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 999px; background: rgba(239, 68, 68, 0.15); color: #ef4444; font-weight: 500; }
+    .blog-article__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.3; margin-bottom: 24px; color: var(--color-text-heading); }
+    .blog-article__lead { font-size: 1.1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--color-border); }
+    .blog-article h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; color: var(--color-text-heading); margin: 56px 0 20px; padding-bottom: 12px; border-bottom: 2px solid transparent; border-image: var(--gradient-primary) 1; }
+    .blog-article h3 { font-size: 1.2rem; font-weight: 600; color: var(--color-text-heading); margin: 36px 0 12px; padding-left: 16px; border-left: 3px solid var(--color-indigo); }
+    .blog-article p { font-size: 1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 20px; }
+    .blog-article ul, .blog-article ol { margin: 16px 0 24px 24px; color: var(--color-text-body); line-height: 1.9; }
+    .blog-article li { margin-bottom: 8px; }
+    .blog-article .tip-box { background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+    .blog-article .tip-box__title { font-size: 0.9rem; font-weight: 700; color: var(--color-indigo); margin-bottom: 8px; }
+    .blog-article .tip-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .blog-article .warning-box { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+    .blog-article .warning-box__title { font-size: 0.9rem; font-weight: 700; color: #ef4444; margin-bottom: 8px; }
+    .blog-article .warning-box p { margin-bottom: 0; font-size: 0.95rem; }
+    .blog-cta { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px 32px; text-align: center; margin: 56px 0 0; }
+    .blog-cta__title { font-size: 1.5rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+    .blog-cta__text { color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; }
+    .blog-article .toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 0 0 48px; }
+    .blog-article .toc__title { font-size: 0.95rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+    .blog-article .toc ol { margin: 0 0 0 20px; }
+    .blog-article .toc li { margin-bottom: 6px; }
+    .blog-article .toc a { color: var(--color-indigo); text-decoration: none; font-size: 0.9rem; }
+    .blog-breadcrumb { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 24px; }
+    .blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; }
+    .compare-table th { font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--color-border-hover); }
+    .compare-table td { font-size: 0.9rem; color: var(--color-text-body); padding: 12px; border-bottom: 1px solid var(--color-border); }
+    .compare-table .danger { color: #ef4444; font-weight: 700; }
+    .compare-table .safe { color: #22c55e; font-weight: 700; }
+    @media (max-width: 768px) { .blog-article { padding: 100px 16px 60px; } .blog-article .br-desktop { display: none; } .blog-cta { padding: 28px 20px; } }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"個人間の動画販売は危険！プラットフォームを使うべき理由","datePublished":"2026-05-01","dateModified":"2026-05-01","author":{"@type":"Organization","name":"Pretzel"},"publisher":{"@type":"Organization","name":"Pretzel"}}
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo"><img src="../assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
+      <div class="nav__links">
+        <a href="../services.html" class="nav__link">サービス</a><a href="../pricing.html" class="nav__link">料金</a>
+        <a href="../results.html" class="nav__link">実績</a><a href="../blog.html" class="nav__link" style="color:var(--color-indigo);">ブログ</a>
+        <a href="../contact.html" class="nav__link">お問い合わせ</a>
+        <a href="../launch.html" class="nav__cta">夜職の方へ</a>
+        <a href="../uraaka.html" class="nav__cta" style="background:linear-gradient(135deg,#a855f7,#ec4899);">裏垢女子の方へ</a>
+      </div>
+      <button class="nav__hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav__overlay" id="navOverlay"></div>
+  <div class="nav__mobile-menu" id="mobileMenu">
+    <a href="../services.html">サービス</a><a href="../pricing.html">料金</a><a href="../results.html">実績</a>
+    <a href="../blog.html">ブログ</a><a href="../contact.html">お問い合わせ</a>
+    <a href="../launch.html" class="btn-primary w-full text-center">夜職の方へ</a>
+    <a href="../uraaka.html" class="btn-primary w-full text-center" style="background:linear-gradient(135deg,#a855f7,#ec4899);">裏垢女子の方へ</a>
+  </div>
+
+  <main>
+  <article class="blog-article">
+
+    <div class="blog-breadcrumb">
+      <a href="../index.html">ホーム</a> &gt; <a href="../blog.html">ブログ</a> &gt; 個人間の動画販売は危険
+    </div>
+
+    <div class="blog-article__meta">
+      <span class="blog-article__date">2026.05.01</span>
+      <span class="blog-article__tag">警告</span>
+      <span class="blog-article__tag">リスク回避</span>
+    </div>
+
+    <h1 class="blog-article__title">個人間の動画販売は危険！<br class="br-desktop">プラットフォームを使うべき理由</h1>
+
+    <p class="blog-article__lead">
+      「Xの裏垢DMで動画売ってる」「LINEで直接取引してる」「FC2で稼いでる」<br class="br-desktop">
+      それ、今すぐやめた方がいい。個人間のアダルト動画販売には、<br class="br-desktop">
+      あなたが思っている以上のリスクが潜んでいる。
+    </p>
+
+    <div class="toc">
+      <div class="toc__title">目次</div>
+      <ol>
+        <li><a href="#risk1">流出リスク ― 一度出回ったら消せない</a></li>
+        <li><a href="#risk2">脅迫・恐喝リスク ― 個人情報を握られる</a></li>
+        <li><a href="#risk3">法的リスク ― 知らなかったでは済まない</a></li>
+        <li><a href="#risk4">金銭トラブル ― 未払い・チャージバック</a></li>
+        <li><a href="#compare">個人販売 vs プラットフォーム販売 比較</a></li>
+        <li><a href="#move">プラットフォームへ移行する具体的手順</a></li>
+        <li><a href="#protect">コンテンツを守るためにやるべきこと</a></li>
+      </ol>
+    </div>
+
+    <h2 id="risk1">流出リスク ― 一度出回ったら消せない</h2>
+
+    <p>DM販売やLINE取引で渡した動画は、相手がどう使うかコントロールできない。転売、無断アップロード、スクリーンレコーディング――どれも日常的に起きている。</p>
+
+    <div class="warning-box">
+      <div class="warning-box__title">⚠ 実態</div>
+      <p>個人間で販売されたアダルト動画がまとめサイトやP2P、Telegramグループで流通するケースは珍しくない。一度流出すれば削除はほぼ不可能。顔が映っていた場合、身バレ→社会生活への影響は取り返しがつかない。</p>
+    </div>
+
+    <p>プラットフォーム経由であれば、DRM保護・スクリーンショット防止・違法アップロード監視の仕組みがある。myfansやCandFansには専門のパトロールチームが存在し、無断転載の通報→削除対応が機能している。</p>
+
+    <h2 id="risk2">脅迫・恐喝リスク ― 個人情報を握られる</h2>
+
+    <p>DM取引では、振込先の銀行口座・PayPay ID・LINE ID・住所など、なんらかの個人情報を相手に渡すことになる。これらが悪用されれば、脅迫のネタになる。</p>
+
+    <p>「動画を拡散されたくなかったら○○しろ」「お前の住所知ってるぞ」――こうした被害は表に出ないだけで、かなりの数が起きている。被害者が声を上げにくい構造（自身もグレーな活動をしている）が、加害者をさらに大胆にさせている。</p>
+
+    <div class="tip-box">
+      <div class="tip-box__title">💡 プラットフォームなら個人情報は渡らない</div>
+      <p>myfans・CandFansでは、決済はプラットフォームが仲介する。購入者にクリエイターの本名・住所・口座情報が渡ることは一切ない。これが「安全」の最大の根拠。</p>
+    </div>
+
+    <h2 id="risk3">法的リスク ― 知らなかったでは済まない</h2>
+
+    <h3>わいせつ物頒布等の罪（刑法175条）</h3>
+    <p>無修正のアダルト動画を販売した場合、刑法175条に抵触する可能性がある。「修正を入れたつもり」でも基準を満たしていなければアウト。個人販売ではこの審査が一切ない。</p>
+
+    <h3>児童ポルノ禁止法</h3>
+    <p>購入者が18歳未満だった場合、販売側にも責任が問われる。プラットフォームでは年齢認証が必須だが、DM販売では確認のしようがない。</p>
+
+    <h3>リベンジポルノ防止法</h3>
+    <p>元交際相手との性的な動画を本人の同意なく販売した場合、リベンジポルノ防止法違反。個人販売では本人確認のプロセスが存在しないため、第三者による「なりすまし販売」のリスクもある。</p>
+
+    <h2 id="risk4">金銭トラブル ― 未払い・チャージバック</h2>
+
+    <p>DM販売で最も多いトラブルが「先に動画を送ったのに払ってもらえない」「払ったのに動画が来ない」の双方。PayPayやAmazonギフト券での取引はエスクロー（仲介保証）がないため、どちらかが損をする構造になっている。</p>
+
+    <p>プラットフォーム販売なら、決済完了→コンテンツ配信が自動化されており、未払いトラブルは原理的に発生しない。</p>
+
+    <h2 id="compare">個人販売 vs プラットフォーム販売 比較</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>項目</th><th>個人販売（DM/LINE）</th><th>プラットフォーム販売</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>流出対策</td><td class="danger">なし</td><td class="safe">DRM・監視・通報機能あり</td></tr>
+        <tr><td>個人情報保護</td><td class="danger">口座等が相手に渡る</td><td class="safe">完全匿名で取引可能</td></tr>
+        <tr><td>法的審査</td><td class="danger">なし（自己責任）</td><td class="safe">修正基準・年齢確認あり</td></tr>
+        <tr><td>決済トラブル</td><td class="danger">未払い・詐欺リスク</td><td class="safe">プラットフォームが保証</td></tr>
+        <tr><td>収益管理</td><td class="danger">手動・記録なし</td><td class="safe">自動計算・確定申告対応</td></tr>
+        <tr><td>集客</td><td class="danger">自力のみ</td><td class="safe">検索・ランキングで新規獲得</td></tr>
+        <tr><td>サブスク収益</td><td class="danger">不可</td><td class="safe">月額課金で安定収入</td></tr>
+        <tr><td>手数料</td><td class="safe">0%（ただし上記リスクと引き換え）</td><td>17.5〜20%</td></tr>
+      </tbody>
+    </table>
+
+    <p>手数料17.5〜20%を「高い」と感じるかもしれない。だがそれは、流出対策・個人情報保護・決済保証・法的コンプライアンス・集客機能のすべてを含んだ料金。個人販売の「手数料0%」は、これらすべてのリスクを自分で背負う代償に過ぎない。</p>
+
+    <h2 id="move">プラットフォームへ移行する具体的手順</h2>
+
+    <h3>ステップ1：プラットフォームを選ぶ</h3>
+    <p>myfans（国内最大手・検索に強い）かCandFans（手数料が安い）がおすすめ。まずは片方から始めて、慣れたら両方運用するのがベスト。詳しくは<a href="fansub-hikaku.html" style="color:var(--color-indigo);">ファンサブスク比較記事</a>参照。</p>
+
+    <h3>ステップ2：既存コンテンツをプラットフォームに移す</h3>
+    <p>DM販売で使っていた動画や写真のうち、修正基準を満たすものをプラットフォームにアップロード。この際、過去にDM販売したコンテンツと完全に同じものは避け、再編集や新カット追加でバージョン違いにするのがベター（既存購入者への配慮）。</p>
+
+    <h3>ステップ3：X裏垢の導線を書き換える</h3>
+    <p>「DM販売」の文言をすべて「myfans/CandFansのリンク」に差し替える。プロフィール・固定ツイートにリンクを設置。「今後はこちらでの販売に一本化します」と告知。</p>
+
+    <h3>ステップ4：サブスク設計で安定収入化</h3>
+    <p>単品販売だけでなく、月額サブスクプランを設計する。月額2,500〜3,000円のメインプランに加え、バンドルプランとバックナンバープランの3階建てが最適。DM販売の「売り切り」から「積み上がるサブスク収入」への転換。</p>
+
+    <h2 id="protect">コンテンツを守るためにやるべきこと</h2>
+
+    <ul>
+      <li><strong>透かし（ウォーターマーク）を入れる：</strong>動画・写真に自分のアカウント名の透かしを入れることで、流出時の追跡と抑止力になる</li>
+      <li><strong>Exif情報を削除する：</strong>写真に埋め込まれた撮影場所・日時情報を必ず削除してからアップロード</li>
+      <li><strong>顔を映さない or 部分的に隠す：</strong>万が一の流出時のダメージを最小化</li>
+      <li><strong>定期的にエゴサーチする：</strong>自分のコンテンツが無断転載されていないか定期的にチェック。発見したらプラットフォームの通報機能を使う</li>
+      <li><strong>契約書なしの撮影に応じない：</strong>コラボ撮影は必ず書面で使用範囲を明確にする</li>
+    </ul>
+
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 28px 32px; margin: 48px 0;">
+      <h3 style="font-size: 18px; margin-bottom: 16px; color: #a5b4fc;">📚 あわせて読みたい</h3>
+      <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 12px;">
+        <li><a href="myfans-hajimekata.html" style="color: #93c5fd; text-decoration: none; display: block; padding: 12px 16px; background: rgba(255,255,255,0.03); border-radius: 8px;">→ myfans始め方完全ガイド</a></li>
+        <li><a href="mibare-boushi.html" style="color: #93c5fd; text-decoration: none; display: block; padding: 12px 16px; background: rgba(255,255,255,0.03); border-radius: 8px;">→ 身バレ防止の完全マニュアル</a></li>
+        <li><a href="papakatu-risuku-fanclub.html" style="color: #93c5fd; text-decoration: none; display: block; padding: 12px 16px; background: rgba(255,255,255,0.03); border-radius: 8px;">→ パパ活はもう限界？ファンサブスクという選択肢</a></li>
+      </ul>
+    </div>
+
+    <div class="blog-cta">
+      <div class="blog-cta__title">個人販売からの移行、<br class="br-desktop">Pretzelがサポートします</div>
+      <p class="blog-cta__text">
+        プラットフォーム選定・コンテンツ移行・プラン設計まで<br class="br-desktop">
+        安全な収益化への移行を伴走サポート。初回相談は無料。
+      </p>
+      <a href="../contact.html" class="btn-primary">無料で相談する</a>
+    </div>
+
+  </article>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo"><img src="../assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;"></div>
+          <p class="footer__description">ファンサブスクリプション特化型<br>クリエイターマネジメントエージェンシー</p>
+        </div>
+        <div><h4 class="footer__heading">サービス</h4><div class="footer__links"><a href="../services.html">Pretzel Standard</a><a href="../launch.html">Pretzel Launch</a><a href="../uraaka.html">裏垢女子の方へ</a><a href="../pricing.html">料金プラン</a></div></div>
+        <div><h4 class="footer__heading">情報</h4><div class="footer__links"><a href="../results.html">実績</a><a href="../faq.html">よくある質問</a><a href="../blog.html">ブログ</a><a href="../news.html">ニュース</a></div></div>
+        <div><h4 class="footer__heading">お問い合わせ</h4><div class="footer__links"><a href="../contact.html">お問い合わせフォーム</a><a href="#">LINE</a><a href="#">X (Twitter) DM</a></div></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Pretzel. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50);});
+    const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu'),navOverlay=document.getElementById('navOverlay');
+    function toggleMenu(){hamburger.classList.toggle('active');mobileMenu.classList.toggle('open');navOverlay.classList.toggle('visible');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';}
+    hamburger.addEventListener('click',toggleMenu);navOverlay.addEventListener('click',toggleMenu);
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(mobileMenu.classList.contains('open'))toggleMenu();}));
+  </script>
+</body>
+</html>
