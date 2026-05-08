@@ -147,10 +147,91 @@
       color: var(--color-text-muted);
       font-size: 0.95rem;
     }
+    /* ===== Filter Bar ===== */
+    .blog-filter-bar {
+      max-width: 1100px;
+      margin: 0 auto 28px;
+      padding: 0 24px;
+    }
+    .blog-filter-bar__controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .blog-filter-bar__sort {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .blog-filter-bar__sort-label {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .blog-filter-bar__count {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+    .sort-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .sort-btn:hover {
+      border-color: var(--color-border-hover);
+      color: var(--color-text-heading);
+    }
+    .sort-btn.active {
+      background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(236,72,153,0.15));
+      border-color: var(--color-indigo);
+      color: var(--color-indigo);
+      font-weight: 600;
+    }
+    .blog-filter-bar__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-tag {
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .filter-tag:hover {
+      border-color: var(--color-border-hover);
+      color: var(--color-text-heading);
+    }
+    .filter-tag.active {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: var(--color-indigo);
+      color: var(--color-indigo);
+      font-weight: 600;
+    }
+    .blog-card[data-hidden="true"] {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .blog-hero { padding: 110px 16px 40px; }
       .blog-grid { grid-template-columns: 1fr; padding: 0 16px 60px; }
       .blog-hero__subtitle br { display: none; }
+      .blog-filter-bar { padding: 0 16px; }
+      .blog-filter-bar__controls { flex-direction: column; align-items: flex-start; }
     }
   </style>
 
@@ -186,7 +267,23 @@
       { "@type": "BlogPosting", "headline": "グレーゾーンから卒業｜合法ファンサブスク移行ガイド", "datePublished": "2026-05-01", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/gray-zone-sotsugyou.html", "author": { "@type": "Organization", "name": "Pretzel" } },
       { "@type": "BlogPosting", "headline": "アダルトコンテンツ撮影機材おすすめ【予算別3段階】", "datePublished": "2026-05-01", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/satsuei-kizai-osusume.html", "author": { "@type": "Organization", "name": "Pretzel" } },
       { "@type": "BlogPosting", "headline": "Fantia男性向けR18 売れるクリエイターの勝ちパターン12選", "datePublished": "2026-05-01", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-kachi-pattern.html", "author": { "@type": "Organization", "name": "Pretzel" } },
-      { "@type": "BlogPosting", "headline": "Fantia vs myfans 徹底比較｜R18クリエイターが稼げるのはどっち？", "datePublished": "2026-05-01", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-myfans-hikaku-r18.html", "author": { "@type": "Organization", "name": "Pretzel" } }
+      { "@type": "BlogPosting", "headline": "Fantia vs myfans 徹底比較｜R18クリエイターが稼げるのはどっち？", "datePublished": "2026-05-01", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fantia-myfans-hikaku-r18.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "myfansの売上を2倍にする7つのテクニック【伸び悩み解消】", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/myfans-uriage-nobasu.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "candfansで匿名のまま月収20万円を作る方法【完全ガイド】", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/candfans-tokumei-shunyu.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ファンサブスクの値段設定ガイド｜高すぎても安すぎてもダメな理由", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-nedan-kimeikata.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ファンサブスクの解約率を下げる10の施策｜月収を安定させる方法", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-kaiyakuritsu-sageru.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "SNS副業詐欺の見分け方｜騙されないための7つのチェックポイント", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/sns-sagi-miwakekata.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ホス狂い・推し活のお金をファンサブスクで作る完全ガイド", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/hosukui-okane-tsukurikata.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "キャバ嬢引退後の稼ぎ方5選｜夜職スキルで月収を落とさない方法", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/kyabajou-intaigo.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "月5万円の副収入を最短で作る方法｜初心者でも今日から始められる", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/tsuki5man-fukusyunyu.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ファンサブスクDM対応マニュアル｜課金率を上げる返信テクニック", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/dm-taiou-manual.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "X（Twitter）裏垢でフォロワーを1000人にする最速テクニック", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/x-uraakaforowaa.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "ガールズバー・コンカフェからファンサブスクに転身する方法", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/girlsbar-concafe-tenshin.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "夜職にバレない副業ランキングTOP5｜確実に隠せる方法", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/yashoku-barenai-fukugyo.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "顔出しなしで月10万稼ぐファンサブスク運用術【完全匿名OK】", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/kaodashi-nashi-kasegu.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "OnlyFansは日本人でも稼げる？始め方と注意点を完全解説", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/onlyfans-nihon.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "在宅で月10万円稼ぐ方法5選｜夜職経験者が有利な理由", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/zaitaku-tsuki10man.html", "author": { "@type": "Organization", "name": "Pretzel" } },
+      { "@type": "BlogPosting", "headline": "チャットレディ vs ファンサブスク｜稼げるのはどっち？徹底比較", "datePublished": "2026-05-02", "url": "https://pretzel-mgmt.github.io/pretzel-website/blog/chatlady-vs-fansub.html", "author": { "@type": "Organization", "name": "Pretzel" } }
     ]
   }
   </script>
@@ -244,266 +341,282 @@
     </p>
   </section>
 
-  <!-- ========== Blog Grid ========== -->
-  <div class="blog-grid">
+  <!-- ========== Filter Bar ========== -->
+  <div class="blog-filter-bar">
+    <div class="blog-filter-bar__controls">
+      <div class="blog-filter-bar__sort">
+        <span class="blog-filter-bar__sort-label">並び替え:</span>
+        <button class="sort-btn active" data-sort="new">新着順</button>
+        <button class="sort-btn" data-sort="old">古い順</button>
+      </div>
+      <span class="blog-filter-bar__count" id="articleCount">全35件</span>
+    </div>
+    <div class="blog-filter-bar__tags">
+      <button class="filter-tag active" data-tag="all">すべて</button>
+      <button class="filter-tag" data-tag="初心者向け">初心者向け</button>
+      <button class="filter-tag" data-tag="myfans">myfans</button>
+      <button class="filter-tag" data-tag="candfans">candfans</button>
+      <button class="filter-tag" data-tag="Fantia">Fantia</button>
+      <button class="filter-tag" data-tag="比較">比較</button>
+      <button class="filter-tag" data-tag="夜職">夜職</button>
+      <button class="filter-tag" data-tag="裏垢女子">裏垢女子</button>
+      <button class="filter-tag" data-tag="収益化">収益化</button>
+      <button class="filter-tag" data-tag="リスク回避">リスク回避</button>
+      <button class="filter-tag" data-tag="撮影">撮影</button>
+      <button class="filter-tag" data-tag="税金">税金・申告</button>
+      <button class="filter-tag" data-tag="身バレ防止">身バレ防止</button>
+    </div>
+  </div>
 
-    <!-- Article 1 -->
-    <a href="blog/myfans-hajimekata.html" class="blog-card">
-      <div class="blog-card__image-placeholder">📱</div>
+  <!-- ========== Blog Grid ========== -->
+  <div class="blog-grid" id="blogGrid">
+
+
+    <!-- ===== 2026.05.02 記事（新しい順） ===== -->
+
+    <a href="blog/myfans-uriage-nobasu.html" class="blog-card" data-date="2026-05-02" data-tags="myfans,収益化">
+      <div class="blog-card__image-placeholder">🔥</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__date">2026.05.02</span>
           <span class="blog-card__tag">myfans</span>
-          <span class="blog-card__tag">初心者向け</span>
+          <span class="blog-card__tag">収益化</span>
         </div>
-        <h2 class="blog-card__title">myfans始め方完全ガイド【2026年最新版】</h2>
-        <p class="blog-card__excerpt">myfansの始め方を初心者向けに徹底解説。アカウント開設から収益化までのステップ、稼ぐコツ、注意点をプロのマネージャーが解説します。</p>
+        <h2 class="blog-card__title">myfansの売上を2倍にする7つのテクニック【伸び悩み解消】</h2>
+        <p class="blog-card__excerpt">売上が伸び悩むmyfansクリエイター向け。プラン設計・投稿頻度・DM対応など、今すぐ改善できる7つのテクニック。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
 
-    <!-- Article 2 -->
-    <a href="blog/candfans-hajimekata.html" class="blog-card">
+    <a href="blog/candfans-tokumei-shunyu.html" class="blog-card" data-date="2026-05-02" data-tags="candfans,収益化,身バレ防止">
       <div class="blog-card__image-placeholder">💎</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__date">2026.05.02</span>
           <span class="blog-card__tag">candfans</span>
-          <span class="blog-card__tag">初心者向け</span>
-        </div>
-        <h2 class="blog-card__title">candfans始め方完全ガイド【2026年最新版】</h2>
-        <p class="blog-card__excerpt">candfansの特徴から登録方法、収益化のコツまで徹底解説。手数料の仕組みや他プラットフォームとの違いも比較。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 3 -->
-    <a href="blog/fantia-hajimekata.html" class="blog-card">
-      <div class="blog-card__image-placeholder">🎨</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag">Fantia</span>
-          <span class="blog-card__tag">初心者向け</span>
-        </div>
-        <h2 class="blog-card__title">Fantia始め方完全ガイド【2026年最新版】</h2>
-        <p class="blog-card__excerpt">Fantiaでファンクラブを開設し収益化するまでの全手順。実写コンテンツでも稼げる理由とプライバシー設定も解説。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 4 -->
-    <a href="blog/fansub-hikaku.html" class="blog-card">
-      <div class="blog-card__image-placeholder">⚖️</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag">比較</span>
-          <span class="blog-card__tag">プラットフォーム</span>
-        </div>
-        <h2 class="blog-card__title">ファンサブスク4社徹底比較｜myfans・candfans・Fantia・OnlyFans</h2>
-        <p class="blog-card__excerpt">手数料・決済方法・匿名性・集客力を徹底比較。タイプ別おすすめ診断であなたに最適なプラットフォームがわかる。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 5 -->
-    <a href="blog/uraaka-shuuekika.html" class="blog-card">
-      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.2));">💜</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag" style="background: rgba(168,85,247,0.15); color: #a855f7;">裏垢女子</span>
           <span class="blog-card__tag">収益化</span>
-        </div>
-        <h2 class="blog-card__title">裏垢女子がファンサブスクで月10万稼ぐ完全ガイド</h2>
-        <p class="blog-card__excerpt">既存フォロワーを収益化する方法、匿名アカウント設計、無料と有料の境界線設計まで。裏垢女子専門ガイド。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 6 -->
-    <a href="blog/yashoku-fukugyo.html" class="blog-card">
-      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(34,211,238,0.2), rgba(99,102,241,0.2));">🌙</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag" style="background: rgba(34,211,238,0.15); color: #22d3ee;">夜職</span>
-          <span class="blog-card__tag">副業</span>
-        </div>
-        <h2 class="blog-card__title">夜職×ファンサブスク副業ガイド｜キャバ嬢・ホステスの収益化戦略</h2>
-        <p class="blog-card__excerpt">本業との両立スケジュール、お店にバレない対策、源氏名での始め方まで。夜職専門の副業ガイド。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 7 -->
-    <a href="blog/fansub-zeikin.html" class="blog-card">
-      <div class="blog-card__image-placeholder">📋</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag">確定申告</span>
-          <span class="blog-card__tag">税金</span>
-        </div>
-        <h2 class="blog-card__title">ファンサブスク収入の確定申告完全ガイド｜税金・経費・節税</h2>
-        <p class="blog-card__excerpt">所得の種類、経費にできるもの一覧、住民税でバレない方法、開業届のメリット・デメリットまで網羅。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 8 -->
-    <a href="blog/mibare-boushi.html" class="blog-card">
-      <div class="blog-card__image-placeholder">🔒</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
           <span class="blog-card__tag">身バレ防止</span>
-          <span class="blog-card__tag">プライバシー</span>
         </div>
-        <h2 class="blog-card__title">身バレ防止完全マニュアル｜匿名で安全に活動する方法</h2>
-        <p class="blog-card__excerpt">バレるパターンTOP5、Exifデータ削除、決済の匿名化、知人に見つかった場合の対処法まで徹底解説。</p>
+        <h2 class="blog-card__title">candfansで匿名のまま月収20万円を作る方法【完全ガイド】</h2>
+        <p class="blog-card__excerpt">candfansの匿名運用で月20万円を達成する方法。アカウント設計・プラン構成・集客導線を解説。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
 
-    <!-- Article 9 -->
-    <a href="blog/content-kikaku.html" class="blog-card">
-      <div class="blog-card__image-placeholder">📸</div>
+    <a href="blog/fansub-nedan-kimeikata.html" class="blog-card" data-date="2026-05-02" data-tags="収益化,初心者向け">
+      <div class="blog-card__image-placeholder">🏷️</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag">コンテンツ</span>
-          <span class="blog-card__tag">撮影</span>
-        </div>
-        <h2 class="blog-card__title">コンテンツ企画＆撮影テクニック集｜ネタ切れしない方法</h2>
-        <p class="blog-card__excerpt">アイデア30選、顔出しなし撮影テクニック、スマホでプロ級の写真を撮る方法、投稿スケジュールの作り方。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 10 -->
-    <a href="blog/sns-shuukyaku.html" class="blog-card">
-      <div class="blog-card__image-placeholder">📢</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag">SNS集客</span>
-          <span class="blog-card__tag">X</span>
-        </div>
-        <h2 class="blog-card__title">SNS集客術｜X・Instagramでファンを増やす方法</h2>
-        <p class="blog-card__excerpt">バズる投稿テンプレート5選、フォロワー→サブスク登録の導線設計、投稿時間帯とアルゴリズム攻略法。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article 11 -->
-    <a href="blog/100man-roadmap.html" class="blog-card">
-      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(236,72,153,0.3));">🚀</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.04.28</span>
-          <span class="blog-card__tag">月収100万</span>
-          <span class="blog-card__tag">ロードマップ</span>
-        </div>
-        <h2 class="blog-card__title">ファンサブスクで月収100万円を達成するロードマップ【完全版】</h2>
-        <p class="blog-card__excerpt">0→5万→20万→50万→100万の4フェーズ戦略。必要なファン数の計算、複数プラットフォーム展開、挫折の乗り越え方。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article: パパ活→ファンサブスク -->
-    <a href="blog/papakatu-risuku-fanclub.html" class="blog-card">
-      <div class="blog-card__image-placeholder">⚠️</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.05.01</span>
-          <span class="blog-card__tag">リスク回避</span>
+          <span class="blog-card__date">2026.05.02</span>
           <span class="blog-card__tag">収益化</span>
+          <span class="blog-card__tag">初心者向け</span>
         </div>
-        <h2 class="blog-card__title">パパ活は逮捕される？リスクとファンサブスクへの安全な移行方法</h2>
-        <p class="blog-card__excerpt">パパ活の法的リスクを具体的に解説し、合法で同等以上に稼げるファンサブスクへの移行5ステップを紹介。</p>
+        <h2 class="blog-card__title">ファンサブスクの値段設定ガイド｜高すぎても安すぎてもダメな理由</h2>
+        <p class="blog-card__excerpt">月額プランの最適価格、複数プラン設計、値上げタイミングをデータで解説。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
 
-    <!-- Article: 動画販売の危険性 -->
-    <a href="blog/douga-hanbai-kiken.html" class="blog-card">
-      <div class="blog-card__image-placeholder">🚨</div>
+    <a href="blog/fansub-kaiyakuritsu-sageru.html" class="blog-card" data-date="2026-05-02" data-tags="収益化,コンテンツ">
+      <div class="blog-card__image-placeholder">📉</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
-          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">収益化</span>
+          <span class="blog-card__tag">コンテンツ</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスクの解約率を下げる10の施策｜月収を安定させる方法</h2>
+        <p class="blog-card__excerpt">解約率を5%改善するだけで年間100万円の差。具体的な10の改善施策を紹介。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/sns-sagi-miwakekata.html" class="blog-card" data-date="2026-05-02" data-tags="リスク回避,安全">
+      <div class="blog-card__image-placeholder">🚫</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
           <span class="blog-card__tag">リスク回避</span>
           <span class="blog-card__tag">安全</span>
         </div>
-        <h2 class="blog-card__title">個人間の動画販売は危険！流出・脅迫リスクと安全な代替手段</h2>
-        <p class="blog-card__excerpt">DMでの個人動画販売のリスクと、プラットフォームを使った安全な収益化方法を比較表付きで解説。</p>
+        <h2 class="blog-card__title">SNS副業詐欺の見分け方｜騙されないための7つのチェックポイント</h2>
+        <p class="blog-card__excerpt">「楽して月100万」の嘘を見破る7つのチェックポイント。安全な副業の選び方。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
 
-    <!-- Article: 風俗→ファンサブスク -->
-    <a href="blog/fuzoku-intai-shunyu.html" class="blog-card">
-      <div class="blog-card__image-placeholder">🔄</div>
+    <a href="blog/hosukui-okane-tsukurikata.html" class="blog-card" data-date="2026-05-02" data-tags="推し活,収益化">
+      <div class="blog-card__image-placeholder">🥂</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
-          <span class="blog-card__date">2026.05.01</span>
-          <span class="blog-card__tag">転身</span>
-          <span class="blog-card__tag">夜職</span>
-        </div>
-        <h2 class="blog-card__title">風俗引退後もファンサブスクで月収を維持する方法【スキル転用ガイド】</h2>
-        <p class="blog-card__excerpt">風俗で培った接客力・トーク力をファンサブスクに転用。6ヶ月ロードマップ＋月収シミュレーション付き。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article: 推し活×ファンサブスク -->
-    <a href="blog/oshikatsu-okane-adult.html" class="blog-card">
-      <div class="blog-card__image-placeholder">💜</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__date">2026.05.02</span>
           <span class="blog-card__tag">推し活</span>
           <span class="blog-card__tag">収益化</span>
         </div>
-        <h2 class="blog-card__title">推し活資金をファンサブスクで作る方法【顔出しなしOK】</h2>
-        <p class="blog-card__excerpt">推し活の出費を賄うためにファンサブスクで月5〜15万円を作る。顔出しなし運用＋30日行動プラン。</p>
+        <h2 class="blog-card__title">ホス狂い・推し活のお金をファンサブスクで作る完全ガイド</h2>
+        <p class="blog-card__excerpt">ホスト通い・推し活の資金を在宅・匿名で作る方法。危険な稼ぎ方に手を出さないで。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
 
-    <!-- Article: グレーゾーン卒業 -->
-    <a href="blog/gray-zone-sotsugyou.html" class="blog-card">
-      <div class="blog-card__image-placeholder">🛡️</div>
+    <a href="blog/kyabajou-intaigo.html" class="blog-card" data-date="2026-05-02" data-tags="夜職,転身">
+      <div class="blog-card__image-placeholder">👗</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">夜職</span>
+          <span class="blog-card__tag">転身</span>
+        </div>
+        <h2 class="blog-card__title">キャバ嬢引退後の稼ぎ方5選｜夜職スキルで月収を落とさない方法</h2>
+        <p class="blog-card__excerpt">キャバで培ったスキルで月収維持。ファンサブスク・SNS・コンサルなど5選。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/tsuki5man-fukusyunyu.html" class="blog-card" data-date="2026-05-02" data-tags="収益化,初心者向け">
+      <div class="blog-card__image-placeholder">💰</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">収益化</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">月5万円の副収入を最短で作る方法｜初心者でも今日から始められる</h2>
+        <p class="blog-card__excerpt">初期費用ゼロ・スマホ1台で月5万円を30日で達成するロードマップ。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/dm-taiou-manual.html" class="blog-card" data-date="2026-05-02" data-tags="収益化,コンテンツ">
+      <div class="blog-card__image-placeholder">💌</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">収益化</span>
+          <span class="blog-card__tag">コンテンツ</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスクDM対応マニュアル｜課金率を上げる返信テクニック</h2>
+        <p class="blog-card__excerpt">DM対応で課金率とリピート率を上げるテクニック。テンプレート付き。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/x-uraakaforowaa.html" class="blog-card" data-date="2026-05-02" data-tags="裏垢女子,SNS集客">
+      <div class="blog-card__image-placeholder">📈</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">裏垢女子</span>
+          <span class="blog-card__tag">SNS集客</span>
+        </div>
+        <h2 class="blog-card__title">X（Twitter）裏垢でフォロワーを1000人にする最速テクニック</h2>
+        <p class="blog-card__excerpt">フォロワー0→1000人の最速テクニック。凍結対策・投稿テンプレも。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/girlsbar-concafe-tenshin.html" class="blog-card" data-date="2026-05-02" data-tags="夜職,転身">
+      <div class="blog-card__image-placeholder">🍸</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">夜職</span>
+          <span class="blog-card__tag">転身</span>
+        </div>
+        <h2 class="blog-card__title">ガールズバー・コンカフェからファンサブスクに転身する方法</h2>
+        <p class="blog-card__excerpt">ガルバ・コンカフェキャストの「推される力」をファンサブスクに活かす方法。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/yashoku-barenai-fukugyo.html" class="blog-card" data-date="2026-05-02" data-tags="夜職,副業">
+      <div class="blog-card__image-placeholder">🤫</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">夜職</span>
+          <span class="blog-card__tag">副業</span>
+        </div>
+        <h2 class="blog-card__title">夜職にバレない副業ランキングTOP5｜確実に隠せる方法</h2>
+        <p class="blog-card__excerpt">お店にバレずにできる副業TOP5。住民税対策・確定申告のコツも解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/kaodashi-nashi-kasegu.html" class="blog-card" data-date="2026-05-02" data-tags="収益化,身バレ防止">
+      <div class="blog-card__image-placeholder">🎭</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">収益化</span>
+          <span class="blog-card__tag">身バレ防止</span>
+        </div>
+        <h2 class="blog-card__title">顔出しなしで月10万稼ぐファンサブスク運用術【完全匿名OK】</h2>
+        <p class="blog-card__excerpt">顔出しなしの撮影テクニック7選と匿名運用の鉄則5つ。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/onlyfans-nihon.html" class="blog-card" data-date="2026-05-02" data-tags="比較,収益化">
+      <div class="blog-card__image-placeholder">🌍</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">比較</span>
+          <span class="blog-card__tag">収益化</span>
+        </div>
+        <h2 class="blog-card__title">OnlyFansは日本人でも稼げる？始め方と注意点を完全解説</h2>
+        <p class="blog-card__excerpt">OnlyFansの始め方と日本人が使う際の注意点。国内プラットフォームとの比較表付き。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/zaitaku-tsuki10man.html" class="blog-card" data-date="2026-05-02" data-tags="収益化,夜職">
+      <div class="blog-card__image-placeholder">🏠</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">収益化</span>
+          <span class="blog-card__tag">夜職</span>
+        </div>
+        <h2 class="blog-card__title">在宅で月10万円稼ぐ方法5選｜夜職経験者が有利な理由</h2>
+        <p class="blog-card__excerpt">在宅で月10万円を稼ぐ方法5選。夜職経験者のスキルが活きる理由。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/chatlady-vs-fansub.html" class="blog-card" data-date="2026-05-02" data-tags="比較,収益化">
+      <div class="blog-card__image-placeholder">💬</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.02</span>
+          <span class="blog-card__tag">比較</span>
+          <span class="blog-card__tag">収益化</span>
+        </div>
+        <h2 class="blog-card__title">チャットレディ vs ファンサブスク｜稼げるのはどっち？徹底比較</h2>
+        <p class="blog-card__excerpt">チャトレとファンサブスクを手取り・自由度・安全性で徹底比較。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- ===== 2026.05.01 記事（新しい順） ===== -->
+
+    <a href="blog/fantia-myfans-hikaku-r18.html" class="blog-card" data-date="2026-05-01" data-tags="Fantia,myfans,比較">
+      <div class="blog-card__image-placeholder">⚔️</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__date">2026.05.01</span>
-          <span class="blog-card__tag">リスク回避</span>
-          <span class="blog-card__tag">合法化</span>
+          <span class="blog-card__tag">Fantia</span>
+          <span class="blog-card__tag">myfans</span>
+          <span class="blog-card__tag">比較</span>
         </div>
-        <h2 class="blog-card__title">グレーゾーンから卒業｜パパ活・動画販売→合法ファンサブスク移行ガイド</h2>
-        <p class="blog-card__excerpt">パパ活・個人間動画販売・裏バイトのリスクを具体的に提示し、合法ファンサブスクへの移行3ステップを解説。</p>
+        <h2 class="blog-card__title">Fantia vs myfans 徹底比較｜R18クリエイターが稼げるのはどっち？</h2>
+        <p class="blog-card__excerpt">収益チャネル・価格帯・入口設計・LTVを実データで比較。コンテンツタイプ別の相性マトリクス付き。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
 
-    <!-- Article: 撮影機材おすすめ -->
-    <a href="blog/satsuei-kizai-osusume.html" class="blog-card">
-      <div class="blog-card__image-placeholder">📷</div>
-      <div class="blog-card__body">
-        <div class="blog-card__meta">
-          <span class="blog-card__date">2026.05.01</span>
-          <span class="blog-card__tag">機材</span>
-          <span class="blog-card__tag">撮影テクニック</span>
-        </div>
-        <h2 class="blog-card__title">アダルトコンテンツ撮影機材おすすめ【予算別3段階】</h2>
-        <p class="blog-card__excerpt">予算1万・3万・10万円の3段階で撮影機材を完全ガイド。カメラ・照明・三脚・背景・マイク＋撮影テクニック5選。</p>
-        <span class="blog-card__readmore">続きを読む</span>
-      </div>
-    </a>
-
-    <!-- Article: Fantia勝ちパターン12選 -->
-    <a href="blog/fantia-kachi-pattern.html" class="blog-card">
+    <a href="blog/fantia-kachi-pattern.html" class="blog-card" data-date="2026-05-01" data-tags="Fantia,データ分析">
       <div class="blog-card__image-placeholder">📊</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
@@ -517,18 +630,242 @@
       </div>
     </a>
 
-    <!-- Article: Fantia vs myfans比較 -->
-    <a href="blog/fantia-myfans-hikaku-r18.html" class="blog-card">
-      <div class="blog-card__image-placeholder">⚔️</div>
+    <a href="blog/satsuei-kizai-osusume.html" class="blog-card" data-date="2026-05-01" data-tags="撮影,機材">
+      <div class="blog-card__image-placeholder">📷</div>
       <div class="blog-card__body">
         <div class="blog-card__meta">
           <span class="blog-card__date">2026.05.01</span>
-          <span class="blog-card__tag">Fantia</span>
-          <span class="blog-card__tag">myfans</span>
-          <span class="blog-card__tag">比較</span>
+          <span class="blog-card__tag">機材</span>
+          <span class="blog-card__tag">撮影</span>
         </div>
-        <h2 class="blog-card__title">Fantia vs myfans 徹底比較｜R18クリエイターが稼げるのはどっち？</h2>
-        <p class="blog-card__excerpt">収益チャネル・価格帯・入口設計・LTVを実データで比較。コンテンツタイプ別の相性マトリクス付き。</p>
+        <h2 class="blog-card__title">アダルトコンテンツ撮影機材おすすめ【予算別3段階】</h2>
+        <p class="blog-card__excerpt">予算1万・3万・10万円の3段階で撮影機材を完全ガイド。カメラ・照明・三脚・背景・マイク＋撮影テクニック5選。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/gray-zone-sotsugyou.html" class="blog-card" data-date="2026-05-01" data-tags="リスク回避,合法化">
+      <div class="blog-card__image-placeholder">🛡️</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__tag">リスク回避</span>
+          <span class="blog-card__tag">合法化</span>
+        </div>
+        <h2 class="blog-card__title">グレーゾーンから卒業｜パパ活・動画販売→合法ファンサブスク移行ガイド</h2>
+        <p class="blog-card__excerpt">パパ活・個人間動画販売・裏バイトのリスクを具体的に提示し、合法ファンサブスクへの移行3ステップを解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/oshikatsu-okane-adult.html" class="blog-card" data-date="2026-05-01" data-tags="推し活,収益化">
+      <div class="blog-card__image-placeholder">💜</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__tag">推し活</span>
+          <span class="blog-card__tag">収益化</span>
+        </div>
+        <h2 class="blog-card__title">推し活資金をファンサブスクで作る方法【顔出しなしOK】</h2>
+        <p class="blog-card__excerpt">推し活の出費を賄うためにファンサブスクで月5〜15万円を作る。顔出しなし運用＋30日行動プラン。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/fuzoku-intai-shunyu.html" class="blog-card" data-date="2026-05-01" data-tags="夜職,転身">
+      <div class="blog-card__image-placeholder">🔄</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__tag">転身</span>
+          <span class="blog-card__tag">夜職</span>
+        </div>
+        <h2 class="blog-card__title">風俗引退後もファンサブスクで月収を維持する方法【スキル転用ガイド】</h2>
+        <p class="blog-card__excerpt">風俗で培った接客力・トーク力をファンサブスクに転用。6ヶ月ロードマップ＋月収シミュレーション付き。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/douga-hanbai-kiken.html" class="blog-card" data-date="2026-05-01" data-tags="リスク回避,安全">
+      <div class="blog-card__image-placeholder">🚨</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__tag">リスク回避</span>
+          <span class="blog-card__tag">安全</span>
+        </div>
+        <h2 class="blog-card__title">個人間の動画販売は危険！流出・脅迫リスクと安全な代替手段</h2>
+        <p class="blog-card__excerpt">DMでの個人動画販売のリスクと、プラットフォームを使った安全な収益化方法を比較表付きで解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/papakatu-risuku-fanclub.html" class="blog-card" data-date="2026-05-01" data-tags="リスク回避,収益化">
+      <div class="blog-card__image-placeholder">⚠️</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.05.01</span>
+          <span class="blog-card__tag">リスク回避</span>
+          <span class="blog-card__tag">収益化</span>
+        </div>
+        <h2 class="blog-card__title">パパ活は逮捕される？リスクとファンサブスクへの安全な移行方法</h2>
+        <p class="blog-card__excerpt">パパ活の法的リスクを具体的に解説し、合法で同等以上に稼げるファンサブスクへの移行5ステップを紹介。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <!-- ===== 2026.04.28 記事 ===== -->
+
+    <a href="blog/100man-roadmap.html" class="blog-card" data-date="2026-04-28" data-tags="月収100万,ロードマップ,収益化">
+      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(236,72,153,0.3));">🚀</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">月収100万</span>
+          <span class="blog-card__tag">ロードマップ</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスクで月収100万円を達成するロードマップ【完全版】</h2>
+        <p class="blog-card__excerpt">0→5万→20万→50万→100万の4フェーズ戦略。必要なファン数の計算、複数プラットフォーム展開、挫折の乗り越え方。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/sns-shuukyaku.html" class="blog-card" data-date="2026-04-28" data-tags="SNS集客,X">
+      <div class="blog-card__image-placeholder">📢</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">SNS集客</span>
+          <span class="blog-card__tag">X</span>
+        </div>
+        <h2 class="blog-card__title">SNS集客術｜X・Instagramでファンを増やす方法</h2>
+        <p class="blog-card__excerpt">バズる投稿テンプレート5選、フォロワー→サブスク登録の導線設計、投稿時間帯とアルゴリズム攻略法。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/content-kikaku.html" class="blog-card" data-date="2026-04-28" data-tags="コンテンツ,撮影">
+      <div class="blog-card__image-placeholder">📸</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">コンテンツ</span>
+          <span class="blog-card__tag">撮影</span>
+        </div>
+        <h2 class="blog-card__title">コンテンツ企画＆撮影テクニック集｜ネタ切れしない方法</h2>
+        <p class="blog-card__excerpt">アイデア30選、顔出しなし撮影テクニック、スマホでプロ級の写真を撮る方法、投稿スケジュールの作り方。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/mibare-boushi.html" class="blog-card" data-date="2026-04-28" data-tags="身バレ防止,プライバシー">
+      <div class="blog-card__image-placeholder">🔒</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">身バレ防止</span>
+          <span class="blog-card__tag">プライバシー</span>
+        </div>
+        <h2 class="blog-card__title">身バレ防止完全マニュアル｜匿名で安全に活動する方法</h2>
+        <p class="blog-card__excerpt">バレるパターンTOP5、Exifデータ削除、決済の匿名化、知人に見つかった場合の対処法まで徹底解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/fansub-zeikin.html" class="blog-card" data-date="2026-04-28" data-tags="確定申告,税金">
+      <div class="blog-card__image-placeholder">📋</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">確定申告</span>
+          <span class="blog-card__tag">税金</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスク収入の確定申告完全ガイド｜税金・経費・節税</h2>
+        <p class="blog-card__excerpt">所得の種類、経費にできるもの一覧、住民税でバレない方法、開業届のメリット・デメリットまで網羅。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/yashoku-fukugyo.html" class="blog-card" data-date="2026-04-28" data-tags="夜職,副業">
+      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(34,211,238,0.2), rgba(99,102,241,0.2));">🌙</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag" style="background: rgba(34,211,238,0.15); color: #22d3ee;">夜職</span>
+          <span class="blog-card__tag">副業</span>
+        </div>
+        <h2 class="blog-card__title">夜職×ファンサブスク副業ガイド｜キャバ嬢・ホステスの収益化戦略</h2>
+        <p class="blog-card__excerpt">本業との両立スケジュール、お店にバレない対策、源氏名での始め方まで。夜職専門の副業ガイド。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/uraaka-shuuekika.html" class="blog-card" data-date="2026-04-28" data-tags="裏垢女子,収益化">
+      <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.2));">💜</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag" style="background: rgba(168,85,247,0.15); color: #a855f7;">裏垢女子</span>
+          <span class="blog-card__tag">収益化</span>
+        </div>
+        <h2 class="blog-card__title">裏垢女子がファンサブスクで月10万稼ぐ完全ガイド</h2>
+        <p class="blog-card__excerpt">既存フォロワーを収益化する方法、匿名アカウント設計、無料と有料の境界線設計まで。裏垢女子専門ガイド。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/fansub-hikaku.html" class="blog-card" data-date="2026-04-28" data-tags="比較,プラットフォーム">
+      <div class="blog-card__image-placeholder">⚖️</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">比較</span>
+          <span class="blog-card__tag">プラットフォーム</span>
+        </div>
+        <h2 class="blog-card__title">ファンサブスク4社徹底比較｜myfans・candfans・Fantia・OnlyFans</h2>
+        <p class="blog-card__excerpt">手数料・決済方法・匿名性・集客力を徹底比較。タイプ別おすすめ診断であなたに最適なプラットフォームがわかる。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/fantia-hajimekata.html" class="blog-card" data-date="2026-04-28" data-tags="Fantia,初心者向け">
+      <div class="blog-card__image-placeholder">🎨</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">Fantia</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">Fantia始め方完全ガイド【2026年最新版】</h2>
+        <p class="blog-card__excerpt">Fantiaでファンクラブを開設し収益化するまでの全手順。実写コンテンツでも稼げる理由とプライバシー設定も解説。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/candfans-hajimekata.html" class="blog-card" data-date="2026-04-28" data-tags="candfans,初心者向け">
+      <div class="blog-card__image-placeholder">💎</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">candfans</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">candfans始め方完全ガイド【2026年最新版】</h2>
+        <p class="blog-card__excerpt">candfansの特徴から登録方法、収益化のコツまで徹底解説。手数料の仕組みや他プラットフォームとの違いも比較。</p>
+        <span class="blog-card__readmore">続きを読む</span>
+      </div>
+    </a>
+
+    <a href="blog/myfans-hajimekata.html" class="blog-card" data-date="2026-04-28" data-tags="myfans,初心者向け">
+      <div class="blog-card__image-placeholder">📱</div>
+      <div class="blog-card__body">
+        <div class="blog-card__meta">
+          <span class="blog-card__date">2026.04.28</span>
+          <span class="blog-card__tag">myfans</span>
+          <span class="blog-card__tag">初心者向け</span>
+        </div>
+        <h2 class="blog-card__title">myfans始め方完全ガイド【2026年最新版】</h2>
+        <p class="blog-card__excerpt">myfansの始め方を初心者向けに徹底解説。アカウント開設から収益化までのステップ、稼ぐコツ、注意点をプロのマネージャーが解説します。</p>
         <span class="blog-card__readmore">続きを読む</span>
       </div>
     </a>
@@ -620,6 +957,56 @@
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       if (mobileMenu.classList.contains('open')) toggleMenu();
     }));
+
+    // ===== Blog Filter & Sort =====
+    (function() {
+      const grid = document.getElementById('blogGrid');
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll('.blog-card'));
+      const countEl = document.getElementById('articleCount');
+      const sortBtns = document.querySelectorAll('.sort-btn');
+      const filterTags = document.querySelectorAll('.filter-tag');
+      let currentSort = 'new';
+      let currentTag = 'all';
+
+      function applyFilter() {
+        let visible = 0;
+        cards.forEach(card => {
+          const tags = (card.dataset.tags || '').split(',');
+          const show = currentTag === 'all' || tags.some(t => t === currentTag);
+          card.setAttribute('data-hidden', show ? 'false' : 'true');
+          if (show) visible++;
+        });
+        if (countEl) countEl.textContent = currentTag === 'all' ? '全' + cards.length + '件' : visible + '件 / 全' + cards.length + '件';
+      }
+
+      function applySort() {
+        const sorted = cards.slice().sort((a, b) => {
+          const da = a.dataset.date || '';
+          const db = b.dataset.date || '';
+          return currentSort === 'new' ? db.localeCompare(da) : da.localeCompare(db);
+        });
+        sorted.forEach(card => grid.appendChild(card));
+      }
+
+      sortBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sortBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentSort = btn.dataset.sort;
+          applySort();
+        });
+      });
+
+      filterTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+          filterTags.forEach(t => t.classList.remove('active'));
+          tag.classList.add('active');
+          currentTag = tag.dataset.tag;
+          applyFilter();
+        });
+      });
+    })();
   </script>
 
 </body>
