@@ -492,4 +492,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/dm-message-kakin-guide.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/ai-katuyou-content-kouritsu.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/creator-burnout-mental-health.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/fansub-platform-hikaku-2026.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/fukusuu-shuuekigen-tsukurikata.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/kaigai-fan-kakutoku-pf-hikaku.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

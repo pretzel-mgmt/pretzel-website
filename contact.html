@@ -547,6 +547,14 @@
       .info-card p br { display: none; }
     }
   </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 
@@ -616,11 +624,12 @@
     <h2 class="form-section-title">フォームからお問い合わせ</h2>
     <p class="form-section-sub">以下のフォームからもお問い合わせいただけます。</p>
 
-    <div class="form-notice">
-      ※現在フォームは準備中です。LINE or X DMからお問い合わせください。
-    </div>
-
-    <form action="#" class="contact-form" onsubmit="event.preventDefault(); alert('現在フォームは準備中です。LINE or X DMからお問い合わせください。');">
+    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="Pretzel公式サイトからのお問い合わせ">
+      <input type="hidden" name="from_name" value="Pretzel Contact Form">
+      <input type="hidden" name="redirect" value="https://pretzel-mgmt.github.io/pretzel-website/contact.html?sent=1">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
 
       <div class="form-group">
         <label>名前 <span class="required">必須</span></label>
@@ -694,6 +703,15 @@
     document.getElementById('mobileToggle').addEventListener('click', function() {
       document.getElementById('navLinks').classList.toggle('open');
     });
+
+    // Show success message after form submission
+    if (window.location.search.includes('sent=1')) {
+      var formSection = document.querySelector('.form-section');
+      var msg = document.createElement('div');
+      msg.style.cssText = 'background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);border-radius:12px;padding:24px;text-align:center;margin-bottom:24px;';
+      msg.innerHTML = '<p style="color:#22d3ee;font-weight:700;font-size:1.1rem;margin-bottom:8px;">送信完了しました</p><p style="color:rgba(255,255,255,0.7);font-size:0.95rem;">お問い合わせありがとうございます。2営業日以内にご返信いたします。</p>';
+      formSection.insertBefore(msg, formSection.querySelector('.contact-form'));
+    }
   </script>
 
 </body>
