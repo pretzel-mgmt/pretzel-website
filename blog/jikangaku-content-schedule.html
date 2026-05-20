@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K83S4M97G5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K83S4M97G5');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「何時に投稿すれば売れるか」の科学｜時間帯別コンテンツ戦略 | Pretzel ブログ</title>
+  <meta name="description" content="ファンサブスクコンテンツを投稿する最適な時間帯を曜日別・ターゲット別に解説。データに基づく投稿スケジュール設計法。">
+  <meta name="keywords" content="ファンサブスク,投稿時間,スケジュール,エンゲージメント,コンテンツ戦略">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/blog/jikangaku-content-schedule.html">
+  <meta property="og:title" content="「何時に投稿すれば売れるか」の科学｜時間帯別コンテンツ戦略 | Pretzel ブログ">
+  <meta property="og:description" content="ファンサブスクコンテンツを投稿する最適な時間帯を曜日別・ターゲット別に解説。データに基づく投稿スケジュール設計法。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/blog/jikangaku-content-schedule.html">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="「何時に投稿すれば売れるか」の科学｜時間帯別コンテンツ戦略">
+  <meta name="twitter:description" content="ファンサブスクコンテンツを投稿する最適な時間帯を曜日別・ターゲット別に解説。データに基づく投稿スケジュール設計法。">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+.blog-article { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
+.blog-article__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.blog-article__date { font-size: 0.875rem; color: var(--color-text-muted); }
+.blog-article__tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 999px; background: rgba(99, 102, 241, 0.15); color: var(--color-indigo); font-weight: 500; }
+.blog-article__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.3; margin-bottom: 24px; color: var(--color-text-heading); }
+.blog-article__lead { font-size: 1.1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--color-border); }
+.blog-article h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; color: var(--color-text-heading); margin: 56px 0 20px; padding-bottom: 12px; border-bottom: 2px solid transparent; border-image: var(--gradient-primary) 1; }
+.blog-article h3 { font-size: 1.2rem; font-weight: 600; color: var(--color-text-heading); margin: 36px 0 12px; padding-left: 16px; border-left: 3px solid var(--color-indigo); }
+.blog-article p { font-size: 1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 20px; }
+.blog-article ul, .blog-article ol { margin: 16px 0 24px 24px; color: var(--color-text-body); line-height: 1.9; }
+.blog-article li { margin-bottom: 8px; }
+.blog-article .tip-box { background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.blog-article .tip-box__title { font-size: 0.9rem; font-weight: 700; color: var(--color-indigo); margin-bottom: 8px; }
+.blog-article .tip-box p { margin-bottom: 0; font-size: 0.95rem; }
+.blog-article .warning-box { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.blog-article .warning-box__title { font-size: 0.9rem; font-weight: 700; color: #ef4444; margin-bottom: 8px; }
+.blog-article .warning-box p { margin-bottom: 0; font-size: 0.95rem; }
+.blog-article .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; }
+.blog-article .compare-table th { font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--color-border-hover); }
+.blog-article .compare-table td { font-size: 0.9rem; color: var(--color-text-body); padding: 12px; border-bottom: 1px solid var(--color-border); }
+.blog-article .compare-table tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.blog-cta { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px 32px; text-align: center; margin: 56px 0 0; }
+.blog-cta__title { font-size: 1.5rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+.blog-cta__text { color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; }
+.blog-article .toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 0 0 48px; }
+.blog-article .toc__title { font-size: 0.95rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+.blog-article .toc ol { margin: 0 0 0 20px; }
+.blog-article .toc li { margin-bottom: 6px; }
+.blog-article .toc a { color: var(--color-indigo); text-decoration: none; font-size: 0.9rem; }
+.blog-article .toc a:hover { text-decoration: underline; }
+.blog-breadcrumb { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 24px; }
+.blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
+.blog-breadcrumb a:hover { color: var(--color-indigo); }
+@media (max-width: 768px) {
+  .blog-article { padding: 100px 16px 60px; }
+  .blog-cta { padding: 28px 20px; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "「何時に投稿すれば売れるか」の科学｜時間帯別コンテンツ戦略",
+    "description": "ファンサブスクコンテンツを投稿する最適な時間帯を曜日別・ターゲット別に解説。データに基づく投稿スケジュール設計法。",
+    "datePublished": "2026-05-11",
+    "dateModified": "2026-05-11",
+    "author": { "@type": "Organization", "name": "Pretzel", "url": "https://pretzel-mgmt.github.io/pretzel-website/" },
+    "publisher": { "@type": "Organization", "name": "Pretzel" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://pretzel-mgmt.github.io/pretzel-website/blog/jikangaku-content-schedule.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://pretzel-mgmt.github.io/pretzel-website/"},
+      {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://pretzel-mgmt.github.io/pretzel-website/blog.html"},
+      {"@type": "ListItem", "position": 3, "name": "「何時に投稿すれば売れるか」の科学", "item": "https://pretzel-mgmt.github.io/pretzel-website/blog/jikangaku-content-schedule.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">Pretzel</a>
+      <div class="nav__links">
+        <a href="../services.html">サービス</a>
+        <a href="../pricing.html">料金</a>
+        <a href="../blog.html">ブログ</a>
+        <a href="../contact.html" class="nav__cta">無料相談</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="blog-article">
+    <div class="blog-breadcrumb">
+      <a href="../index.html">トップ</a> &gt; <a href="../blog.html">ブログ</a> &gt; 「何時に投稿すれば売れるか」の科学
+    </div>
+
+    <div class="blog-article__meta">
+      <span class="blog-article__date">2026.05.11</span>
+      <span class="blog-article__tag">収益化</span>
+<span class="blog-article__tag">ノウハウ</span>
+    </div>
+
+    <h1 class="blog-article__title">「何時に投稿すれば売れるか」の科学｜時間帯別コンテンツ戦略</h1>
+
+    <p class="blog-article__lead">ファンサブスクコンテンツを投稿する最適な時間帯を曜日別・ターゲット別に解説。データに基づく投稿スケジュール設計法。</p>
+
+    <div class="toc">
+      <div class="toc__title">目次</div>
+      <ol>
+        <li><a href="#s1">「いつ投稿するか」で売上が3割変わる現実</a></li>
+<li><a href="#s2">ターゲット別：ファンが画面を見ている時間帯</a></li>
+<li><a href="#s3">曜日別のエンゲージメント傾向</a></li>
+<li><a href="#s4">「予約投稿」と「リアルタイム投稿」の使い分け</a></li>
+<li><a href="#s5">1ヶ月の投稿カレンダーの作り方</a></li>
+<li><a href="#s6">投稿しない日も「存在感」を出す方法</a></li>
+<li><a href="#s7">まとめ：スケジュールは仕組みで守る</a></li>
+      </ol>
+    </div>
+
+    
+<h2 id="s1">「いつ投稿するか」で売上が3割変わる現実</h2>
+<p>同じコンテンツでも、朝7時に投稿するのと夜22時に投稿するのでは、開封率も課金率もまったく違う。</p>
+<p>これは当たり前のようで、意外と軽視されている。多くのクリエイターが「作り終わったとき」に投稿している。しかしそれは、レストランがシェフの気分で開店時間を決めるようなものだ。お客さんがお腹を空かせている時間に店を開けなければ意味がない。</p>
+<p>Pretzelが支援するクリエイターのデータを集計すると、投稿時間を最適化しただけで月間売上が平均30%向上した事例がある。コンテンツの質も量も変えずに、だ。</p>
+
+<h2 id="s2">ターゲット別：ファンが画面を見ている時間帯</h2>
+<p>まず大前提として、あなたのファンが「誰か」によって最適な時間帯は変わる。</p>
+<h3>会社員の男性（20〜40代）がメインの場合</h3>
+<ul>
+<li>朝の通勤時間（7:30〜8:30）：軽めのコンテンツ、テキスト付き写真が有効</li>
+<li>昼休み（12:00〜13:00）：ここが意外と穴場。仕事のストレスからの逃避で開封率が高い</li>
+<li>夜のゴールデンタイム（21:00〜23:30）：最も反応が大きい。動画や長文コンテンツはここ</li>
+<li>深夜（0:30〜1:30）：一人の時間。DM返信や親密なコンテンツに最適</li>
+</ul>
+<h3>夜職の女性（同業者・友人層）がメインの場合</h3>
+<ul>
+<li>昼過ぎ（14:00〜16:00）：起床後のSNSチェック時間</li>
+<li>出勤前（18:00〜19:00）：準備中のながらスマホ</li>
+<li>アフター後（翌2:00〜4:00）：仕事終わりのリラックスタイム</li>
+</ul>
+<h3>学生（18〜22歳）がメインの場合</h3>
+<ul>
+<li>授業の合間（10:00〜10:30、14:30〜15:00）：短い休憩時間にサッと見られるもの</li>
+<li>夜（20:00〜24:00）：バイト後や自由時間。最も長くスマホに触る時間帯</li>
+</ul>
+
+<h2 id="s3">曜日別のエンゲージメント傾向</h2>
+<p>週の中でも反応には波がある。</p>
+<table class="compare-table">
+<tr><th>曜日</th><th>傾向</th><th>おすすめコンテンツ</th></tr>
+<tr><td>月曜</td><td>テンション低め。開封率は低い</td><td>軽めの挨拶系、モチベ系テキスト</td></tr>
+<tr><td>火・水</td><td>平常運転。安定した反応</td><td>通常コンテンツ。写真セット投稿</td></tr>
+<tr><td>木曜</td><td>週末が見え始めて活発に</td><td>週末の予告、期待感を煽る投稿</td></tr>
+<tr><td>金曜</td><td>解放感で課金率UP</td><td>新規限定コンテンツや特典の告知</td></tr>
+<tr><td>土曜</td><td>昼〜夜に長時間滞在</td><td>動画やライブ配信、ボリュームある投稿</td></tr>
+<tr><td>日曜</td><td>夜は翌日への不安で反応下がる</td><td>癒し系、リラックス系コンテンツ</td></tr>
+</table>
+<div class="tip-box">
+<div class="tip-box__title">金曜夜の法則</div>
+<p>金曜の21〜23時は「自分へのご褒美」として課金するハードルが最も下がる時間帯。新プランの告知や限定コンテンツの解放は金曜夜に合わせると効果的。</p>
+</div>
+
+<h2 id="s4">「予約投稿」と「リアルタイム投稿」の使い分け</h2>
+<p>多くのプラットフォームには予約投稿機能がある。これを使わない手はない。</p>
+<p>予約投稿に向くもの：定期コンテンツ、写真セット、告知。品質が安定していて、いつ見ても価値が変わらないもの。</p>
+<p>リアルタイム投稿に向くもの：日常の一コマ、「今これしてる」系、ファンへの返信を兼ねた投稿。ライブ感がファンとの距離を縮める。</p>
+<p>理想は、予約投稿で安定した更新頻度を確保しつつ、リアルタイム投稿で「今この瞬間」のつながりを演出すること。両方があるとサブスクの満足度が格段に上がる。</p>
+
+<h2 id="s5">1ヶ月の投稿カレンダーの作り方</h2>
+<p>月初に1ヶ月分のカレンダーを作ってしまえば、「今日何投稿しよう…」と悩む時間がゼロになる。</p>
+<ol>
+<li>月の投稿本数を決める（例：月12本＝週3本）</li>
+<li>曜日を固定する（例：火・木・土）</li>
+<li>各曜日のコンテンツタイプを決める（火：写真、木：テキスト付き、土：動画）</li>
+<li>月末に「今月の振り返り＋来月予告」を必ず入れる</li>
+<li>月に1回は「イレギュラー」な投稿を入れる（コラボ、アンケート、ライブなど）</li>
+</ol>
+<p>このフレームワークに沿ってカレンダーを埋めるだけ。クリエイティブなエネルギーは「何を投稿するか」ではなく「どう投稿するか」に使うべきだ。</p>
+
+<h2 id="s6">投稿しない日も「存在感」を出す方法</h2>
+<p>毎日投稿は理想だが、現実には難しい。しかし「投稿がない日＝存在感ゼロの日」にしてはいけない。</p>
+<ul>
+<li>Xで「今日はサブスク用の撮影してました」と匂わせる</li>
+<li>ストーリーズ的な短文投稿を活用する（プラットフォームによる）</li>
+<li>過去コンテンツの「セルフRT」的な再投稿をする</li>
+<li>ファンのDMに返信する日にする。投稿がなくても「反応がある」と満足度は維持される</li>
+</ul>
+
+<h2 id="s7">まとめ：スケジュールは仕組みで守る</h2>
+<p>投稿スケジュールの最大の敵は「気分」だ。やる気がある日は連投して、ない日は何もしない。これでは安定しない。</p>
+<p>スケジュールを「仕組み」にするとは、感情に頼らず「この曜日のこの時間にはこれを投稿する」と決めて、予約投稿で自動化すること。やる気がなくても回る仕組みを作った人が、長期的に勝つ。</p>
+
+
+    <div style="margin-top:48px;padding:24px;background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:12px;">
+      <h3 style="font-size:18px;margin-bottom:16px;color:#a5b4fc;border:none;padding:0;">
+        <svg style="display:inline;vertical-align:middle;margin-right:4px" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" fill="#a5b4fc"/></svg>
+        あわせて読みたい
+      </h3>
+      <ul style="list-style:none;margin:0;padding:0;">
+        <li><a href="shinri-technique-kadai.html" style="color:var(--color-indigo);text-decoration:none">ファンが「課金したくなる」心理テクニック7選</a></li>
+<li><a href="profile-kaizen-5step.html" style="color:var(--color-indigo);text-decoration:none">ファンサブスクのプロフィール改善5ステップ</a></li>
+<li><a href="fan-ikusei-loyalty.html" style="color:var(--color-indigo);text-decoration:none">「見るだけのファン」を「推してくれるファン」に育てる5つの段階</a></li>
+      </ul>
+    </div>
+
+    <div class="blog-cta">
+      <div class="blog-cta__title">収益化の悩み、Pretzelが解決します</div>
+      <p class="blog-cta__text">プラットフォーム選び・コンテンツ企画・身バレ対策まで、<br>ファンサブスク運営をトータルでサポート。まずは無料相談から。</p>
+      <a href="../contact.html" style="display:inline-block;padding:14px 40px;background:var(--gradient-primary);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:1rem;">無料で相談する</a>
+    </div>
+  </article>
+
+  <footer style="text-align:center;padding:40px 24px;border-top:1px solid var(--color-border);margin-top:60px;">
+    <p style="color:var(--color-text-muted);font-size:0.85rem;">&copy; 2026 Pretzel. All rights reserved.</p>
+  </footer>
+</body>
+</html>

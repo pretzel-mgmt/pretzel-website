@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K83S4M97G5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-K83S4M97G5');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ファンサブスクのデータ分析入門｜数字を見れば「次にやること」が見える | Pretzel ブログ</title>
+  <meta name="description" content="ファンサブスクの売上・継続率・流入元・閲覧数などのデータを分析し、改善アクションに落とし込む方法を初心者向けに解説。">
+  <meta name="keywords" content="データ分析,ファンサブスク,継続率,売上分析,myfans,candfans,改善">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://pretzel-mgmt.github.io/pretzel-website/blog/data-bunseki-kaizen.html">
+  <meta property="og:title" content="ファンサブスクのデータ分析入門｜数字を見れば「次にやること」が見える | Pretzel ブログ">
+  <meta property="og:description" content="ファンサブスクの売上・継続率・流入元・閲覧数などのデータを分析し、改善アクションに落とし込む方法を初心者向けに解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pretzel-mgmt.github.io/pretzel-website/blog/data-bunseki-kaizen.html">
+  <meta property="og:site_name" content="Pretzel">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ファンサブスクのデータ分析入門｜数字を見れば「次にやること」が見える">
+  <meta name="twitter:description" content="ファンサブスクの売上・継続率・流入元・閲覧数などのデータを分析し、改善アクションに落とし込む方法を初心者向けに解説。">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+.blog-article { max-width: 780px; margin: 0 auto; padding: 120px 24px 80px; }
+.blog-article__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.blog-article__date { font-size: 0.875rem; color: var(--color-text-muted); }
+.blog-article__tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 999px; background: rgba(99, 102, 241, 0.15); color: var(--color-indigo); font-weight: 500; }
+.blog-article__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.3; margin-bottom: 24px; color: var(--color-text-heading); }
+.blog-article__lead { font-size: 1.1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--color-border); }
+.blog-article h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700; color: var(--color-text-heading); margin: 56px 0 20px; padding-bottom: 12px; border-bottom: 2px solid transparent; border-image: var(--gradient-primary) 1; }
+.blog-article h3 { font-size: 1.2rem; font-weight: 600; color: var(--color-text-heading); margin: 36px 0 12px; padding-left: 16px; border-left: 3px solid var(--color-indigo); }
+.blog-article p { font-size: 1rem; line-height: 1.9; color: var(--color-text-body); margin-bottom: 20px; }
+.blog-article ul, .blog-article ol { margin: 16px 0 24px 24px; color: var(--color-text-body); line-height: 1.9; }
+.blog-article li { margin-bottom: 8px; }
+.blog-article .tip-box { background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.blog-article .tip-box__title { font-size: 0.9rem; font-weight: 700; color: var(--color-indigo); margin-bottom: 8px; }
+.blog-article .tip-box p { margin-bottom: 0; font-size: 0.95rem; }
+.blog-article .warning-box { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+.blog-article .warning-box__title { font-size: 0.9rem; font-weight: 700; color: #ef4444; margin-bottom: 8px; }
+.blog-article .warning-box p { margin-bottom: 0; font-size: 0.95rem; }
+.blog-article .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; }
+.blog-article .compare-table th { font-size: 0.8rem; font-weight: 600; color: var(--color-text-muted); text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--color-border-hover); }
+.blog-article .compare-table td { font-size: 0.9rem; color: var(--color-text-body); padding: 12px; border-bottom: 1px solid var(--color-border); }
+.blog-article .compare-table tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.blog-cta { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 40px 32px; text-align: center; margin: 56px 0 0; }
+.blog-cta__title { font-size: 1.5rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+.blog-cta__text { color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; }
+.blog-article .toc { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 28px; margin: 0 0 48px; }
+.blog-article .toc__title { font-size: 0.95rem; font-weight: 700; color: var(--color-text-heading); margin-bottom: 12px; }
+.blog-article .toc ol { margin: 0 0 0 20px; }
+.blog-article .toc li { margin-bottom: 6px; }
+.blog-article .toc a { color: var(--color-indigo); text-decoration: none; font-size: 0.9rem; }
+.blog-article .toc a:hover { text-decoration: underline; }
+.blog-breadcrumb { font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 24px; }
+.blog-breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
+.blog-breadcrumb a:hover { color: var(--color-indigo); }
+@media (max-width: 768px) {
+  .blog-article { padding: 100px 16px 60px; }
+  .blog-cta { padding: 28px 20px; }
+}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ファンサブスクのデータ分析入門｜数字を見れば「次にやること」が見える",
+    "description": "ファンサブスクの売上・継続率・流入元・閲覧数などのデータを分析し、改善アクションに落とし込む方法を初心者向けに解説。",
+    "datePublished": "2026-05-11",
+    "dateModified": "2026-05-11",
+    "author": { "@type": "Organization", "name": "Pretzel", "url": "https://pretzel-mgmt.github.io/pretzel-website/" },
+    "publisher": { "@type": "Organization", "name": "Pretzel" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://pretzel-mgmt.github.io/pretzel-website/blog/data-bunseki-kaizen.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://pretzel-mgmt.github.io/pretzel-website/"},
+      {"@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://pretzel-mgmt.github.io/pretzel-website/blog.html"},
+      {"@type": "ListItem", "position": 3, "name": "データ分析で次の一手が見える", "item": "https://pretzel-mgmt.github.io/pretzel-website/blog/data-bunseki-kaizen.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">Pretzel</a>
+      <div class="nav__links">
+        <a href="../services.html">サービス</a>
+        <a href="../pricing.html">料金</a>
+        <a href="../blog.html">ブログ</a>
+        <a href="../contact.html" class="nav__cta">無料相談</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="blog-article">
+    <div class="blog-breadcrumb">
+      <a href="../index.html">トップ</a> &gt; <a href="../blog.html">ブログ</a> &gt; データ分析で次の一手が見える
+    </div>
+
+    <div class="blog-article__meta">
+      <span class="blog-article__date">2026.05.11</span>
+      <span class="blog-article__tag">データ分析</span>
+<span class="blog-article__tag">戦略</span>
+    </div>
+
+    <h1 class="blog-article__title">ファンサブスクのデータ分析入門｜数字を見れば「次にやること」が見える</h1>
+
+    <p class="blog-article__lead">ファンサブスクの売上・継続率・流入元・閲覧数などのデータを分析し、改善アクションに落とし込む方法を初心者向けに解説。</p>
+
+    <div class="toc">
+      <div class="toc__title">目次</div>
+      <ol>
+        <li><a href="#s1">「感覚」で運営するクリエイターが9割負ける理由</a></li>
+        <li><a href="#s2">最低限見るべき5つの指標</a></li>
+        <li><a href="#s3">MRRの正しい計算と読み方</a></li>
+        <li><a href="#s4">解約タイミング分析 ― いつ・なぜ辞めるのか</a></li>
+        <li><a href="#s5">コンテンツ別パフォーマンス分析</a></li>
+        <li><a href="#s6">流入元分析 ― どこからファンが来ているか</a></li>
+        <li><a href="#s7">データから「仮説→検証」を回すフレームワーク</a></li>
+        <li><a href="#s8">まとめ：データは武器、感覚は呪い</a></li>
+      </ol>
+    </div>
+
+    
+<h2 id="s1">「感覚」で運営するクリエイターが9割負ける理由</h2>
+<p>「なんとなく反応が良かった気がする」「先月より売上が減った気がする」。ファンサブスクを感覚で運営している人は驚くほど多い。</p>
+<p>問題は、感覚が間違っていることが多いということだ。人間は「印象に残った出来事」を過大評価する認知バイアスがある。DMで熱い感想をもらったコンテンツが実際にはほとんど閲覧されていなかったり、逆に何気なく投稿したコンテンツが圧倒的に見られていたりする。</p>
+<p>データを見れば、こうした思い込みを排除できる。そして何より、データがあれば「次に何をすべきか」が明確になる。闇雲に頑張るのではなく、効果のある場所にだけ力を注げるようになる。</p>
+
+<h2 id="s2">最低限見るべき5つの指標</h2>
+<p>データ分析と聞くと難しそうに感じるかもしれないが、ファンサブスク運営で見るべき数字は意外と少ない。以下の5つだけ押さえれば十分だ。</p>
+<table class="compare-table">
+<tr><th>指標</th><th>意味</th><th>目安</th></tr>
+<tr><td>MRR（月間経常収益）</td><td>毎月安定して入ってくる売上</td><td>右肩上がりなら健全</td></tr>
+<tr><td>解約率（チャーンレート）</td><td>1ヶ月間で解約した人の割合</td><td>10%以下が目標</td></tr>
+<tr><td>新規登録数</td><td>その月に新しく入った人数</td><td>解約数を上回ること</td></tr>
+<tr><td>コンテンツ閲覧率</td><td>投稿に対してどれだけの人が見たか</td><td>50%以上なら健全</td></tr>
+<tr><td>平均継続月数</td><td>ファンが平均何ヶ月続けているか</td><td>3ヶ月以上が目標</td></tr>
+</table>
+<p>これらの数字を月1回記録するだけで、運営の健康状態が一目でわかるようになる。Excelやスプレッドシートで十分。複雑なツールは不要だ。</p>
+
+<h2 id="s3">MRRの正しい計算と読み方</h2>
+<p>MRR（Monthly Recurring Revenue）は「月間経常収益」のこと。サブスクビジネスにおける最重要指標だ。</p>
+<p>計算式はシンプル。「月額料金 × 現在の登録者数」がベースのMRR。複数プランがある場合は、各プランの（月額 × 人数）を合計する。</p>
+<h3>MRRの4つの構成要素</h3>
+<ul>
+<li>New MRR：新規登録者から発生した収益</li>
+<li>Expansion MRR：既存ファンがプランをアップグレードした分</li>
+<li>Contraction MRR：既存ファンがプランをダウングレードした分</li>
+<li>Churned MRR：解約によって失った収益</li>
+</ul>
+<p>「New + Expansion」が「Contraction + Churned」を上回っていれば、MRRは成長している。逆にChurned MRRが大きいと、いくら新規を集めても売上は横ばいか減少する。「穴の空いたバケツに水を入れている」状態だ。</p>
+<div class="tip-box">
+<div class="tip-box__title">具体例で理解する</div>
+<p>月額2,000円のプラン、登録者100人の場合：MRR = 20万円。今月10人解約（Churned: 2万円）、15人新規加入（New: 3万円）、3人がアップグレード（Expansion: 3,000円）なら、来月のMRR = 20万 - 2万 + 3万 + 0.3万 = 21.3万円。成長している。</p>
+</div>
+
+<h2 id="s4">解約タイミング分析 ― いつ・なぜ辞めるのか</h2>
+<p>解約率を下げるには、まず「いつ」「なぜ」解約が起きているかを知る必要がある。</p>
+<h3>「いつ」の分析</h3>
+<p>多くのプラットフォームでは、登録後1ヶ月目の解約が最も多い。つまり「1ヶ月目を乗り越えさせる」ことが最大のテーマ。初月に手厚いフォローを入れるだけで、全体の解約率は大幅に改善する。</p>
+<h3>「なぜ」の分析</h3>
+<p>解約理由は大きく4パターンに分かれる。</p>
+<ul>
+<li>コンテンツの更新頻度に不満 → 投稿スケジュールの見直し</li>
+<li>期待した内容と違った → プロフィールやプラン説明の改善</li>
+<li>お金の問題 → 低価格プランの追加検討</li>
+<li>飽きた → コンテンツのバリエーション追加</li>
+</ul>
+<p>解約した人に「差し支えなければ理由を教えていただけますか？」とDMを送るのは有効だ。全員が返信するわけではないが、返ってきた声は金よりも価値がある。</p>
+
+<h2 id="s5">コンテンツ別パフォーマンス分析</h2>
+<p>「どのコンテンツが最も見られているか」を把握していないクリエイターは、力の入れどころを間違えている可能性が高い。</p>
+<h3>見るべき数字</h3>
+<ul>
+<li>閲覧数：何人が見たか</li>
+<li>閲覧率：全登録者のうち何%が見たか</li>
+<li>いいね率：閲覧者のうち何%がリアクションしたか</li>
+<li>コメント数：深いエンゲージメントの指標</li>
+</ul>
+<p>閲覧率が高くていいね率が低いコンテンツは「見たけど響かなかった」もの。逆にいいね率は高いけど閲覧率が低いものは「見た人には刺さったが、タイトルやサムネイルが弱い」可能性がある。</p>
+<div class="tip-box">
+<div class="tip-box__title">パフォーマンス分析の例</div>
+<p>あるクリエイターが過去3ヶ月の投稿を分析したところ、「メイキング・裏側系」のコンテンツが閲覧率・いいね率ともに最高だった。本人は「完成作品」に力を入れていたが、ファンが求めていたのは「過程」だった。この発見で投稿配分を変えた結果、解約率が8%改善した。</p>
+</div>
+
+<h2 id="s6">流入元分析 ― どこからファンが来ているか</h2>
+<p>新規ファンがどこから来ているかを知ることは、集客戦略を最適化する上で欠かせない。</p>
+<h3>主な流入元</h3>
+<ul>
+<li>X（旧Twitter）：裏垢・メイン垢それぞれの効果を区別する</li>
+<li>他のSNS（Instagram、TikTokなど）</li>
+<li>コラボ相手のサブスク</li>
+<li>ブログやまとめサイトからの検索流入</li>
+<li>口コミ・友人紹介</li>
+</ul>
+<p>各流入元の「新規登録数」だけでなく「継続率」も比較すること。X経由の新規が多くても継続率が低いなら、そのフォロワー層とコンテンツにミスマッチがある可能性がある。逆にコラボ経由は少数でも継続率が高いことが多い。</p>
+<p>「量」と「質」の両面で流入元を評価し、効果の高いチャネルにリソースを集中させる。これがデータに基づく集客戦略だ。</p>
+
+<h2 id="s7">データから「仮説→検証」を回すフレームワーク</h2>
+<p>データを集めるだけでは意味がない。大事なのは「データ → 仮説 → 施策 → 検証」のサイクルを回すこと。</p>
+<h3>4ステップのフレームワーク</h3>
+<ol>
+<li>データを見る：先月の解約率が15%に上昇していた</li>
+<li>仮説を立てる：月末に投稿が減った（月後半3投稿→1投稿）ことが原因ではないか</li>
+<li>施策を打つ：今月は月末にコンテンツを集中投下する</li>
+<li>結果を検証：解約率が10%に改善 → 仮説が正しかった</li>
+</ol>
+<p>このサイクルを毎月回すだけで、3ヶ月後には運営の精度が劇的に上がる。「なんとなく」ではなく「これをやったからこうなった」が分かるようになる。</p>
+<div class="warning-box">
+<div class="warning-box__title">よくある間違い</div>
+<p>一度の結果で「これが正解」と決めつけないこと。統計的に意味のある結論を出すには、最低2〜3ヶ月の検証が必要。1ヶ月で判断して施策をコロコロ変えると、何が効いたのか分からなくなる。</p>
+</div>
+
+<h2 id="s8">まとめ：データは武器、感覚は呪い</h2>
+<p>「データ分析」というと大げさに聞こえるかもしれないが、やることは至ってシンプル。月に1回、5つの数字を記録して、先月と比較する。変化があったら「なぜ？」を考える。仮説を立てて、次の月に検証する。これだけだ。</p>
+<p>感覚で運営し続けるクリエイターは、いつまでも同じ場所をぐるぐる回る。データを見るクリエイターは、毎月少しずつ、しかし確実に前に進む。その差は半年後、1年後に圧倒的なものになる。</p>
+<p>今日からでも始められる。まずはスプレッドシートを開いて、先月の売上と登録者数を記録することから始めよう。</p>
+
+
+    <div style="margin-top:48px;padding:24px;background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:12px;">
+      <h3 style="font-size:18px;margin-bottom:16px;color:#a5b4fc;border:none;padding:0;">
+        <svg style="display:inline;vertical-align:middle;margin-right:4px" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" fill="#a5b4fc"/></svg>
+        あわせて読みたい
+      </h3>
+      <ul style="list-style:none;margin:0;padding:0;">
+        <li><a href="keizoku-ritsu-90-percent.html" style="color:var(--color-indigo);text-decoration:none">継続率90%超えのクリエイターがやっている7つの習慣</a></li>
+<li><a href="fansub-kaiyakuritsu-sageru.html" style="color:var(--color-indigo);text-decoration:none">解約率を下げる10の施策</a></li>
+<li><a href="ne-age-timing-houhou.html" style="color:var(--color-indigo);text-decoration:none">値上げのタイミングと伝え方</a></li>
+      </ul>
+    </div>
+
+    <div class="blog-cta">
+      <div class="blog-cta__title">収益化の悩み、Pretzelが解決します</div>
+      <p class="blog-cta__text">プラットフォーム選び・コンテンツ企画・身バレ対策まで、<br>ファンサブスク運営をトータルでサポート。まずは無料相談から。</p>
+      <a href="../contact.html" style="display:inline-block;padding:14px 40px;background:var(--gradient-primary);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:1rem;">無料で相談する</a>
+    </div>
+  </article>
+
+  <footer style="text-align:center;padding:40px 24px;border-top:1px solid var(--color-border);margin-top:60px;">
+    <p style="color:var(--color-text-muted);font-size:0.85rem;">&copy; 2026 Pretzel. All rights reserved.</p>
+  </footer>
+</body>
+</html>
