@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://pretzel-mgmt.github.io/pretzel-website/services.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://pretzel-mgmt.github.io/pretzel-website/blog.html</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>https://pretzel-mgmt.github.io/pretzel-website/sitemap-page.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -581,5 +581,47 @@
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/x-touketsu-kaihi-kanzen-guide.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/x-shadowban-taisaku-guide.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/dousen-sekkei-sns-fansub.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/dm-eigyou-fansub-guide.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/chatlady-vs-fansub-hikaku.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/smartphone-kasegu-jyosei-anzen.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pretzel-mgmt.github.io/pretzel-website/blog/uraaka-kasegu-ranking-2026.html</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
