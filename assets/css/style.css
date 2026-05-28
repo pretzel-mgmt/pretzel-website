@@ -177,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(16px);
 }
 
-.nav__inner {
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -187,32 +187,34 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 var(--space-lg);
 }
 
-.nav__logo {
+.nav-logo {
   display: flex;
   align-items: center;
   margin-right: 2.5rem;
 }
-.nav__logo img {
+.nav-logo img {
   height: 36px;
   width: auto;
   display: block;
 }
 
-.nav__links {
-  display: none;
+.nav-links {
+  display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: 28px;
+  list-style: none;
 }
 
-.nav__link {
+.nav-links a {
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--color-text-muted);
   transition: color var(--transition-fast);
   position: relative;
+  text-decoration: none;
 }
 
-.nav__link::after {
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -223,61 +225,93 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.nav__link:hover {
+.nav-links a:hover {
   color: var(--color-text-heading);
 }
 
-.nav__link:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-.nav__cta {
+.nav-cta {
   font-size: var(--fs-sm);
   font-weight: 600;
   padding: 0.5rem 1.25rem;
   border-radius: var(--border-radius-full);
   background: var(--gradient-primary);
-  color: #fff;
+  color: #fff !important;
   transition: opacity var(--transition-fast);
 }
 
-.nav__cta:hover {
+.nav-cta:hover {
   opacity: 0.9;
 }
 
 /* Hamburger */
-.nav__hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 28px;
-  padding: 4px 0;
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
   cursor: pointer;
+  padding: 4px;
   z-index: 1001;
 }
 
-.nav__hamburger span {
+.hamburger span {
   display: block;
-  width: 100%;
+  width: 24px;
   height: 2px;
   background: var(--color-text-body);
+  margin: 5px 0;
   border-radius: 2px;
   transition: transform var(--transition-base), opacity var(--transition-fast);
 }
 
-.nav__hamburger.active span:nth-child(1) {
+.hamburger.active span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.nav__hamburger.active span:nth-child(2) {
+.hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 
-.nav__hamburger.active span:nth-child(3) {
+.hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile menu */
+/* Mobile menu (nav-links toggles to full-screen on mobile) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--color-bg-card);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    z-index: 999;
+    padding: var(--space-xl);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: var(--fs-lg);
+    color: var(--color-text-body);
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Mobile slide-in menu (legacy pattern used by index, blog, blog articles) */
 .nav__mobile-menu {
   position: fixed;
   top: 0;
@@ -307,6 +341,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--color-border);
   transition: color var(--transition-fast);
+  text-decoration: none;
 }
 
 .nav__mobile-menu a:hover {
@@ -1125,41 +1160,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
 }
 
-/* ---------- Photo Dividers ---------- */
-.photo-divider {
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  position: relative;
-}
-
-.photo-divider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.4) saturate(0.8);
-  transition: filter 600ms ease;
-}
-
-.photo-divider:hover img {
-  filter: brightness(0.5) saturate(1);
-}
-
-.photo-divider__overlay,
-.photo-divider::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15,16,25,0.6) 0%, transparent 30%, transparent 70%, rgba(15,16,25,0.6) 100%);
-  pointer-events: none;
-}
-
 @media (max-width: 768px) {
-  .photo-divider {
-    height: 180px;
-  }
-
   .br-desktop {
     display: none;
   }
