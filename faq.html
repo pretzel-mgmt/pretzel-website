@@ -65,89 +65,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Navigation ── */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      background: rgba(10,10,26,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .navbar .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      margin-right: 2.5rem;
-    }
-    .logo img {
-      height: 36px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text-primary);
-    }
-
-    .nav-btn {
-      padding: 0.5rem 1.2rem;
-      background: var(--gradient-accent);
-      color: #fff !important;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .nav-btn:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-
-    .mobile-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .mobile-toggle span {
-      width: 24px;
-      height: 2px;
-      background: var(--text-primary);
-      transition: 0.3s;
-    }
-
     /* ── Hero ── */
     .hero {
       display: block;
@@ -424,20 +341,6 @@
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(10, 10, 15, 0.98);
-        flex-direction: column;
-        padding: 1.5rem 2rem;
-        gap: 1.2rem;
-        border-bottom: 1px solid var(--border-color);
-      }
-
-      .nav-links.open { display: flex; }
 
       .mobile-toggle { display: flex; }
 
@@ -591,24 +494,23 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="services.html">サービス</a></li>
-        <li><a href="pricing.html">料金</a></li>
-        <li><a href="results.html">実績</a></li>
-        <li><a href="faq.html" class="active">よくある質問</a></li>
-        <li><a href="blog.html">ブログ</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-        <li><a href="launch.html" class="nav-btn">夜職の方へ</a></li>
-        <li><a href="uraaka.html" class="nav-btn" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a></li>
-      </ul>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="results.html">実績</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="launch.html" class="nav-cta">夜職の方へ</a></li>
+      <li><a href="uraaka.html" class="nav-cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
   <main>
   <!-- Hero -->
@@ -895,27 +797,26 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;margin:0 auto;"></div>
-      <ul class="footer-links">
-        <li><a href="services.html">サービス</a></li>
-        <li><a href="pricing.html">料金</a></li>
-        <li><a href="results.html">実績</a></li>
-        <li><a href="faq.html">よくある質問</a></li>
-        <li><a href="blog.html">ブログ</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-        <li><a href="launch.html">夜職の方へ</a></li>
-        <li><a href="uraaka.html">裏垢女子の方へ</a></li>
-      </ul>
-      <p style="margin-top:12px;text-align:center"><a href="sitemap-page.html" style="color:#94a3b8;font-size:13px;text-decoration:none">サイトマップ</a></p>
-    <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
-    </div>
-  </footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="32" style="display:block;margin:0 auto;"></div>
+    <ul class="footer-links">
+      <li><a href="services.html">サービス</a></li>
+      <li><a href="pricing.html">料金</a></li>
+      <li><a href="results.html">実績</a></li>
+      <li><a href="blog.html">ブログ</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+      <li><a href="launch.html">夜職の方へ</a></li>
+      <li><a href="uraaka.html">裏垢女子の方へ</a></li>
+    </ul>
+    <p style="margin-top:8px;text-align:center"><a href="sitemap-page.html" style="color:#94a3b8;font-size:13px;text-decoration:none">サイトマップ</a></p>
+    <p class="footer-copy" style="text-align:center">&copy; 2026 Pretzel. All rights reserved.</p>
+  </div>
+</footer>
 
   <script>
     // Mobile menu toggle
-    document.getElementById('mobileToggle').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('active');
     });
 
     // Accordion

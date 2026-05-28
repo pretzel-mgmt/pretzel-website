@@ -92,17 +92,6 @@
     a { color: inherit; text-decoration: none; }
 
     /* ===== NAV ===== */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(10,10,26,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--dark-border);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 24px; height: 72px;
-    }
     .logo {
       font-family: 'Inter', sans-serif;
       font-size: 1.5rem; font-weight: 800;
@@ -110,27 +99,6 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-right: 2.5rem;
-    }
-    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
-    .nav-links a {
-      font-size: 0.85rem; font-weight: 500; color: var(--text-muted);
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: #fff; }
-    .nav-links a.active {
-      color: #fff;
-      background: var(--gradient-main);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-weight: 700;
-    }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 4px;
-    }
-    .hamburger span {
-      width: 24px; height: 2px; background: var(--text);
-      transition: 0.3s;
     }
 
     /* ===== HERO ===== */
@@ -567,15 +535,6 @@
       .pricing-btn { padding: 16px 40px; font-size: 1rem; }
     }
     @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-links.open {
-        display: flex; flex-direction: column;
-        position: absolute; top: 72px; left: 0; right: 0;
-        background: rgba(10,10,15,0.97);
-        padding: 24px; gap: 20px;
-        border-bottom: 1px solid var(--dark-border);
-      }
       .hero h1 { font-size: clamp(1.5rem, 7vw, 1.8rem); }
       .step-item { gap: 14px; }
       .step-number { width: 44px; height: 44px; font-size: 0.95rem; }
@@ -630,18 +589,17 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Pretzel" height="36" style="display:block;"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="services.html">サービス</a></li>
       <li><a href="pricing.html">料金</a></li>
       <li><a href="results.html">実績</a></li>
-      <li><a href="faq.html">よくある質問</a></li>
       <li><a href="blog.html">ブログ</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
-      <li><a href="launch.html">夜職の方へ</a></li>
-      <li><a href="uraaka.html" class="active">裏垢女子の方へ</a></li>
+      <li><a href="launch.html" class="nav-cta">夜職の方へ</a></li>
+      <li><a href="uraaka.html" class="nav-cta" style="background: linear-gradient(135deg, #a855f7, #ec4899);">裏垢女子の方へ</a></li>
     </ul>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="メニュー">
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -744,11 +702,6 @@
     </div>
   </div>
 </section>
-
-<div class="photo-divider">
-  <img src="assets/images/DSC_0548.JPG" alt="裏垢女子向けファンサブスク収益化イメージ写真" loading="lazy">
-  <div class="photo-divider__overlay"></div>
-</div>
 
 <!-- PRICING -->
 <section class="section">
@@ -910,16 +863,20 @@
       <li><a href="services.html">サービス</a></li>
       <li><a href="pricing.html">料金</a></li>
       <li><a href="results.html">実績</a></li>
-      <li><a href="faq.html">よくある質問</a></li>
       <li><a href="blog.html">ブログ</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
       <li><a href="launch.html">夜職の方へ</a></li>
       <li><a href="uraaka.html">裏垢女子の方へ</a></li>
     </ul>
-    <p style="margin-top:12px;text-align:center"><a href="sitemap-page.html" style="color:#94a3b8;font-size:13px;text-decoration:none">サイトマップ</a></p>
-    <p class="footer-copy">&copy; 2026 Pretzel. All rights reserved.</p>
+    <p style="margin-top:8px;text-align:center"><a href="sitemap-page.html" style="color:#94a3b8;font-size:13px;text-decoration:none">サイトマップ</a></p>
+    <p class="footer-copy" style="text-align:center">&copy; 2026 Pretzel. All rights reserved.</p>
   </div>
 </footer>
 
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+</script>
 </body>
 </html>
